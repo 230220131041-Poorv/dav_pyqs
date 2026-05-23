@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAV — Chapter 2 Answer Booklet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+  :root{--bg:#f7f5f0;--card:#ffffff;--ink:#1a1a18;--ink2:#4a4a45;--ink3:#7a7a72;--accent:#2d5a8e;--accent2:#c8502a;--green:#2a7a4b;--border:#e0ddd6;--mark3:#eaf3de;--mark3t:#2a7a4b;--mark4:#e6f1fb;--mark4t:#185fa5;--mark7:#faeeda;--mark7t:#854f0b;--diag-bg:#f0eee8;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;}
+  .page-header{background:var(--green);color:#fff;padding:28px 40px 24px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,0.15);}
+  .page-header h1{font-size:18px;font-weight:600;}
+  .page-header p{font-size:12px;opacity:.75;margin-top:3px;}
+  .progress{font-size:12px;background:rgba(255,255,255,.15);padding:6px 14px;border-radius:20px;white-space:nowrap;}
+  .toc{background:var(--card);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .toc-label{font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em;margin-right:4px;}
+  .toc a{font-size:12px;padding:3px 10px;border-radius:14px;background:var(--bg);color:var(--ink2);text-decoration:none;border:1px solid var(--border);transition:all .15s;}
+  .toc a:hover{background:var(--green);color:#fff;border-color:var(--green);}
+  .container{max-width:860px;margin:0 auto;padding:32px 24px 80px;}
+  .q-card{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:28px;overflow:hidden;scroll-margin-top:100px;}
+  .q-header{display:flex;align-items:flex-start;gap:14px;padding:18px 24px 16px;border-bottom:1px solid var(--border);background:#fafaf8;}
+  .q-num{font-size:11px;font-weight:600;color:var(--green);background:#eaf3de;border-radius:6px;padding:3px 8px;white-space:nowrap;margin-top:2px;}
+  .q-text{font-family:'Crimson Pro',serif;font-size:18px;color:var(--ink);line-height:1.4;flex:1;}
+  .mark-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;white-space:nowrap;margin-top:3px;}
+  .m3{background:var(--mark3);color:var(--mark3t);}
+  .m4{background:var(--mark4);color:var(--mark4t);}
+  .m7{background:var(--mark7);color:var(--mark7t);}
+  .exam-tags{display:flex;gap:5px;flex-wrap:wrap;padding:8px 24px 12px;background:#fafaf8;border-bottom:1px solid var(--border);}
+  .exam-tag{font-size:10px;padding:2px 8px;border-radius:8px;background:var(--bg);color:var(--ink3);border:1px solid var(--border);}
+  .q-body{padding:24px;}
+  h3{font-size:14px;font-weight:600;color:var(--green);margin:20px 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+  h3:first-child{margin-top:0;}
+  h4{font-size:15px;font-weight:600;color:var(--ink);margin:14px 0 6px;}
+  p{margin-bottom:10px;color:var(--ink2);}
+  p:last-child{margin-bottom:0;}
+  ul,ol{padding-left:20px;margin-bottom:10px;color:var(--ink2);}
+  li{margin-bottom:5px;}
+  .highlight{background:linear-gradient(to right,#fffbe6,#fff);border-left:3px solid var(--accent2);padding:10px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14px;color:var(--ink);}
+  .formula{font-family:'DM Mono',monospace;background:#f0eee8;border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:13px;margin:12px 0;color:var(--accent);overflow-x:auto;white-space:pre-wrap;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+  th{background:var(--green);color:#fff;padding:8px 12px;text-align:left;font-weight:500;}
+  td{padding:7px 12px;border-bottom:1px solid var(--border);color:var(--ink2);}
+  tr:nth-child(even) td{background:#fafaf8;}
+  .diagram{background:var(--diag-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin:18px 0;text-align:center;}
+  .diagram-title{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin-bottom:14px;font-weight:600;}
+  .step-list{counter-reset:step;list-style:none;padding:0;}
+  .step-list li{counter-increment:step;padding:8px 12px 8px 44px;position:relative;margin-bottom:6px;background:var(--bg);border-radius:8px;color:var(--ink2);font-size:14px;}
+  .step-list li::before{content:counter(step);position:absolute;left:12px;top:8px;width:22px;height:22px;background:var(--green);color:#fff;border-radius:50%;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  .col-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;}
+  .col-box strong{font-size:13px;color:var(--ink);display:block;margin-bottom:6px;}
+  .col-box p,.col-box li{font-size:13px;}
+  .note{background:#eaf3de;border-left:3px solid var(--green);padding:8px 14px;border-radius:0 8px 8px 0;font-size:13px;color:var(--green);margin:10px 0;font-weight:500;}
+  @media(max-width:600px){.page-header{padding:18px 16px;}.toc{padding:12px 16px;}.container{padding:20px 12px 60px;}.q-header{padding:14px 16px 12px;}.q-body{padding:16px;}.two-col{grid-template-columns:1fr;}.exam-tags{padding:8px 16px 10px;}}
+</style>
+</head>
+<body>
+<div class="page-header">
+  <div><h1>Data Analysis &amp; Visualization — 3161613</h1><h2>Chapter 2: Using Clustering to Subdivide Data | GTU Exam Answers</h2></div>
+  <span class="progress">13 Questions Answered</span>
+</div>
+<div class="toc">
+  <span class="toc-label">Jump to:</span>
+  <a href="#q1">Q1 Cluster &amp; Algorithms</a><a href="#q2">Q2 Clustering vs Classification</a><a href="#q3">Q3 Good Clustering</a>
+  <a href="#q4">Q4 KDE</a><a href="#q5">Q5 DBScan</a><a href="#q6">Q6 Types of Clustering</a>
+  <a href="#q7">Q7 K-Means</a><a href="#q8">Q8 Distance Measures</a><a href="#q9">Q9 Random Forest</a>
+  <a href="#q10">Q10 Decision Tree</a><a href="#q11">Q11 Tree Pruning</a><a href="#q12">Q12 Hierarchical</a><a href="#q13">Q13 Overfitting</a>
+</div>
+<div class="container">
+
+<!-- Q1 -->
+<div class="q-card" id="q1">
+  <div class="q-header"><span class="q-num">Q 1</span><span class="q-text">Define Cluster. List out algorithms for identifying clusters. / What is cluster analysis? Write its usage.</span><span class="mark-badge m3">3 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Sum'23</span><span class="exam-tag">Win'23</span><span class="exam-tag">Win'24</span></div>
+  <div class="q-body">
+    <h3>Definition</h3>
+    <p>A <strong>cluster</strong> is a group of data points that are more similar to each other than to data points in other groups. <strong>Cluster analysis</strong> is an unsupervised learning technique that groups unlabeled data into natural clusters without any prior knowledge of group labels.</p>
+    <h3>Algorithms for Identifying Clusters</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>K-Means</strong><p>Partitions data into K clusters by minimizing intra-cluster variance. Fast and simple.</p></div>
+      <div class="col-box"><strong>Hierarchical Clustering</strong><p>Builds a dendrogram by merging (agglomerative) or splitting (divisive) clusters progressively.</p></div>
+      <div class="col-box"><strong>DBSCAN</strong><p>Density-based. Groups dense regions; marks sparse points as outliers/noise. No K needed.</p></div>
+      <div class="col-box"><strong>KDE (Kernel Density Estimation)</strong><p>Estimates data density; peaks of density curve correspond to cluster centers.</p></div>
+      <div class="col-box"><strong>Gaussian Mixture Models</strong><p>Probabilistic model assuming data is from a mixture of Gaussian distributions.</p></div>
+      <div class="col-box"><strong>Mean Shift</strong><p>Shifts data points towards the mode of density. Does not require K to be specified.</p></div>
+    </div>
+    <h3>Applications of Cluster Analysis</h3>
+    <ul>
+      <li><strong>Customer Segmentation:</strong> Group customers by purchasing behaviour for targeted marketing</li>
+      <li><strong>Document Clustering:</strong> Group similar news articles or research papers</li>
+      <li><strong>Image Segmentation:</strong> Partition image pixels into meaningful regions</li>
+      <li><strong>Anomaly Detection:</strong> Isolated points not in any cluster are outliers</li>
+      <li><strong>Bioinformatics:</strong> Group genes with similar expression patterns</li>
+    </ul>
+    <div class="note">📝 Exam tip: Define cluster as "similar within, dissimilar between". List at least 4 algorithms with one-line descriptions.</div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-card" id="q2">
+  <div class="q-header"><span class="q-num">Q 2</span><span class="q-text">Define Clustering and Classification. Compare Clustering and Classification.</span><span class="mark-badge m3">3 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Win'24</span><span class="exam-tag">Win'23</span><span class="exam-tag">Sum'23</span></div>
+  <div class="q-body">
+    <h3>Clustering</h3>
+    <p><strong>Clustering</strong> is an <em>unsupervised</em> learning method that groups data points into clusters based on similarity, without using any predefined class labels or training data.</p>
+    <h3>Classification</h3>
+    <p><strong>Classification</strong> is a <em>supervised</em> learning method that assigns each data point to a predefined category (class) based on a model trained using labeled examples.</p>
+    <h3>Comparison Table</h3>
+    <table>
+      <tr><th>Parameter</th><th>Clustering</th><th>Classification</th></tr>
+      <tr><td>Learning Type</td><td>Unsupervised</td><td>Supervised</td></tr>
+      <tr><td>Labels Required</td><td>No — no labeled data needed</td><td>Yes — labeled training data required</td></tr>
+      <tr><td>Goal</td><td>Discover hidden groups in data</td><td>Predict class of new data point</td></tr>
+      <tr><td>Output</td><td>Cluster IDs (Cluster 1, 2, 3…)</td><td>Class labels (Spam / Not Spam)</td></tr>
+      <tr><td>No. of Groups</td><td>May or may not be known</td><td>Number of classes is pre-defined</td></tr>
+      <tr><td>Algorithms</td><td>K-Means, DBSCAN, Hierarchical</td><td>k-NN, Decision Tree, Random Forest, SVM</td></tr>
+      <tr><td>Example</td><td>Grouping customers by behavior</td><td>Classifying email as spam or not</td></tr>
+    </table>
+    <div class="diagram">
+      <div class="diagram-title">Clustering vs Classification — Visual Comparison</div>
+      <svg viewBox="0 0 680 175" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#2d5a8e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <rect x="10" y="10" width="300" height="155" rx="10" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5"/>
+        <text x="160" y="30" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2a7a4b">Clustering (Unsupervised)</text>
+        <circle cx="55" cy="80" r="5" fill="#7a7a72"/><circle cx="72" cy="66" r="5" fill="#7a7a72"/><circle cx="65" cy="96" r="5" fill="#7a7a72"/><circle cx="50" cy="108" r="5" fill="#7a7a72"/>
+        <circle cx="148" cy="74" r="5" fill="#7a7a72"/><circle cx="165" cy="90" r="5" fill="#7a7a72"/><circle cx="152" cy="108" r="5" fill="#7a7a72"/>
+        <circle cx="248" cy="78" r="5" fill="#7a7a72"/><circle cx="262" cy="64" r="5" fill="#7a7a72"/><circle cx="255" cy="98" r="5" fill="#7a7a72"/>
+        <text x="160" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#2a7a4b">→ Natural groups found automatically</text>
+        <ellipse cx="60" cy="88" rx="26" ry="30" fill="none" stroke="#c8502a" stroke-width="1.8" stroke-dasharray="5 3"/>
+        <ellipse cx="155" cy="92" rx="24" ry="26" fill="none" stroke="#185fa5" stroke-width="1.8" stroke-dasharray="5 3"/>
+        <ellipse cx="254" cy="80" rx="22" ry="24" fill="none" stroke="#2a7a4b" stroke-width="1.8" stroke-dasharray="5 3"/>
+        <rect x="370" y="10" width="300" height="155" rx="10" fill="#e6f1fb" stroke="#2d5a8e" stroke-width="1.5"/>
+        <text x="520" y="30" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2d5a8e">Classification (Supervised)</text>
+        <circle cx="415" cy="68" r="5" fill="#c8502a"/><circle cx="432" cy="54" r="5" fill="#c8502a"/><circle cx="425" cy="85" r="5" fill="#c8502a"/>
+        <circle cx="510" cy="78" r="5" fill="#185fa5"/><circle cx="525" cy="64" r="5" fill="#185fa5"/><circle cx="518" cy="95" r="5" fill="#185fa5"/>
+        <circle cx="605" cy="72" r="5" fill="#2a7a4b"/><circle cx="620" cy="58" r="5" fill="#2a7a4b"/><circle cx="615" cy="90" r="5" fill="#2a7a4b"/>
+        <line x1="478" y1="44" x2="478" y2="130" stroke="#854f0b" stroke-width="1.8" stroke-dasharray="6 3"/>
+        <line x1="568" y1="44" x2="568" y2="130" stroke="#854f0b" stroke-width="1.8" stroke-dasharray="6 3"/>
+        <text x="520" y="148" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#2d5a8e">Decision boundaries learned from labels</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q-card" id="q3">
+  <div class="q-header"><span class="q-num">Q 3</span><span class="q-text">Describe characteristics of good clustering.</span><span class="mark-badge m3">3 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Win'23</span></div>
+  <div class="q-body">
+    <h3>Characteristics of Good Clustering</h3>
+    <ol>
+      <li><strong>High Intra-cluster Similarity:</strong> Points within the same cluster must be very similar (small intra-cluster distance) — tight, compact clusters.</li>
+      <li><strong>Low Inter-cluster Similarity:</strong> Points in different clusters must be very dissimilar (large inter-cluster distance) — clusters are well-separated.</li>
+      <li><strong>Scalability:</strong> Should work efficiently on very large datasets without degrading in performance.</li>
+      <li><strong>Ability to Handle Different Data Types:</strong> Should handle numerical, categorical, and mixed-type data.</li>
+      <li><strong>Robustness to Outliers/Noise:</strong> Should produce meaningful clusters even when the data contains noisy or extreme points.</li>
+      <li><strong>Insensitivity to Input Order:</strong> Results should not depend on the order in which data points are processed.</li>
+      <li><strong>Minimal Parameters:</strong> Should work without requiring users to specify many configuration values (ideally not even K).</li>
+      <li><strong>Interpretability:</strong> Clusters produced should be meaningful and explainable to domain experts.</li>
+    </ol>
+    <div class="note">📝 For 3 marks: write any 4 characteristics clearly, one sentence each. Points 1 and 2 are the most fundamental — always include them.</div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q-card" id="q4">
+  <div class="q-header"><span class="q-num">Q 4</span><span class="q-text">Discuss Estimating Clusters with Kernel Density Estimation (KDE).</span><span class="mark-badge m4">4 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Sum'23</span></div>
+  <div class="q-body">
+    <h3>What is KDE?</h3>
+    <p><strong>Kernel Density Estimation (KDE)</strong> is a non-parametric technique to estimate the probability density function (PDF) of a dataset. Instead of assuming any fixed distribution, KDE places a smooth kernel function at each data point and sums them to build a density curve. In clustering, the <strong>local peaks (maxima)</strong> of this density curve identify cluster centers.</p>
+    <h3>KDE Formula</h3>
+    <div class="formula">f̂(x) = (1/nh) × Σ K((x − xᵢ)/h)
+
+Where:
+  n  = number of data points
+  h  = bandwidth (smoothing parameter)
+  K  = kernel function (usually Gaussian)
+  xᵢ = individual data points</div>
+    <h3>How KDE Identifies Clusters — Steps</h3>
+    <ol class="step-list">
+      <li>Place a smooth Gaussian kernel centered at each data point</li>
+      <li>Sum all kernels across the entire data space to get the density estimate f̂(x)</li>
+      <li>Plot the density curve — high peaks = dense regions = cluster centers</li>
+      <li>Identify all local maxima (peaks) in the density function</li>
+      <li>Assign each data point to the nearest peak — these are the clusters</li>
+    </ol>
+    <h3>Role of Bandwidth (h)</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>Small h (undersmoothing)</strong><p>Many sharp narrow peaks → too many clusters detected. Very sensitive to noise.</p></div>
+      <div class="col-box"><strong>Large h (oversmoothing)</strong><p>Few broad peaks → fewer clusters found. May merge truly distinct groups.</p></div>
+    </div>
+    <div class="diagram">
+      <div class="diagram-title">KDE — Individual Kernels Summed to Form Density Curve with 3 Peaks (Clusters)</div>
+      <svg viewBox="0 0 680 195" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <line x1="40" y1="168" x2="640" y2="168" stroke="#c0bdb5" stroke-width="1.5"/>
+        <line x1="40" y1="30" x2="40" y2="168" stroke="#c0bdb5" stroke-width="1.5"/>
+        <text x="340" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#7a7a72">Data space (X)</text>
+        <text x="22" y="100" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72" transform="rotate(-90,22,100)">Density f̂(x)</text>
+        <circle cx="118" cy="168" r="4" fill="#2a7a4b"/><circle cx="148" cy="168" r="4" fill="#2a7a4b"/><circle cx="133" cy="168" r="4" fill="#2a7a4b"/>
+        <circle cx="348" cy="168" r="4" fill="#2a7a4b"/><circle cx="378" cy="168" r="4" fill="#2a7a4b"/><circle cx="363" cy="168" r="4" fill="#2a7a4b"/>
+        <circle cx="555" cy="168" r="4" fill="#2a7a4b"/><circle cx="575" cy="168" r="4" fill="#2a7a4b"/>
+        <path d="M68,168 Q118,118 168,168" fill="none" stroke="#185fa5" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <path d="M88,168 Q133,112 178,168" fill="none" stroke="#185fa5" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <path d="M103,168 Q148,115 193,168" fill="none" stroke="#185fa5" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <path d="M293,168 Q348,118 398,168" fill="none" stroke="#185fa5" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <path d="M313,168 Q363,112 413,168" fill="none" stroke="#185fa5" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <path d="M328,168 Q378,115 428,168" fill="none" stroke="#185fa5" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <path d="M495,168 Q555,116 615,168" fill="none" stroke="#185fa5" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <path d="M510,168 Q570,112 630,168" fill="none" stroke="#185fa5" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <path d="M40,166 Q70,164 95,158 Q118,104 133,72 Q148,44 163,72 Q178,104 200,158 Q250,166 298,163 Q328,153 350,78 Q365,46 380,78 Q402,153 445,163 Q490,166 535,142 Q558,78 565,56 Q572,78 595,138 Q625,164 640,166"
+              fill="rgba(42,122,75,0.12)" stroke="#2a7a4b" stroke-width="2.5"/>
+        <line x1="133" y1="72" x2="133" y2="168" stroke="#c8502a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="133" y="65" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a" font-weight="600">Peak 1 (Cluster 1)</text>
+        <line x1="365" y1="46" x2="365" y2="168" stroke="#c8502a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="365" y="39" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a" font-weight="600">Peak 2 (Cluster 2)</text>
+        <line x1="565" y1="56" x2="565" y2="168" stroke="#c8502a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="565" y="49" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a" font-weight="600">Peak 3 (Cluster 3)</text>
+        <text x="630" y="22" text-anchor="end" font-family="DM Sans,sans-serif" font-size="10" fill="#185fa5">— — Individual kernels</text>
+        <text x="630" y="36" text-anchor="end" font-family="DM Sans,sans-serif" font-size="10" fill="#2a7a4b">— Summed density curve</text>
+      </svg>
+    </div>
+    <div class="note">📝 Key idea: Peaks in density curve = cluster centers. Bandwidth h is the key parameter controlling the number of clusters found.</div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="q-card" id="q5">
+  <div class="q-header"><span class="q-num">Q 5</span><span class="q-text">Discuss Identifying Clusters with DBSCAN. Explain DBSCAN method for clustering.</span><span class="mark-badge m4">4 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Sum'23 OR</span><span class="exam-tag">Win'24</span></div>
+  <div class="q-body">
+    <h3>What is DBSCAN?</h3>
+    <p><strong>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</strong> is a density-based clustering algorithm. It groups together points that are closely packed (high density) and marks points in sparse, low-density regions as <em>noise/outliers</em>. It does <strong>not</strong> require specifying the number of clusters in advance.</p>
+    <h3>Two Key Parameters</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>ε (epsilon)</strong><p>The radius of the neighbourhood around each point. Two points are neighbours if their distance ≤ ε.</p></div>
+      <div class="col-box"><strong>MinPts</strong><p>Minimum number of points required within the ε-neighbourhood to form a dense region (core point).</p></div>
+    </div>
+    <h3>Three Types of Points</h3>
+    <ul>
+      <li><strong>Core Point:</strong> Has at least MinPts neighbours within distance ε. Forms the interior of a cluster.</li>
+      <li><strong>Border Point:</strong> Has fewer than MinPts neighbours within ε, but lies within ε of a core point. Lies on the edge of a cluster.</li>
+      <li><strong>Noise Point (Outlier):</strong> Neither core nor border point. Does not belong to any cluster.</li>
+    </ul>
+    <div class="diagram">
+      <div class="diagram-title">DBSCAN — Core, Border, and Noise Points with ε Neighbourhood</div>
+      <svg viewBox="0 0 680 215" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <!-- Cluster 1 region -->
+        <circle cx="175" cy="105" r="72" fill="rgba(42,122,75,0.07)" stroke="#2a7a4b" stroke-width="1.5" stroke-dasharray="7 4"/>
+        <!-- Core point with epsilon circle -->
+        <circle cx="175" cy="105" r="52" fill="none" stroke="#c8502a" stroke-width="1.5" stroke-dasharray="8 4"/>
+        <text x="224" y="62" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a">ε radius</text>
+        <circle cx="175" cy="105" r="10" fill="#2a7a4b" opacity="0.25"/>
+        <circle cx="175" cy="105" r="7" fill="#2a7a4b"/>
+        <text x="175" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#2a7a4b" font-weight="600">Core</text>
+        <!-- Neighbour points -->
+        <circle cx="142" cy="88" r="6" fill="#2a7a4b"/><circle cx="155" cy="128" r="6" fill="#2a7a4b"/>
+        <circle cx="198" cy="83" r="6" fill="#2a7a4b"/><circle cx="205" cy="125" r="6" fill="#2a7a4b"/>
+        <circle cx="118" cy="110" r="6" fill="#2a7a4b"/><circle cx="200" cy="108" r="6" fill="#2a7a4b"/>
+        <!-- Border point -->
+        <circle cx="235" cy="155" r="6" fill="#185fa5"/>
+        <text x="255" cy="162" x="255" y="160" font-family="DM Sans,sans-serif" font-size="10" fill="#185fa5">Border</text>
+        <!-- Cluster 2 -->
+        <circle cx="470" cy="95" r="62" fill="rgba(24,95,165,0.07)" stroke="#185fa5" stroke-width="1.5" stroke-dasharray="7 4"/>
+        <circle cx="470" cy="95" r="7" fill="#185fa5"/>
+        <circle cx="444" cy="80" r="6" fill="#185fa5"/><circle cx="493" cy="80" r="6" fill="#185fa5"/>
+        <circle cx="448" cy="112" r="6" fill="#185fa5"/><circle cx="492" cy="112" r="6" fill="#185fa5"/>
+        <circle cx="470" cy="130" r="6" fill="#185fa5"/>
+        <text x="470" y="160" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#185fa5">Cluster 2</text>
+        <text x="175" y="185" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#2a7a4b">Cluster 1</text>
+        <!-- Noise points -->
+        <circle cx="330" cy="55" r="6" fill="#c8502a"/><text x="330" y="44" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a">Noise</text>
+        <circle cx="585" cy="170" r="6" fill="#c8502a"/><text x="585" y="159" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a">Noise</text>
+        <circle cx="55" cy="175" r="6" fill="#c8502a"/><text x="55" y="164" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a">Noise</text>
+        <!-- Legend -->
+        <circle cx="60" cy="205" r="5" fill="#2a7a4b"/><text x="70" y="209" font-family="DM Sans,sans-serif" font-size="10" fill="#2a7a4b">Core Point</text>
+        <circle cx="165" cy="205" r="5" fill="#185fa5"/><text x="175" y="209" font-family="DM Sans,sans-serif" font-size="10" fill="#185fa5">Border Point</text>
+        <circle cx="270" cy="205" r="5" fill="#c8502a"/><text x="280" y="209" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a">Noise / Outlier</text>
+      </svg>
+    </div>
+    <h3>DBSCAN Algorithm — Steps</h3>
+    <ol class="step-list">
+      <li>For each unvisited point P, mark it as visited</li>
+      <li>Find all points within distance ε (the neighbourhood)</li>
+      <li>If neighbourhood size ≥ MinPts → P is a Core Point; start a new cluster</li>
+      <li>Expand the cluster by recursively adding all density-reachable points</li>
+      <li>If size &lt; MinPts → mark P as Border or Noise (temporary)</li>
+      <li>Continue until all points are visited</li>
+    </ol>
+    <h3>Advantages vs Disadvantages</h3>
+    <table>
+      <tr><th>Advantages</th><th>Disadvantages</th></tr>
+      <tr><td>No need to specify number of clusters K</td><td>Sensitive to choice of ε and MinPts</td></tr>
+      <tr><td>Finds arbitrarily shaped clusters</td><td>Struggles with varying density clusters</td></tr>
+      <tr><td>Automatically identifies outliers/noise</td><td>Poor performance on high-dimensional data</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: Always define Core, Border, and Noise points + draw the diagram. DBSCAN is a very frequently tested topic.</div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q-card" id="q6">
+  <div class="q-header"><span class="q-num">Q 6</span><span class="q-text">Discuss types of clustering.</span><span class="mark-badge m7">7 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Win'23</span></div>
+  <div class="q-body">
+    <h3>Overview</h3>
+    <p>Clustering algorithms can be broadly classified into the following categories based on their approach to grouping data:</p>
+    <div class="diagram">
+      <div class="diagram-title">Types of Clustering — Taxonomy</div>
+      <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <rect x="240" y="10" width="200" height="44" rx="8" fill="#2a7a4b"/>
+        <text x="340" y="28" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">Clustering Methods</text>
+        <text x="340" y="46" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#c0e8cc">Unsupervised grouping</text>
+        <line x1="290" y1="54" x2="75" y2="108" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a2)"/>
+        <line x1="315" y1="54" x2="195" y2="108" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a2)"/>
+        <line x1="340" y1="54" x2="340" y2="108" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a2)"/>
+        <line x1="365" y1="54" x2="490" y2="108" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a2)"/>
+        <line x1="390" y1="54" x2="610" y2="108" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a2)"/>
+        <rect x="25" y="108" width="100" height="52" rx="8" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1"/>
+        <text x="75" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#2a7a4b">Partitioning</text>
+        <text x="75" y="146" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">K-Means, PAM</text>
+        <rect x="140" y="108" width="110" height="52" rx="8" fill="#e6f1fb" stroke="#185fa5" stroke-width="1"/>
+        <text x="195" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#185fa5">Hierarchical</text>
+        <text x="195" y="146" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Agglom. / Divisive</text>
+        <rect x="290" y="108" width="100" height="52" rx="8" fill="#faeeda" stroke="#854f0b" stroke-width="1"/>
+        <text x="340" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#854f0b">Density-Based</text>
+        <text x="340" y="146" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">DBSCAN, OPTICS</text>
+        <rect x="440" y="108" width="100" height="52" rx="8" fill="#fcebeb" stroke="#a32d2d" stroke-width="1"/>
+        <text x="490" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#a32d2d">Model-Based</text>
+        <text x="490" y="146" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">GMM, EM</text>
+        <rect x="560" y="108" width="100" height="52" rx="8" fill="#eeedfe" stroke="#534ab7" stroke-width="1"/>
+        <text x="610" y="128" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#534ab7">Fuzzy</text>
+        <text x="610" y="146" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Fuzzy C-Means</text>
+        <rect x="130" y="185" width="420" height="36" rx="8" fill="#f0eee8" stroke="#c0bdb5" stroke-width="1"/>
+        <text x="340" y="207" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a4a45">Grid-Based (STING, CLIQUE) — divides space into grid cells for fast large-scale clustering</text>
+      </svg>
+    </div>
+    <h4>1. Partitioning Clustering</h4>
+    <p>Divides data into exactly K non-overlapping subsets. Each data point belongs to exactly one cluster. Requires K to be specified in advance. Optimizes an objective function (minimize WCSS).</p>
+    <ul><li><strong>Examples:</strong> K-Means, K-Medoids (PAM)</li></ul>
+    <h4>2. Hierarchical Clustering</h4>
+    <p>Builds a tree-like structure (dendrogram) showing how clusters merge (agglomerative, bottom-up) or split (divisive, top-down) at different levels of similarity. No K needed.</p>
+    <ul><li><strong>Examples:</strong> Ward's linkage, Single/Complete/Average linkage</li></ul>
+    <h4>3. Density-Based Clustering</h4>
+    <p>Groups data points in regions of high density. Can find arbitrarily shaped clusters and naturally identifies noise/outlier points. Does not require K.</p>
+    <ul><li><strong>Examples:</strong> DBSCAN, OPTICS, DENCLUE</li></ul>
+    <h4>4. Grid-Based Clustering</h4>
+    <p>Divides the data space into a finite grid of cells. Performs clustering on the grid rather than individual points — making it very fast and scalable for spatial data.</p>
+    <ul><li><strong>Examples:</strong> STING, CLIQUE, WaveCluster</li></ul>
+    <h4>5. Model-Based Clustering</h4>
+    <p>Assumes data is generated from a mixture of statistical distributions. Uses the Expectation-Maximization (EM) algorithm to estimate parameters.</p>
+    <ul><li><strong>Example:</strong> Gaussian Mixture Models (GMM)</li></ul>
+    <h4>6. Fuzzy Clustering</h4>
+    <p>Each data point has a degree of membership (probability) to each cluster rather than a hard binary assignment. A point can partially belong to multiple clusters.</p>
+    <ul><li><strong>Example:</strong> Fuzzy C-Means (FCM) — a point could be 70% in Cluster 1 and 30% in Cluster 2</li></ul>
+    <div class="note">📝 Exam tip: For 7 marks, name and explain all 6 types with examples and one key differentiating property. Draw the taxonomy diagram.</div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="q-card" id="q7">
+  <div class="q-header"><span class="q-num">Q 7</span><span class="q-text">Describe K-Means Clustering Algorithm with example.</span><span class="mark-badge m7">7 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Win'23 OR</span></div>
+  <div class="q-body">
+    <h3>What is K-Means?</h3>
+    <p><strong>K-Means</strong> is a partitioning clustering algorithm that divides a dataset into exactly K clusters by iteratively assigning each data point to the nearest centroid and recalculating centroids until the assignments stabilize (converge).</p>
+    <p><strong>Objective:</strong> Minimize Within-Cluster Sum of Squares (WCSS):</p>
+    <div class="formula">WCSS = Σₖ Σᵢ∈Cₖ ||xᵢ − μₖ||²
+Where μₖ = centroid (mean) of cluster k</div>
+    <h3>Algorithm Steps</h3>
+    <ol class="step-list">
+      <li><strong>Initialize:</strong> Randomly select K data points as initial cluster centroids (μ₁, μ₂, ..., μₖ)</li>
+      <li><strong>Assign:</strong> Assign every data point to the nearest centroid using Euclidean distance</li>
+      <li><strong>Update:</strong> Recalculate each centroid as the mean of all points now assigned to it</li>
+      <li><strong>Convergence check:</strong> If centroids have not changed (or change &lt; threshold), stop</li>
+      <li><strong>Repeat:</strong> If centroids changed, return to Step 2</li>
+    </ol>
+    <div class="diagram">
+      <div class="diagram-title">K-Means — 4 Stages of the Algorithm (K = 2)</div>
+      <svg viewBox="0 0 680 235" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#7a7a72" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <!-- Stage 1 -->
+        <rect x="10" y="28" width="142" height="172" rx="8" fill="#f0eee8" stroke="#c0bdb5" stroke-width="1"/>
+        <text x="81" y="48" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#4a4a45">1: Raw Data</text>
+        <circle cx="42" cy="85" r="5" fill="#7a7a72"/><circle cx="60" cy="72" r="5" fill="#7a7a72"/>
+        <circle cx="52" cy="100" r="5" fill="#7a7a72"/><circle cx="76" cy="88" r="5" fill="#7a7a72"/>
+        <circle cx="105" cy="130" r="5" fill="#7a7a72"/><circle cx="125" cy="118" r="5" fill="#7a7a72"/>
+        <circle cx="115" cy="150" r="5" fill="#7a7a72"/><circle cx="138" cy="138" r="5" fill="#7a7a72"/>
+        <circle cx="46" cy="80" r="10" fill="none" stroke="#c8502a" stroke-width="2.2"/>
+        <circle cx="130" cy="124" r="10" fill="none" stroke="#185fa5" stroke-width="2.2"/>
+        <text x="81" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Random centroids</text>
+        <line x1="154" y1="114" x2="176" y2="114" stroke="#7a7a72" stroke-width="1.5" marker-end="url(#a3)"/>
+        <!-- Stage 2 -->
+        <rect x="179" y="28" width="142" height="172" rx="8" fill="#f0eee8" stroke="#c0bdb5" stroke-width="1"/>
+        <text x="250" y="48" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#4a4a45">2: Assign Points</text>
+        <circle cx="211" cy="85" r="5" fill="#c8502a"/><circle cx="229" cy="72" r="5" fill="#c8502a"/>
+        <circle cx="221" cy="100" r="5" fill="#c8502a"/><circle cx="245" cy="88" r="5" fill="#c8502a"/>
+        <circle cx="274" cy="130" r="5" fill="#185fa5"/><circle cx="294" cy="118" r="5" fill="#185fa5"/>
+        <circle cx="284" cy="150" r="5" fill="#185fa5"/><circle cx="307" cy="138" r="5" fill="#185fa5"/>
+        <circle cx="215" cy="80" r="10" fill="none" stroke="#c8502a" stroke-width="2.2"/>
+        <circle cx="299" cy="124" r="10" fill="none" stroke="#185fa5" stroke-width="2.2"/>
+        <text x="250" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Color = nearest centroid</text>
+        <line x1="323" y1="114" x2="345" y2="114" stroke="#7a7a72" stroke-width="1.5" marker-end="url(#a3)"/>
+        <!-- Stage 3 -->
+        <rect x="348" y="28" width="142" height="172" rx="8" fill="#f0eee8" stroke="#c0bdb5" stroke-width="1"/>
+        <text x="419" y="48" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#4a4a45">3: Update Centroids</text>
+        <circle cx="380" cy="85" r="5" fill="#c8502a"/><circle cx="398" cy="72" r="5" fill="#c8502a"/>
+        <circle cx="390" cy="100" r="5" fill="#c8502a"/><circle cx="414" cy="88" r="5" fill="#c8502a"/>
+        <circle cx="443" cy="130" r="5" fill="#185fa5"/><circle cx="463" cy="118" r="5" fill="#185fa5"/>
+        <circle cx="453" cy="150" r="5" fill="#185fa5"/><circle cx="476" cy="138" r="5" fill="#185fa5"/>
+        <circle cx="396" cy="86" r="10" fill="#c8502a" fill-opacity="0.25" stroke="#c8502a" stroke-width="2.2"/>
+        <text x="396" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" font-weight="600" fill="#c8502a">μ₁</text>
+        <circle cx="459" cy="134" r="10" fill="#185fa5" fill-opacity="0.25" stroke="#185fa5" stroke-width="2.2"/>
+        <text x="459" y="138" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" font-weight="600" fill="#185fa5">μ₂</text>
+        <text x="419" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">New μ = mean of cluster</text>
+        <line x1="492" y1="114" x2="514" y2="114" stroke="#7a7a72" stroke-width="1.5" marker-end="url(#a3)"/>
+        <!-- Stage 4 -->
+        <rect x="517" y="28" width="155" height="172" rx="8" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5"/>
+        <text x="594" y="48" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#2a7a4b">4: Converged ✓</text>
+        <ellipse cx="564" cy="87" rx="37" ry="33" fill="rgba(200,80,42,0.1)" stroke="#c8502a" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <ellipse cx="626" cy="135" rx="37" ry="33" fill="rgba(24,95,165,0.1)" stroke="#185fa5" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <circle cx="548" cy="82" r="5" fill="#c8502a"/><circle cx="565" cy="70" r="5" fill="#c8502a"/>
+        <circle cx="558" cy="98" r="5" fill="#c8502a"/><circle cx="580" cy="86" r="5" fill="#c8502a"/>
+        <circle cx="610" cy="128" r="5" fill="#185fa5"/><circle cx="628" cy="117" r="5" fill="#185fa5"/>
+        <circle cx="620" cy="148" r="5" fill="#185fa5"/><circle cx="644" cy="136" r="5" fill="#185fa5"/>
+        <text x="594" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#2a7a4b">Stable clusters formed</text>
+      </svg>
+    </div>
+    <h3>Choosing K — Elbow Method</h3>
+    <p>Plot WCSS vs number of clusters K. The "elbow" point — where the rate of decrease sharply slows — is the optimal K value.</p>
+    <h3>Advantages &amp; Limitations</h3>
+    <table>
+      <tr><th>Advantages</th><th>Limitations</th></tr>
+      <tr><td>Simple, fast, and scalable</td><td>K must be specified in advance</td></tr>
+      <tr><td>Works well for spherical clusters</td><td>Sensitive to initial centroid placement</td></tr>
+      <tr><td>Easy to implement and interpret</td><td>Cannot find non-spherical clusters</td></tr>
+      <tr><td>Scales to large datasets</td><td>Affected by outliers</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: Write 5 steps with numbers, draw the 4-stage diagram, state the WCSS objective function, and mention the Elbow method for choosing K.</div>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="q-card" id="q8">
+  <div class="q-header"><span class="q-num">Q 8</span><span class="q-text">Describe distance measures used in data science.</span><span class="mark-badge m4">4 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Win'23</span></div>
+  <div class="q-body">
+    <h3>Why Distance Measures Matter</h3>
+    <p>Distance measures quantify the dissimilarity between two data points. They are fundamental to clustering (K-Means, hierarchical, k-NN) — the choice of distance metric directly affects the quality of results.</p>
+    <h4>1. Euclidean Distance</h4>
+    <p>Most common. Straight-line ("as the crow flies") distance between two points in n-dimensional space.</p>
+    <div class="formula">d(A,B) = √[Σ(Aᵢ − Bᵢ)²]
+Example: d((1,2),(4,6)) = √[(4−1)² + (6−2)²] = √(9+16) = 5</div>
+    <h4>2. Manhattan Distance (City Block / L1)</h4>
+    <p>Sum of absolute differences along each axis. Like navigating a city in a grid — only horizontal and vertical moves.</p>
+    <div class="formula">d(A,B) = Σ|Aᵢ − Bᵢ|
+Example: d((1,2),(4,6)) = |4−1| + |6−2| = 3 + 4 = 7</div>
+    <h4>3. Minkowski Distance</h4>
+    <p>Generalized form. Euclidean (p=2) and Manhattan (p=1) are special cases.</p>
+    <div class="formula">d(A,B) = (Σ|Aᵢ − Bᵢ|ᵖ)^(1/p)</div>
+    <h4>4. Cosine Similarity</h4>
+    <p>Measures the angle between two vectors (not their magnitude). Used in text mining and document clustering.</p>
+    <div class="formula">cos(θ) = (A·B) / (||A|| × ||B||)</div>
+    <h4>5. Hamming Distance</h4>
+    <p>Count of positions where two equal-length strings differ. Used for categorical data and binary features.</p>
+    <table>
+      <tr><th>Measure</th><th>Best For</th><th>Outlier Sensitive</th></tr>
+      <tr><td>Euclidean</td><td>Continuous numeric data</td><td>Yes</td></tr>
+      <tr><td>Manhattan</td><td>High-dimensional, noisy data</td><td>Less</td></tr>
+      <tr><td>Cosine</td><td>Text / document similarity</td><td>No</td></tr>
+      <tr><td>Hamming</td><td>Categorical / binary data</td><td>No</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q-card" id="q9">
+  <div class="q-header"><span class="q-num">Q 9</span><span class="q-text">Discuss Random Forest Algorithm in detail. / Explain working of Random Forest. / Explain how to categorize data using Random Forest.</span><span class="mark-badge m7">7 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Win'23</span><span class="exam-tag">Win'24 OR</span><span class="exam-tag">Sum'24</span><span class="exam-tag">Sum'25</span></div>
+  <div class="q-body">
+    <h3>What is Random Forest?</h3>
+    <p><strong>Random Forest</strong> is an ensemble supervised learning algorithm that builds many decision trees and combines their outputs (majority vote for classification, average for regression) to produce a more accurate and robust prediction. It is based on <em>Bagging (Bootstrap Aggregating)</em>.</p>
+    <h3>Three Key Ideas</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>1. Bootstrap Sampling</strong><p>Each tree trains on a different random sample of the training data drawn with replacement.</p></div>
+      <div class="col-box"><strong>2. Random Feature Selection</strong><p>At each split node, only a random subset of features (m features where m &lt;&lt; total features) is considered. This decorrelates the trees.</p></div>
+      <div class="col-box"><strong>3. Majority Voting (Ensemble)</strong><p>For classification: the class predicted by the most trees wins. For regression: average of all tree outputs.</p></div>
+      <div class="col-box"><strong>4. Out-of-Bag (OOB) Estimate</strong><p>Data not included in a tree's bootstrap sample is used to estimate that tree's error — a free internal validation mechanism.</p></div>
+    </div>
+    <h3>Working — Step by Step</h3>
+    <ol class="step-list">
+      <li>From N training samples, create B bootstrap samples (random subsets with replacement)</li>
+      <li>For each bootstrap sample, grow a decision tree. At each node, randomly select m features out of all F features and choose the best split from only those m</li>
+      <li>Grow each tree fully to maximum depth — no pruning at this stage</li>
+      <li>To predict for a new data point, pass it through all B trees</li>
+      <li>Aggregate: majority vote (classification) or average (regression) gives the final answer</li>
+    </ol>
+    <div class="diagram">
+      <div class="diagram-title">Random Forest — Ensemble of B Decision Trees with Majority Vote</div>
+      <svg viewBox="0 0 680 255" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <rect x="265" y="10" width="150" height="44" rx="8" fill="#2a7a4b"/>
+        <text x="340" y="28" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">Training Dataset</text>
+        <text x="340" y="46" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#c0e8cc">N samples, F features</text>
+        <line x1="305" y1="54" x2="100" y2="98" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a4)"/>
+        <line x1="340" y1="54" x2="340" y2="98" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a4)"/>
+        <line x1="375" y1="54" x2="580" y2="98" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a4)"/>
+        <text x="185" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Bootstrap 1</text>
+        <text x="340" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Bootstrap 2</text>
+        <text x="490" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Bootstrap B</text>
+        <!-- Trees as triangles -->
+        <polygon points="100,98 55,172 145,172" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5"/>
+        <text x="100" y="142" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#2a7a4b">Tree 1</text>
+        <text x="100" y="158" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Pred: A</text>
+        <polygon points="340,98 295,172 385,172" fill="#e6f1fb" stroke="#185fa5" stroke-width="1.5"/>
+        <text x="340" y="142" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#185fa5">Tree 2</text>
+        <text x="340" y="158" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Pred: A</text>
+        <polygon points="580,98 535,172 625,172" fill="#faeeda" stroke="#854f0b" stroke-width="1.5"/>
+        <text x="580" y="142" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#854f0b">Tree B</text>
+        <text x="580" y="158" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Pred: B</text>
+        <text x="238" y="136" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="20" fill="#c0bdb5">· · ·</text>
+        <line x1="100" y1="172" x2="252" y2="208" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a4)"/>
+        <line x1="340" y1="172" x2="340" y2="208" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a4)"/>
+        <line x1="580" y1="172" x2="428" y2="208" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a4)"/>
+        <rect x="195" y="208" width="290" height="40" rx="8" fill="#eeedfe" stroke="#534ab7" stroke-width="1.5"/>
+        <text x="340" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#534ab7">Majority Vote → Class A wins</text>
+        <text x="340" y="240" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a4a45">Final Prediction = A (2 trees vs 1)</text>
+      </svg>
+    </div>
+    <h3>Applications</h3>
+    <ul>
+      <li>Medical diagnosis — classifying diseases from patient data</li>
+      <li>Credit scoring and fraud detection in banking</li>
+      <li>Stock price movement prediction</li>
+      <li>Feature importance ranking (built-in feature selection)</li>
+      <li>Remote sensing and satellite image classification</li>
+    </ul>
+    <h3>Advantages &amp; Disadvantages</h3>
+    <table>
+      <tr><th>Advantages</th><th>Disadvantages</th></tr>
+      <tr><td>High accuracy — reduces overfitting compared to single tree</td><td>Slower prediction (many trees to evaluate)</td></tr>
+      <tr><td>Handles missing values naturally</td><td>Not easily interpretable ("black box")</td></tr>
+      <tr><td>Works for both classification and regression</td><td>Requires more memory and computation</td></tr>
+      <tr><td>Provides built-in feature importance scores</td><td>May overfit on very noisy datasets</td></tr>
+    </table>
+    <div class="note">📝 Three keywords to remember: Bootstrap sampling + Random feature selection + Majority voting. This is one of the most frequently tested 7-mark topics.</div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q-card" id="q10">
+  <div class="q-header"><span class="q-num">Q 10</span><span class="q-text">Explain how to categorize data using Decision Tree Algorithm.</span><span class="mark-badge m4">4 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Sum'24 OR</span></div>
+  <div class="q-body">
+    <h3>What is a Decision Tree?</h3>
+    <p>A <strong>Decision Tree</strong> is a supervised learning algorithm that uses a tree structure of feature tests to classify data. Each internal node tests a feature, each branch is an outcome, and each leaf node gives the final class label.</p>
+    <h3>Key Concepts</h3>
+    <ul>
+      <li><strong>Root Node:</strong> Top node — represents the most important feature (best split)</li>
+      <li><strong>Internal Node:</strong> Tests a feature condition (e.g., Age &gt; 30?)</li>
+      <li><strong>Branch:</strong> Outcome of the feature test (Yes/No)</li>
+      <li><strong>Leaf Node:</strong> Final class label / decision</li>
+    </ul>
+    <h3>Split Criteria</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>Information Gain (ID3 algorithm)</strong><p>Choose feature that maximally reduces entropy (uncertainty).</p><p style="font-family:monospace;font-size:12px;">IG = Entropy(parent) − Weighted Entropy(children)</p></div>
+      <div class="col-box"><strong>Gini Index (CART algorithm)</strong><p>Measure impurity of a node. Lower Gini = purer = better split.</p><p style="font-family:monospace;font-size:12px;">Gini = 1 − Σ(pᵢ)²</p></div>
+    </div>
+    <div class="diagram">
+      <div class="diagram-title">Decision Tree — Classifying Whether to Play Tennis</div>
+      <svg viewBox="0 0 680 235" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#2d5a8e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <rect x="262" y="10" width="156" height="44" rx="8" fill="#2d5a8e"/>
+        <text x="340" y="28" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">Outlook?</text>
+        <text x="340" y="46" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#cce0f5">Root Node (best split)</text>
+        <line x1="308" y1="54" x2="155" y2="108" stroke="#2d5a8e" stroke-width="1.2" marker-end="url(#a5)"/>
+        <text x="210" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#2d5a8e">Sunny</text>
+        <line x1="340" y1="54" x2="340" y2="108" stroke="#2d5a8e" stroke-width="1.2" marker-end="url(#a5)"/>
+        <text x="352" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#2d5a8e">Overcast</text>
+        <line x1="373" y1="54" x2="520" y2="108" stroke="#2d5a8e" stroke-width="1.2" marker-end="url(#a5)"/>
+        <text x="468" y="84" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#2d5a8e">Rainy</text>
+        <rect x="82" y="108" width="148" height="44" rx="8" fill="#e6f1fb" stroke="#185fa5" stroke-width="1.2"/>
+        <text x="156" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#185fa5">Humidity?</text>
+        <text x="156" y="144" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Internal Node</text>
+        <rect x="267" y="108" width="148" height="44" rx="8" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.8"/>
+        <text x="341" y="130" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" font-weight="600" fill="#2a7a4b">✓ Play</text>
+        <text x="341" y="146" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Leaf Node</text>
+        <rect x="450" y="108" width="148" height="44" rx="8" fill="#e6f1fb" stroke="#185fa5" stroke-width="1.2"/>
+        <text x="524" y="126" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#185fa5">Wind?</text>
+        <text x="524" y="144" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Internal Node</text>
+        <line x1="124" y1="152" x2="78" y2="192" stroke="#185fa5" stroke-width="1" marker-end="url(#a5)"/>
+        <text x="84" y="178" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">High</text>
+        <line x1="185" y1="152" x2="205" y2="192" stroke="#185fa5" stroke-width="1" marker-end="url(#a5)"/>
+        <text x="210" y="178" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Normal</text>
+        <line x1="490" y1="152" x2="455" y2="192" stroke="#185fa5" stroke-width="1" marker-end="url(#a5)"/>
+        <text x="456" y="178" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Weak</text>
+        <line x1="558" y1="152" x2="590" y2="192" stroke="#185fa5" stroke-width="1" marker-end="url(#a5)"/>
+        <text x="592" y="178" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Strong</text>
+        <rect x="22" y="192" width="110" height="36" rx="8" fill="#fcebeb" stroke="#a32d2d" stroke-width="1.5"/>
+        <text x="77" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#a32d2d">✗ No Play</text>
+        <rect x="150" y="192" width="110" height="36" rx="8" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5"/>
+        <text x="205" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2a7a4b">✓ Play</text>
+        <rect x="408" y="192" width="110" height="36" rx="8" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5"/>
+        <text x="463" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2a7a4b">✓ Play</text>
+        <rect x="538" y="192" width="110" height="36" rx="8" fill="#fcebeb" stroke="#a32d2d" stroke-width="1.5"/>
+        <text x="593" y="215" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#a32d2d">✗ No Play</text>
+      </svg>
+    </div>
+    <div class="note">📝 Exam tip: Always draw the tree 2 levels deep with real feature names. Mention Information Gain or Gini Index as splitting criterion.</div>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="q-card" id="q11">
+  <div class="q-header"><span class="q-num">Q 11</span><span class="q-text">Write a note on Tree Pruning. / Explain working of Tree Pruning.</span><span class="mark-badge m3">3 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Win'24</span><span class="exam-tag">Sum'25 OR</span></div>
+  <div class="q-body">
+    <h3>What is Tree Pruning?</h3>
+    <p><strong>Tree Pruning</strong> is a technique to reduce the size of a decision tree by removing branches that have little predictive power or that are causing overfitting. A fully-grown decision tree tends to memorize training data (overfitting) — pruning corrects this by simplifying the tree to improve generalization on unseen data.</p>
+    <h3>Types of Pruning</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>Pre-Pruning (Early Stopping)</strong><p>Stop growing the tree early. Conditions to stop:</p><ul><li>Node has fewer than min_samples_split</li><li>Maximum depth reached</li><li>Information gain below threshold</li></ul></div>
+      <div class="col-box"><strong>Post-Pruning (Bottom-Up)</strong><p>Grow the full tree, then trim. Methods:</p><ul><li><strong>Reduced Error Pruning:</strong> Remove subtree if accuracy doesn't drop on validation set</li><li><strong>Cost Complexity Pruning:</strong> Add penalty α for tree size</li></ul></div>
+    </div>
+    <div class="diagram">
+      <div class="diagram-title">Before Pruning (Overfitted) vs After Pruning (Generalized)</div>
+      <svg viewBox="0 0 680 195" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="a6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#2d5a8e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <!-- BEFORE -->
+        <text x="155" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#c8502a">Before Pruning — Overfitted</text>
+        <rect x="125" y="28" width="60" height="28" rx="6" fill="#fcebeb" stroke="#a32d2d" stroke-width="1.2"/>
+        <text x="155" y="47" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#a32d2d">Root</text>
+        <line x1="140" y1="56" x2="92" y2="80" stroke="#a32d2d" stroke-width="1" marker-end="url(#a6)"/>
+        <line x1="170" y1="56" x2="218" y2="80" stroke="#a32d2d" stroke-width="1" marker-end="url(#a6)"/>
+        <rect x="62" y="80" width="60" height="28" rx="6" fill="#fcebeb" stroke="#a32d2d" stroke-width="1"/>
+        <text x="92" y="99" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#a32d2d">N1</text>
+        <rect x="188" y="80" width="60" height="28" rx="6" fill="#fcebeb" stroke="#a32d2d" stroke-width="1"/>
+        <text x="218" y="99" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#a32d2d">N2</text>
+        <line x1="80" y1="108" x2="48" y2="132" stroke="#a32d2d" stroke-width="1" marker-end="url(#a6)"/>
+        <line x1="104" y1="108" x2="122" y2="132" stroke="#a32d2d" stroke-width="1" marker-end="url(#a6)"/>
+        <line x1="204" y1="108" x2="175" y2="132" stroke="#a32d2d" stroke-width="1" marker-end="url(#a6)"/>
+        <line x1="228" y1="108" x2="252" y2="132" stroke="#a32d2d" stroke-width="1" marker-end="url(#a6)"/>
+        <rect x="18" y="132" width="55" height="26" rx="5" fill="#faeeda" stroke="#854f0b" stroke-width="1"/><text x="45" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#854f0b">Leaf</text>
+        <rect x="97" y="132" width="55" height="26" rx="5" fill="#faeeda" stroke="#854f0b" stroke-width="1"/><text x="124" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#854f0b">Leaf</text>
+        <rect x="150" y="132" width="55" height="26" rx="5" fill="#faeeda" stroke="#854f0b" stroke-width="1"/><text x="177" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#854f0b">Leaf</text>
+        <rect x="224" y="132" width="55" height="26" rx="5" fill="#faeeda" stroke="#854f0b" stroke-width="1"/><text x="251" y="150" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#854f0b">Leaf</text>
+        <!-- Noisy sub-branches -->
+        <line x1="45" y1="158" x2="30" y2="178" stroke="#c8502a" stroke-width="1" opacity="0.5"/>
+        <line x1="45" y1="158" x2="60" y2="178" stroke="#c8502a" stroke-width="1" opacity="0.5"/>
+        <rect x="12" y="178" width="38" height="15" rx="4" fill="#f5f0e8" stroke="#c0bdb5"/><text x="31" y="189" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#7a7a72">noise</text>
+        <rect x="52" y="178" width="38" height="15" rx="4" fill="#f5f0e8" stroke="#c0bdb5"/><text x="71" y="189" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#7a7a72">noise</text>
+        <!-- Arrow -->
+        <text x="340" y="112" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="24" fill="#534ab7">→</text>
+        <text x="340" y="130" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#534ab7" font-weight="600">Prune</text>
+        <!-- AFTER -->
+        <text x="530" y="20" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#2a7a4b">After Pruning — Generalized</text>
+        <rect x="500" y="28" width="60" height="28" rx="6" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5"/>
+        <text x="530" y="47" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#2a7a4b">Root</text>
+        <line x1="514" y1="56" x2="464" y2="100" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a6)"/>
+        <line x1="546" y1="56" x2="596" y2="100" stroke="#2a7a4b" stroke-width="1.2" marker-end="url(#a6)"/>
+        <rect x="430" y="100" width="80" height="30" rx="6" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5"/>
+        <text x="470" y="120" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#2a7a4b">Leaf ✓</text>
+        <rect x="558" y="100" width="80" height="30" rx="6" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5"/>
+        <text x="598" y="120" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" fill="#2a7a4b">Leaf ✓</text>
+      </svg>
+    </div>
+    <div class="note">📝 Remember: Pruning = fix for overfitting in decision trees. Pre-pruning = stop early. Post-pruning = cut back after full growth.</div>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="q-card" id="q12">
+  <div class="q-header"><span class="q-num">Q 12</span><span class="q-text">Explain Hierarchical Clustering Algorithm.</span><span class="mark-badge m7">7 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Sum'24 OR</span></div>
+  <div class="q-body">
+    <h3>What is Hierarchical Clustering?</h3>
+    <p>Hierarchical clustering creates a tree of clusters called a <strong>dendrogram</strong>. It does not require specifying K in advance. By cutting the dendrogram at different heights, you can obtain any number of clusters — the user chooses the cut level.</p>
+    <h3>Two Approaches</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>Agglomerative (Bottom-Up) ← Most Common</strong><ol style="font-size:13px;padding-left:16px;margin-top:6px;"><li>Start: each point is its own cluster (N clusters)</li><li>Merge the two closest clusters into one</li><li>Repeat until only one cluster remains</li></ol></div>
+      <div class="col-box"><strong>Divisive (Top-Down)</strong><ol style="font-size:13px;padding-left:16px;margin-top:6px;"><li>Start: all points in one single cluster</li><li>Split into two sub-clusters</li><li>Repeat until each point is its own cluster</li></ol></div>
+    </div>
+    <h3>Linkage Criteria</h3>
+    <table>
+      <tr><th>Linkage Method</th><th>Distance Between Clusters</th><th>Characteristic</th></tr>
+      <tr><td>Single Linkage</td><td>Min distance of any two points across clusters</td><td>Chain-like clusters</td></tr>
+      <tr><td>Complete Linkage</td><td>Max distance of any two points across clusters</td><td>Compact, tight clusters</td></tr>
+      <tr><td>Average Linkage</td><td>Average of all pairwise distances</td><td>Balanced clusters</td></tr>
+      <tr><td>Ward's Method</td><td>Minimizes increase in within-cluster variance</td><td>Most compact clusters (most common)</td></tr>
+    </table>
+    <div class="diagram">
+      <div class="diagram-title">Dendrogram — Hierarchical Clustering of 6 Points (A–F) — Agglomerative</div>
+      <svg viewBox="0 0 680 235" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <!-- Y axis -->
+        <line x1="40" y1="35" x2="40" y2="208" stroke="#c0bdb5" stroke-width="1.5"/>
+        <text x="22" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72" transform="rotate(-90,22,115)">Distance (Dissimilarity)</text>
+        <!-- Y-axis ticks -->
+        <line x1="36" y1="50" x2="44" y2="50" stroke="#c0bdb5" stroke-width="1"/><text x="34" y="54" text-anchor="end" font-family="DM Sans,sans-serif" font-size="9" fill="#7a7a72">High</text>
+        <line x1="36" y1="208" x2="44" y2="208" stroke="#c0bdb5" stroke-width="1"/><text x="34" y="212" text-anchor="end" font-family="DM Sans,sans-serif" font-size="9" fill="#7a7a72">Low</text>
+        <!-- Point labels -->
+        <text x="105" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2d5a8e">A</text>
+        <text x="185" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2d5a8e">B</text>
+        <text x="295" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2d5a8e">C</text>
+        <text x="370" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2d5a8e">D</text>
+        <text x="495" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2d5a8e">E</text>
+        <text x="570" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2d5a8e">F</text>
+        <!-- Stems -->
+        <line x1="105" y1="208" x2="105" y2="185" stroke="#2d5a8e" stroke-width="2"/>
+        <line x1="185" y1="208" x2="185" y2="185" stroke="#2d5a8e" stroke-width="2"/>
+        <line x1="295" y1="208" x2="295" y2="170" stroke="#2d5a8e" stroke-width="2"/>
+        <line x1="370" y1="208" x2="370" y2="170" stroke="#2d5a8e" stroke-width="2"/>
+        <line x1="495" y1="208" x2="495" y2="185" stroke="#2d5a8e" stroke-width="2"/>
+        <line x1="570" y1="208" x2="570" y2="185" stroke="#2d5a8e" stroke-width="2"/>
+        <!-- Merge A-B (height 185) -->
+        <line x1="105" y1="185" x2="185" y2="185" stroke="#c8502a" stroke-width="2.2"/>
+        <line x1="145" y1="185" x2="145" y2="148" stroke="#c8502a" stroke-width="2.2"/>
+        <!-- Merge C-D (height 170) -->
+        <line x1="295" y1="170" x2="370" y2="170" stroke="#185fa5" stroke-width="2.2"/>
+        <line x1="332" y1="170" x2="332" y2="135" stroke="#185fa5" stroke-width="2.2"/>
+        <!-- Merge E-F (height 185) -->
+        <line x1="495" y1="185" x2="570" y2="185" stroke="#2a7a4b" stroke-width="2.2"/>
+        <line x1="532" y1="185" x2="532" y2="112" stroke="#2a7a4b" stroke-width="2.2"/>
+        <!-- Merge AB-CD (height 148→135) -->
+        <line x1="145" y1="148" x2="332" y2="148" stroke="#854f0b" stroke-width="2.2"/>
+        <line x1="238" y1="148" x2="238" y2="75" stroke="#854f0b" stroke-width="2.2"/>
+        <!-- Merge ABCD-EF (height 75) -->
+        <line x1="238" y1="75" x2="532" y2="75" stroke="#534ab7" stroke-width="2.5"/>
+        <line x1="385" y1="75" x2="385" y2="42" stroke="#534ab7" stroke-width="2.5"/>
+        <circle cx="385" cy="42" r="5" fill="#534ab7"/>
+        <text x="630" y="42" text-anchor="end" font-family="DM Sans,sans-serif" font-size="10" fill="#534ab7">1 cluster (root)</text>
+        <!-- Cut line for 2 clusters -->
+        <line x1="50" y1="100" x2="640" y2="100" stroke="#c8502a" stroke-width="1.8" stroke-dasharray="9 5"/>
+        <text x="58" y="96" font-family="DM Sans,sans-serif" font-size="10" fill="#c8502a" font-weight="600">Cut → 2 clusters</text>
+      </svg>
+    </div>
+    <h3>How to Determine Number of Clusters</h3>
+    <p>Draw a horizontal line across the dendrogram. The number of vertical lines the cut intersects = number of clusters. Cut at the <strong>longest vertical gap</strong> for the most natural and well-separated clustering.</p>
+    <div class="note">📝 Exam tip: Draw the dendrogram with 5-6 points, label the cut line, and explain agglomerative steps. Include the linkage methods table — it earns significant marks for a 7M question.</div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="q-card" id="q13">
+  <div class="q-header"><span class="q-num">Q 13</span><span class="q-text">Explain Overfitting Problem. / Discuss ways to avoid overfitting in classification.</span><span class="mark-badge m3">3 M</span></div>
+  <div class="exam-tags"><span class="exam-tag">Sum'23</span><span class="exam-tag">Win'24</span><span class="exam-tag">Sum'25</span></div>
+  <div class="q-body">
+    <h3>What is Overfitting?</h3>
+    <p><strong>Overfitting</strong> occurs when a machine learning model learns the training data too well — including its noise and random fluctuations — resulting in excellent training accuracy but poor performance on unseen test data. The model memorizes rather than generalizes.</p>
+    <div class="highlight"><strong>Sign of overfitting:</strong> Training accuracy = 99%, Test accuracy = 60% — a large gap between the two.</div>
+    <h3>Causes</h3>
+    <ul>
+      <li>Model is too complex (too deep decision tree, too many parameters)</li>
+      <li>Training dataset is too small or not representative of the real population</li>
+      <li>Too many irrelevant features included in the model</li>
+      <li>Training for too many iterations without monitoring validation error</li>
+    </ul>
+    <h3>Ways to Avoid Overfitting</h3>
+    <ol>
+      <li><strong>Pruning (Decision Trees):</strong> Remove branches with little predictive power</li>
+      <li><strong>Cross-Validation (k-fold):</strong> Evaluate model on multiple train/test splits to detect overfitting</li>
+      <li><strong>Regularization (L1/L2):</strong> Add a penalty for model complexity in regression models</li>
+      <li><strong>More Training Data:</strong> Larger, more diverse datasets reduce memorization</li>
+      <li><strong>Feature Selection:</strong> Remove irrelevant and redundant features</li>
+      <li><strong>Ensemble Methods:</strong> Random Forest averages many trees, reducing variance</li>
+      <li><strong>Early Stopping:</strong> Stop training when validation error starts increasing</li>
+      <li><strong>Dropout (Neural Networks):</strong> Randomly deactivate neurons during training</li>
+    </ol>
+    <div class="note">📝 For 3 marks: define overfitting (training accuracy ≠ test accuracy), list 4 prevention techniques with one sentence each.</div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:24px 0;color:var(--ink3);font-size:13px;border-top:1px solid var(--border);margin-top:12px;">
+  Chapter 2 Complete · 13 Questions Answered · GTU 3161613 — Data Analysis &amp; Visualization<br>
+  <span style="font-size:11px;margin-top:4px;display:block;">Say "Chapter 3" for Modeling Instances (k-NN, ANN, Classification) answers</span>
+</div>
+</div>
+</body>
+</html>

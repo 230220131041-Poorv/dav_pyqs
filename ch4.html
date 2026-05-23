@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAV — Chapter 4 Answer Booklet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f4f6f2;
+    --card: #ffffff;
+    --ink: #1a1a18;
+    --ink2: #4a4a45;
+    --ink3: #7a7a72;
+    --accent: #3a6b3a;
+    --accent2: #b04a1a;
+    --teal: #1e6e6e;
+    --border: #deded6;
+    --mark3: #eaf3de;
+    --mark3t: #2a6a2a;
+    --mark4: #e4f0e4;
+    --mark4t: #1e5e1e;
+    --mark7: #faeeda;
+    --mark7t: #854f0b;
+    --diag-bg: #edeee8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .page-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 32px 40px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  }
+  .page-header h1 { font-size: 18px; font-weight: 600; }
+  .page-header h2 { font-size: 13px; opacity: 0.8; margin-top: 4px; font-weight: 400; }
+  .page-header p  { font-size: 12px; opacity: 0.7; margin-top: 3px; }
+  .progress { font-size: 12px; background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; white-space: nowrap; }
+
+  .toc {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .toc-label { font-size: 11px; color: var(--ink3); text-transform: uppercase; letter-spacing: .05em; margin-right: 4px; }
+  .toc a { font-size: 12px; padding: 3px 10px; border-radius: 14px; background: var(--bg); color: var(--ink2); text-decoration: none; border: 1px solid var(--border); transition: all .15s; }
+  .toc a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    scroll-margin-top: 100px;
+  }
+
+  .q-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: #f8f9f6;
+  }
+  .q-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--mark3);
+    border-radius: 6px;
+    padding: 3px 8px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .q-text { font-family: 'Crimson Pro', serif; font-size: 18px; color: var(--ink); line-height: 1.4; flex: 1; }
+  .mark-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .m3 { background: var(--mark3); color: var(--mark3t); }
+  .m4 { background: var(--mark4); color: var(--mark4t); }
+  .m7 { background: var(--mark7); color: var(--mark7t); }
+
+  .exam-tags { display: flex; gap: 5px; flex-wrap: wrap; padding: 8px 24px 10px; background: #f8f9f6; border-bottom: 1px solid var(--border); }
+  .exam-tag { font-size: 10px; padding: 2px 8px; border-radius: 8px; background: var(--bg); color: var(--ink3); border: 1px solid var(--border); }
+
+  .q-body { padding: 24px; }
+
+  h3 { font-size: 13px; font-weight: 600; color: var(--accent); margin: 20px 0 8px; text-transform: uppercase; letter-spacing: .04em; }
+  h3:first-child { margin-top: 0; }
+  h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin: 14px 0 6px; }
+
+  p { margin-bottom: 10px; color: var(--ink2); }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { padding-left: 20px; margin-bottom: 10px; color: var(--ink2); }
+  li { margin-bottom: 5px; }
+
+  .highlight {
+    background: linear-gradient(to right, #fffbe6, #fff);
+    border-left: 3px solid var(--accent2);
+    padding: 10px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .formula {
+    font-family: 'DM Mono', monospace;
+    background: #f0f1ec;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    margin: 12px 0;
+    color: var(--teal);
+    overflow-x: auto;
+    line-height: 1.8;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th { background: var(--accent); color: #fff; padding: 8px 12px; text-align: left; font-weight: 500; }
+  td { padding: 7px 12px; border-bottom: 1px solid var(--border); color: var(--ink2); }
+  tr:nth-child(even) td { background: #f8f9f6; }
+  tr:last-child td { border-bottom: none; }
+
+  .diagram {
+    background: var(--diag-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 18px 0;
+    text-align: center;
+  }
+  .diagram-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ink3);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .diagram svg { max-width: 100%; }
+
+  .step-list { counter-reset: step; list-style: none; padding: 0; }
+  .step-list li {
+    counter-increment: step;
+    padding: 8px 12px 8px 44px;
+    position: relative;
+    margin-bottom: 6px;
+    background: var(--bg);
+    border-radius: 8px;
+    color: var(--ink2);
+    font-size: 14px;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 12px; top: 8px;
+    width: 22px; height: 22px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .col-box { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+  .col-box strong { font-size: 13px; color: var(--ink); display: block; margin-bottom: 6px; }
+  .col-box p, .col-box li { font-size: 13px; }
+
+  .note {
+    background: #eaf3de;
+    border-left: 3px solid var(--accent);
+    padding: 8px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--accent);
+    margin: 10px 0;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .page-header { padding: 18px 16px; }
+    .toc { padding: 12px 16px; }
+    .container { padding: 20px 12px 60px; }
+    .q-header { padding: 14px 16px 12px; }
+    .q-body { padding: 16px; }
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .exam-tags { padding: 8px 16px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div>
+    <h1>Data Analysis &amp; Visualization — 3161613</h1>
+    <h1>Chapter 4: Principles of Data Visualization Design | GTU Exam Answers</h1>
+  </div>
+  <span class="progress">24 Questions Answered</span>
+</div>
+
+<div class="toc">
+  <span class="toc-label">Jump to:</span>
+  <a href="#q1">Q1 Six Steps</a>
+  <a href="#q2">Q2 Big Three Graphics</a>
+  <a href="#q3">Q3 Three Types of Graphics</a>
+  <a href="#q4">Q4 Big Three Note</a>
+  <a href="#q5">Q5 Data Visualization Note</a>
+  <a href="#q6">Q6 Design Style</a>
+  <a href="#q7">Q7 Time Series (Ch4)</a>
+  <a href="#q8">Q8 Data Graphic &amp; Comparative</a>
+  <a href="#q9">Q9 Right Design Style</a>
+  <a href="#q10">Q10 D3.js Purpose</a>
+  <a href="#q11">Q11 Graphs for DV</a>
+  <a href="#q12">Q12 Standard Charts</a>
+  <a href="#q13">Q13 SVG &amp; DOM in D3</a>
+  <a href="#q14">Q14 D3.js Pros &amp; Cons</a>
+  <a href="#q15">Q15 Comparative Graphics</a>
+  <a href="#q16">Q16 Big Three 7M</a>
+  <a href="#q17">Q17 Brainstorm &amp; Purpose</a>
+  <a href="#q18">Q18 D3.js Interactive</a>
+  <a href="#q19">Q19 Design Principles</a>
+  <a href="#q20">Q20 Big Three Detail</a>
+  <a href="#q21">Q21 D3 Selections</a>
+  <a href="#q22">Q22 Target Audience</a>
+  <a href="#q23">Q23 D3-DOM Methods</a>
+</div>
+
+<div class="container">
+
+<!-- ═══ Q1 ═══ -->
+<div class="q-card" id="q1">
+  <div class="q-header">
+    <span class="q-num">Q 1</span>
+    <span class="q-text">List out six steps of process for creating data visualization.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span><span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>Six Steps of Data Visualization Process</h3>
+    <ol class="step-list">
+      <li><strong>Acquire the Data:</strong> Collect raw data from databases, APIs, spreadsheets, surveys, or other sources. Ensure data quality and completeness.</li>
+      <li><strong>Parse / Prepare the Data:</strong> Clean, format, and structure the data. Handle missing values, remove duplicates, normalize if needed.</li>
+      <li><strong>Filter the Data:</strong> Select only the relevant subset of data needed for the specific visualization. Remove noise and irrelevant records.</li>
+      <li><strong>Mine the Data (Analyze):</strong> Apply statistical methods, identify patterns, correlations, trends, and outliers in the filtered dataset.</li>
+      <li><strong>Represent the Data:</strong> Choose the appropriate chart or graphic type (bar, line, scatter, map, etc.) based on the data type and message.</li>
+      <li><strong>Refine and Interact:</strong> Improve aesthetics, add interactivity (tooltips, filters, zoom), and present the final visualization to the target audience.</li>
+    </ol>
+
+    <div class="diagram">
+      <div class="diagram-title">Data Visualization Creation Process</div>
+      <svg viewBox="0 0 680 70" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#3a6b3a" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+        <rect x="4"   y="15" width="90" height="36" rx="7" fill="#eaf3de" stroke="#3a6b3a" stroke-width="1"/>
+        <text x="49"  y="37" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#2a6a2a">1. Acquire</text>
+        <line x1="96"  y1="33" x2="110" y2="33" stroke="#3a6b3a" stroke-width="1.2" marker-end="url(#a1)"/>
+        <rect x="112" y="15" width="90" height="36" rx="7" fill="#e4f0e4" stroke="#3a6b3a" stroke-width="1"/>
+        <text x="157" y="37" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#1e5e1e">2. Parse</text>
+        <line x1="204" y1="33" x2="218" y2="33" stroke="#3a6b3a" stroke-width="1.2" marker-end="url(#a1)"/>
+        <rect x="220" y="15" width="90" height="36" rx="7" fill="#faeeda" stroke="#854f0b" stroke-width="1"/>
+        <text x="265" y="37" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#854f0b">3. Filter</text>
+        <line x1="312" y1="33" x2="326" y2="33" stroke="#3a6b3a" stroke-width="1.2" marker-end="url(#a1)"/>
+        <rect x="328" y="15" width="90" height="36" rx="7" fill="#fceae4" stroke="#b04a1a" stroke-width="1"/>
+        <text x="373" y="37" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#b04a1a">4. Mine</text>
+        <line x1="420" y1="33" x2="434" y2="33" stroke="#3a6b3a" stroke-width="1.2" marker-end="url(#a1)"/>
+        <rect x="436" y="15" width="100" height="36" rx="7" fill="#e4eeee" stroke="#1e6e6e" stroke-width="1"/>
+        <text x="486" y="37" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#1e6e6e">5. Represent</text>
+        <line x1="538" y1="33" x2="552" y2="33" stroke="#3a6b3a" stroke-width="1.2" marker-end="url(#a1)"/>
+        <rect x="554" y="15" width="122" height="36" rx="7" fill="#eaf3de" stroke="#3a6b3a" stroke-width="1"/>
+        <text x="615" y="37" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#2a6a2a">6. Refine &amp; Interact</text>
+      </svg>
+    </div>
+    <div class="note">📝 Exam tip: Remember the sequence — Acquire → Parse → Filter → Mine → Represent → Refine. All 6 steps with one-line explanation earns full marks.</div>
+  </div>
+</div>
+
+<!-- ═══ Q2 ═══ -->
+<div class="q-card" id="q2">
+  <div class="q-header">
+    <span class="q-num">Q 2</span>
+    <span class="q-text">Choose appropriate standard chart graphics for Data Storytelling, Showcasing and Data Art.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23 OR</span>
+  </div>
+  <div class="q-body">
+    <h3>Graphics for each of the Big Three</h3>
+    <div class="three-col">
+      <div class="col-box">
+        <strong>Data Storytelling</strong>
+        <p>Charts that guide the viewer through a narrative.</p>
+        <ul>
+          <li>Annotated line charts</li>
+          <li>Stacked bar charts</li>
+          <li>Slope graphs</li>
+          <li>Small multiples</li>
+          <li>Infographics</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <strong>Data Showcasing</strong>
+        <p>Charts that let data speak for itself with accuracy.</p>
+        <ul>
+          <li>Bar / Column charts</li>
+          <li>Scatter plots</li>
+          <li>Heatmaps</li>
+          <li>Box plots</li>
+          <li>Dashboard panels</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <strong>Data Art</strong>
+        <p>Visuals that prioritize creativity and aesthetics.</p>
+        <ul>
+          <li>Chord diagrams</li>
+          <li>Network graphs</li>
+          <li>Radial / Circular charts</li>
+          <li>Word clouds</li>
+          <li>Custom SVG art</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">📝 The key is matching purpose to chart: Storytelling = narrative flow; Showcasing = clarity and accuracy; Art = aesthetic impact.</div>
+  </div>
+</div>
+
+<!-- ═══ Q3 ═══ -->
+<div class="q-card" id="q3">
+  <div class="q-header">
+    <span class="q-num">Q 3</span>
+    <span class="q-text">List three common types of data graphics used in data visualization.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'24 OR</span>
+  </div>
+  <div class="q-body">
+    <h3>Three Common Types of Data Graphics</h3>
+    <h4>1. Charts and Graphs</h4>
+    <p>The most widely used form. Used to show relationships, comparisons, distributions, and trends in numeric data.</p>
+    <ul>
+      <li><strong>Bar chart:</strong> Compare categories</li>
+      <li><strong>Line chart:</strong> Show trends over time</li>
+      <li><strong>Pie chart:</strong> Show proportions of a whole</li>
+      <li><strong>Scatter plot:</strong> Show relationship between two variables</li>
+    </ul>
+
+    <h4>2. Tables</h4>
+    <p>Present raw or summarized data in rows and columns. Best when the viewer needs to look up exact values or compare multiple attributes precisely.</p>
+
+    <h4>3. Geospatial / Map Graphics</h4>
+    <p>Visualize data that has a geographic component. Show distribution of data across regions.</p>
+    <ul>
+      <li><strong>Choropleth map:</strong> Color-coded regions by value (e.g., population density by state)</li>
+      <li><strong>Bubble map:</strong> Circles on a map scaled by value</li>
+    </ul>
+
+    <div class="note">📝 Alternate acceptable answer: Charts, Diagrams, and Maps — always explain each type briefly.</div>
+  </div>
+</div>
+
+<!-- ═══ Q4 ═══ -->
+<div class="q-card" id="q4">
+  <div class="q-header">
+    <span class="q-num">Q 4</span>
+    <span class="q-text">Write a note on Big Three of data visualization.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'23 OR</span>
+  </div>
+  <div class="q-body">
+    <h3>The Big Three of Data Visualization</h3>
+    <p>The "Big Three" refers to the three fundamental purposes or approaches to data visualization, each serving a different goal and audience.</p>
+    <div class="two-col">
+      <div class="col-box">
+        <strong>1. Data Storytelling</strong>
+        <p>Combines data with narrative to guide the audience through insights. Used in journalism, reports, and presentations. Focus: clarity, flow, and message. <em>Example: An interactive article showing rising temperatures over decades.</em></p>
+      </div>
+      <div class="col-box">
+        <strong>2. Data Showcasing</strong>
+        <p>Presents data clearly and accurately for experts or analysts who will explore it themselves. Focus: accuracy, completeness, interactivity. <em>Example: A business dashboard showing KPIs.</em></p>
+      </div>
+    </div>
+    <div class="col-box" style="margin-top:12px">
+      <strong>3. Data Art</strong>
+      <p>Uses data as raw material to create aesthetically compelling visuals. The goal is artistic expression or cultural commentary rather than strict information transfer. <em>Example: A visualization of Twitter conversations as an abstract network.</em></p>
+    </div>
+    <div class="note">📝 The Big Three differ in purpose: Story (communicate) → Showcase (inform) → Art (express).</div>
+  </div>
+</div>
+
+<!-- ═══ Q5 ═══ -->
+<div class="q-card" id="q5">
+  <div class="q-header">
+    <span class="q-num">Q 5</span>
+    <span class="q-text">Describe Descriptive and Inferential statistics / Write a note on data visualization.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'24</span><span class="exam-tag">Sum'25</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Data Visualization?</h3>
+    <p><strong>Data Visualization</strong> is the graphical representation of data and information using visual elements like charts, graphs, maps, and dashboards. It transforms raw data into visual context so patterns, trends, and insights can be easily understood by the human brain.</p>
+
+    <h3>Importance of Data Visualization</h3>
+    <ul>
+      <li>Humans process visual information 60,000× faster than text</li>
+      <li>Reveals patterns, correlations, and outliers not obvious in raw data</li>
+      <li>Enables faster and better decision-making</li>
+      <li>Makes complex data accessible to non-technical audiences</li>
+      <li>Essential for storytelling with data in journalism, business, and science</li>
+    </ul>
+
+    <h3>Key Principles of Good Data Visualization</h3>
+    <ul>
+      <li><strong>Clarity:</strong> The visual must be easy to understand without explanation</li>
+      <li><strong>Accuracy:</strong> Data must not be distorted or misrepresented</li>
+      <li><strong>Efficiency:</strong> Convey maximum information with minimum ink</li>
+      <li><strong>Aesthetics:</strong> The visual should be appealing enough to engage the viewer</li>
+    </ul>
+
+    <div class="note">📝 If the question asks for Descriptive and Inferential Statistics, refer to Chapter 1 Q1. In the Ch4 context, answer with the data visualization note above.</div>
+  </div>
+</div>
+
+<!-- ═══ Q6 ═══ -->
+<div class="q-card" id="q6">
+  <div class="q-header">
+    <span class="q-num">Q 6</span>
+    <span class="q-text">Discuss the most appropriate design style in data visualization.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25 OR</span>
+  </div>
+  <div class="q-body">
+    <h3>Design Styles in Data Visualization</h3>
+    <p>The design style of a visualization should be chosen based on the <strong>purpose, audience, and data type</strong>. There is no universal "best" style — the most appropriate style fits the context.</p>
+
+    <h3>Common Design Styles</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <strong>Minimalist Style</strong>
+        <p>Remove all non-data ink (gridlines, borders, decorations). Maximum data-to-ink ratio. Best for: professional reports, academic papers.</p>
+      </div>
+      <div class="col-box">
+        <strong>Infographic Style</strong>
+        <p>Uses icons, illustrations, and bold colors to make data engaging. Best for: social media, public communication, marketing.</p>
+      </div>
+      <div class="col-box">
+        <strong>Dashboard Style</strong>
+        <p>Compact, information-dense panels showing multiple KPIs. Best for: business analytics, real-time monitoring.</p>
+      </div>
+      <div class="col-box">
+        <strong>Narrative / Scrollytelling Style</strong>
+        <p>Data visualization embedded in a story that unfolds as the user scrolls. Best for: journalism, interactive web features.</p>
+      </div>
+    </div>
+
+    <h3>Most Appropriate Choice</h3>
+    <table>
+      <tr><th>Context</th><th>Best Design Style</th></tr>
+      <tr><td>Business KPI report</td><td>Dashboard — clean, compact, accurate</td></tr>
+      <tr><td>Public campaign / awareness</td><td>Infographic — visual, engaging, simple</td></tr>
+      <tr><td>Scientific research paper</td><td>Minimalist — precise, no clutter</td></tr>
+      <tr><td>News article / journalism</td><td>Narrative — story-driven, annotated</td></tr>
+      <tr><td>Exploratory data analysis</td><td>Interactive — filters, tooltips, zoom</td></tr>
+    </table>
+    <div class="note">📝 Key rule: Design style = function + audience. Always justify your choice based on who will see it and why.</div>
+  </div>
+</div>
+
+<!-- ═══ Q7 ═══ -->
+<div class="q-card" id="q7">
+  <div class="q-header">
+    <span class="q-num">Q 7</span>
+    <span class="q-text">Write a note on time series analysis. (placed in Ch4 paper context)</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25</span>
+  </div>
+  <div class="q-body">
+    <h3>Time Series Analysis in Data Visualization</h3>
+    <p>A <strong>time series</strong> is a sequence of data points indexed in time order. In the context of data visualization, time series data is one of the most common types visualized — it shows how a variable changes over time.</p>
+
+    <h3>Visualization Techniques for Time Series</h3>
+    <ul>
+      <li><strong>Line Chart:</strong> Most common — connects data points along a continuous time axis to show trends</li>
+      <li><strong>Area Chart:</strong> Line chart with the area below filled — emphasizes volume/magnitude over time</li>
+      <li><strong>Candlestick Chart:</strong> Used in finance — shows open, close, high, low values per time period</li>
+      <li><strong>Heatmap Calendar:</strong> Shows daily values across months using color intensity (e.g., GitHub activity)</li>
+      <li><strong>Horizon Chart:</strong> Compact multi-layer view for large time series data</li>
+    </ul>
+
+    <h3>Key Components Visualized</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>Trend</strong><p>Long-term upward or downward direction shown by a smooth line.</p></div>
+      <div class="col-box"><strong>Seasonality</strong><p>Repeating periodic patterns highlighted by overlaying multiple years.</p></div>
+      <div class="col-box"><strong>Anomalies</strong><p>Outlier spikes highlighted by annotations or reference lines.</p></div>
+      <div class="col-box"><strong>Forecast</strong><p>Predicted future values shown as a dotted line with confidence interval.</p></div>
+    </div>
+    <div class="note">📝 For a Ch4 paper context: focus on what charts to use for time series data, not the statistical techniques (those are Ch1).</div>
+  </div>
+</div>
+
+<!-- ═══ Q8 ═══ -->
+<div class="q-card" id="q8">
+  <div class="q-header">
+    <span class="q-num">Q 8</span>
+    <span class="q-text">Define data graphic. Explain comparative graphics.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span>
+  </div>
+  <div class="q-body">
+    <h3>What is a Data Graphic?</h3>
+    <p>A <strong>data graphic</strong> is any visual representation that encodes data values into visual properties — such as position, length, area, color, or shape — to communicate information efficiently. Data graphics translate abstract numbers into meaningful visual patterns that the human brain can interpret rapidly.</p>
+    <p><strong>Components of a data graphic:</strong></p>
+    <ul>
+      <li><strong>Visual marks:</strong> Points, lines, bars, areas — the basic geometric elements</li>
+      <li><strong>Visual channels:</strong> Position, size, color, shape, angle — properties used to encode data</li>
+      <li><strong>Axes and labels:</strong> Reference system that decodes the encoding</li>
+      <li><strong>Title and annotations:</strong> Context that guides interpretation</li>
+    </ul>
+
+    <h3>Comparative Graphics</h3>
+    <p>Comparative graphics are data visualizations specifically designed to <strong>compare values across categories, groups, or time periods</strong>. They answer questions like: "Which is bigger?", "How do these differ?", "How has this changed?"</p>
+
+    <h4>Types of Comparative Graphics</h4>
+    <div class="two-col">
+      <div class="col-box">
+        <strong>Bar Chart</strong>
+        <p>Compare values across discrete categories. Horizontal bars work better for long category names.</p>
+      </div>
+      <div class="col-box">
+        <strong>Grouped Bar Chart</strong>
+        <p>Compare multiple series side-by-side within each category (e.g., sales by product per quarter).</p>
+      </div>
+      <div class="col-box">
+        <strong>Stacked Bar Chart</strong>
+        <p>Show both total and part-to-whole comparison. Bars are divided into segments.</p>
+      </div>
+      <div class="col-box">
+        <strong>Bullet Chart</strong>
+        <p>Compare an actual value against a target. Used in dashboards for KPI tracking.</p>
+      </div>
+      <div class="col-box">
+        <strong>Slope Graph</strong>
+        <p>Show change between two time points for multiple items. Lines connect before and after values.</p>
+      </div>
+      <div class="col-box">
+        <strong>Dot Plot</strong>
+        <p>Compare values across many categories more cleanly than a bar chart. Reduces visual clutter.</p>
+      </div>
+    </div>
+
+    <div class="diagram">
+      <div class="diagram-title">Comparative Graphics — Bar Chart vs Grouped Bar Chart</div>
+      <svg viewBox="0 0 680 160" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <!-- Bar Chart -->
+        <text x="150" y="18" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#3a6b3a">Simple Bar Chart</text>
+        <line x1="40" y1="140" x2="260" y2="140" stroke="#deded6" stroke-width="1.5"/>
+        <line x1="40" y1="30"  x2="40"  y2="140" stroke="#deded6" stroke-width="1.5"/>
+        <rect x="55"  y="60"  width="32" height="80" fill="#3a6b3a" opacity="0.75" rx="2"/>
+        <rect x="100" y="80"  width="32" height="60" fill="#3a6b3a" opacity="0.75" rx="2"/>
+        <rect x="145" y="50"  width="32" height="90" fill="#3a6b3a" opacity="0.75" rx="2"/>
+        <rect x="190" y="90"  width="32" height="50" fill="#3a6b3a" opacity="0.75" rx="2"/>
+        <text x="71"  y="153" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">A</text>
+        <text x="116" y="153" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">B</text>
+        <text x="161" y="153" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">C</text>
+        <text x="206" y="153" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">D</text>
+
+        <!-- Grouped Bar Chart -->
+        <text x="500" y="18" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#1e6e6e">Grouped Bar Chart</text>
+        <line x1="300" y1="140" x2="660" y2="140" stroke="#deded6" stroke-width="1.5"/>
+        <line x1="300" y1="30"  x2="300" y2="140" stroke="#deded6" stroke-width="1.5"/>
+        <!-- Group 1 -->
+        <rect x="315" y="65" width="22" height="75" fill="#3a6b3a" opacity="0.8" rx="2"/>
+        <rect x="339" y="90" width="22" height="50" fill="#b04a1a" opacity="0.8" rx="2"/>
+        <text x="338" y="153" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Q1</text>
+        <!-- Group 2 -->
+        <rect x="375" y="80" width="22" height="60" fill="#3a6b3a" opacity="0.8" rx="2"/>
+        <rect x="399" y="55" width="22" height="85" fill="#b04a1a" opacity="0.8" rx="2"/>
+        <text x="398" y="153" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Q2</text>
+        <!-- Group 3 -->
+        <rect x="435" y="70" width="22" height="70" fill="#3a6b3a" opacity="0.8" rx="2"/>
+        <rect x="459" y="100" width="22" height="40" fill="#b04a1a" opacity="0.8" rx="2"/>
+        <text x="458" y="153" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Q3</text>
+        <!-- Group 4 -->
+        <rect x="495" y="50" width="22" height="90" fill="#3a6b3a" opacity="0.8" rx="2"/>
+        <rect x="519" y="80" width="22" height="60" fill="#b04a1a" opacity="0.8" rx="2"/>
+        <text x="518" y="153" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Q4</text>
+        <!-- Legend -->
+        <rect x="580" y="55" width="10" height="10" fill="#3a6b3a" rx="2"/>
+        <text x="594" y="64" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Product A</text>
+        <rect x="580" y="72" width="10" height="10" fill="#b04a1a" rx="2"/>
+        <text x="594" y="81" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Product B</text>
+      </svg>
+    </div>
+    <div class="note">📝 Best practice: Use horizontal bars when category names are long. Always start bar charts at zero — truncating the axis is misleading.</div>
+  </div>
+</div>
+
+<!-- ═══ Q9 ═══ -->
+<div class="q-card" id="q9">
+  <div class="q-header">
+    <span class="q-num">Q 9</span>
+    <span class="q-text">Explain the importance of selecting the right design style for effective communication.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>Why Design Style Matters</h3>
+    <p>In data visualization, <strong>design style</strong> is not just about aesthetics — it directly affects how effectively information is communicated. The wrong style can mislead, confuse, or disengage the audience, even if the data is accurate.</p>
+
+    <h3>Factors Influencing Style Choice</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>Audience</strong><p>Experts need precise, dense charts. General public needs simple, annotated visuals. Executives prefer high-level dashboards.</p></div>
+      <div class="col-box"><strong>Purpose / Goal</strong><p>Exploring data? Use interactive style. Presenting findings? Use narrative style. Monitoring KPIs? Use dashboard style.</p></div>
+      <div class="col-box"><strong>Data Type</strong><p>Time data → Line chart. Categories → Bar chart. Relationships → Scatter. Geography → Map. Parts of whole → Pie.</p></div>
+      <div class="col-box"><strong>Medium / Channel</strong><p>Print: static, no interactivity. Web: can be interactive. Mobile: compact layout needed.</p></div>
+    </div>
+
+    <h3>Importance — Why Getting It Right Matters</h3>
+    <ol>
+      <li><strong>Clarity of message:</strong> The right chart type makes the key insight immediately obvious</li>
+      <li><strong>Audience engagement:</strong> Appropriate style keeps the audience interested and avoids cognitive overload</li>
+      <li><strong>Credibility:</strong> A well-designed visualization signals professionalism and trustworthiness</li>
+      <li><strong>Avoiding misinterpretation:</strong> Wrong style choices (e.g., 3D pie charts, truncated axes) distort perception of data</li>
+      <li><strong>Accessibility:</strong> Color-blind-safe palettes and proper contrast make visualizations usable by all</li>
+    </ol>
+
+    <h3>Data-to-Ink Ratio (Tufte's Principle)</h3>
+    <p>Edward Tufte's key rule: maximize the proportion of ink (pixels) used to display data, not decoration. Remove chart junk — unnecessary gridlines, borders, legends, shadows — that add noise without adding information.</p>
+    <div class="formula">Data-to-Ink Ratio = Data Ink / Total Ink Used in Graphic
+                       → Maximize this ratio for effective design</div>
+    <div class="note">📝 Mention Tufte's data-to-ink ratio principle for extra marks. Always relate design choice to audience and purpose.</div>
+  </div>
+</div>
+
+<!-- ═══ Q10 ═══ -->
+<div class="q-card" id="q10">
+  <div class="q-header">
+    <span class="q-num">Q 10</span>
+    <span class="q-text">Discuss purpose of D3.js library of data visualizations.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span><span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>What is D3.js?</h3>
+    <p><strong>D3.js</strong> (Data-Driven Documents) is an open-source JavaScript library for creating dynamic, interactive data visualizations in web browsers. It uses HTML, SVG, and CSS to bind data to the DOM and apply transformations to create charts and graphics.</p>
+    <div class="formula">D3.js = Data-Driven Documents
+Created by: Mike Bostock (2011)
+Language: JavaScript
+Renders: SVG, HTML, Canvas
+</div>
+
+    <h3>Purpose of D3.js</h3>
+    <ol>
+      <li><strong>Data Binding:</strong> D3 binds data directly to DOM elements, allowing any change in data to automatically update the visualization.</li>
+      <li><strong>Custom Visualizations:</strong> Unlike chart libraries (Chart.js), D3 gives full control to create any type of visualization — not limited to standard charts.</li>
+      <li><strong>Interactivity:</strong> Supports user interactions like hover effects, tooltips, zoom, pan, and click events using JavaScript event listeners.</li>
+      <li><strong>Animations and Transitions:</strong> Smooth animated transitions when data changes, making visualizations more engaging.</li>
+      <li><strong>Scalable Vector Graphics (SVG):</strong> Renders resolution-independent graphics that scale perfectly on any screen size.</li>
+      <li><strong>Wide Chart Library:</strong> Supports bar charts, line charts, scatter plots, geographic maps, tree diagrams, chord diagrams, force-directed graphs, and more.</li>
+    </ol>
+
+    <h3>Why D3.js over other libraries?</h3>
+    <table>
+      <tr><th>Feature</th><th>D3.js</th><th>Chart.js / Highcharts</th></tr>
+      <tr><td>Customization</td><td>Complete control</td><td>Limited to prebuilt charts</td></tr>
+      <tr><td>Complexity</td><td>Steeper learning curve</td><td>Easier to start</td></tr>
+      <tr><td>Flexibility</td><td>Any visualization possible</td><td>Standard chart types only</td></tr>
+      <tr><td>Performance</td><td>High (SVG + Canvas)</td><td>Good for small datasets</td></tr>
+      <tr><td>Use case</td><td>Custom, complex, interactive</td><td>Quick, standard dashboards</td></tr>
+    </table>
+    <div class="note">📝 D3 does NOT provide pre-built charts — it provides building blocks (selections, scales, axes, shapes) to build any chart from scratch.</div>
+  </div>
+</div>
+
+<!-- ═══ Q11 ═══ -->
+<div class="q-card" id="q11">
+  <div class="q-header">
+    <span class="q-num">Q 11</span>
+    <span class="q-text">Describe various graphs used for data visualization.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'23 OR</span>
+  </div>
+  <div class="q-body">
+    <h3>Common Graphs / Charts Used in Data Visualization</h3>
+
+    <h4>1. Bar Chart</h4>
+    <p>Uses rectangular bars to compare values across discrete categories. Length of bar encodes the value. Best for: comparing quantities across categories.</p>
+
+    <h4>2. Line Chart</h4>
+    <p>Connects data points with a line to show trends over a continuous axis (usually time). Best for: time series, trends, continuous data.</p>
+
+    <h4>3. Pie / Donut Chart</h4>
+    <p>Circular chart divided into slices proportional to their values. Shows part-to-whole relationships. Donut chart = pie with center cut out for readability.</p>
+
+    <h4>4. Scatter Plot</h4>
+    <p>Plots individual data points on X-Y axes. Shows correlation or relationship between two continuous variables. Points can be colored by a third variable.</p>
+
+    <h4>5. Histogram</h4>
+    <p>Similar to bar chart but for continuous data divided into bins. Shows the frequency distribution of a dataset.</p>
+
+    <h4>6. Box Plot (Box-and-Whisker)</h4>
+    <p>Shows the five-number summary (Min, Q1, Median, Q3, Max) and outliers. Great for comparing distributions across groups.</p>
+
+    <h4>7. Heatmap</h4>
+    <p>Uses a matrix of colored cells where color intensity represents values. Best for: showing patterns in a 2D matrix (e.g., correlation matrix, time vs. day activity).</p>
+
+    <h4>8. Area Chart</h4>
+    <p>Like a line chart but with the area below the line filled. Useful for showing cumulative totals or volume over time.</p>
+
+    <table>
+      <tr><th>Chart</th><th>Data Type</th><th>Best Used For</th></tr>
+      <tr><td>Bar</td><td>Categorical + Numeric</td><td>Category comparison</td></tr>
+      <tr><td>Line</td><td>Time + Numeric</td><td>Trends over time</td></tr>
+      <tr><td>Pie</td><td>Categorical</td><td>Part-to-whole (max 5-6 slices)</td></tr>
+      <tr><td>Scatter</td><td>Numeric + Numeric</td><td>Correlation / relationship</td></tr>
+      <tr><td>Histogram</td><td>Continuous Numeric</td><td>Frequency distribution</td></tr>
+      <tr><td>Heatmap</td><td>Matrix / 2D</td><td>Patterns in 2D data</td></tr>
+      <tr><td>Box Plot</td><td>Numeric Groups</td><td>Distribution comparison</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ Q12 ═══ -->
+<div class="q-card" id="q12">
+  <div class="q-header">
+    <span class="q-num">Q 12</span>
+    <span class="q-text">Which are the 'Standard Charts'? Explain in brief.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'24</span>
+  </div>
+  <div class="q-body">
+    <h3>Standard Charts in Data Visualization</h3>
+    <p>Standard charts are the universally recognized, tried-and-tested chart types that most audiences already know how to read. They form the core toolkit of any data visualization practitioner.</p>
+
+    <div class="two-col">
+      <div class="col-box">
+        <strong>Bar / Column Chart</strong>
+        <p>Vertical (column) or horizontal bars encoding values by length. Best for comparing discrete categories. Rule: always start Y-axis at 0.</p>
+      </div>
+      <div class="col-box">
+        <strong>Line Chart</strong>
+        <p>Connects ordered data points with a line. Ideal for continuous data and time series. Multiple lines can compare several series.</p>
+      </div>
+      <div class="col-box">
+        <strong>Pie / Donut Chart</strong>
+        <p>Circular slices proportional to values. Use only when showing parts of a whole with few categories (≤5). Donut adds center label space.</p>
+      </div>
+      <div class="col-box">
+        <strong>Scatter Plot</strong>
+        <p>Two-dimensional plot of numerical data. Each point = one observation. Reveals correlation, clustering, and outliers between variables.</p>
+      </div>
+      <div class="col-box">
+        <strong>Histogram</strong>
+        <p>Bar chart for continuous data grouped into intervals (bins). Shows the distribution shape — normal, skewed, bimodal, etc.</p>
+      </div>
+      <div class="col-box">
+        <strong>Area Chart</strong>
+        <p>Filled line chart emphasizing magnitude over time. Stacked area charts show composition changes over time.</p>
+      </div>
+    </div>
+
+    <div class="note">📝 Standard charts are preferred for general audiences because they require no learning. Use non-standard (chord, radial, Sankey) only for expert audiences or when no standard chart fits.</div>
+  </div>
+</div>
+
+<!-- ═══ Q13 ═══ -->
+<div class="q-card" id="q13">
+  <div class="q-header">
+    <span class="q-num">Q 13</span>
+    <span class="q-text">What are the significance of SVG and DOM in D3.js?</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'24 OR</span>
+  </div>
+  <div class="q-body">
+    <h3>DOM (Document Object Model) in D3.js</h3>
+    <p>The <strong>DOM</strong> is a tree-like representation of an HTML page where every element (div, p, svg, rect, circle) is a node. D3 manipulates the DOM directly to create, update, and remove visual elements based on data.</p>
+    <ul>
+      <li>D3 uses <code>d3.select()</code> and <code>d3.selectAll()</code> to select DOM elements</li>
+      <li>Once selected, D3 can set attributes, styles, text content, and event handlers on those elements</li>
+      <li>The DOM update cycle (Enter → Update → Exit) is the core mechanism of D3's data-driven approach</li>
+    </ul>
+    <div class="formula">DOM Manipulation Example:
+d3.select("body")            // Select the body element<br>
+  .append("p")               // Add a paragraph to DOM<br>
+  .text("Hello D3");         // Set its text content</div>
+
+    <h3>SVG (Scalable Vector Graphics) in D3.js</h3>
+    <p><strong>SVG</strong> is an XML-based vector image format for 2D graphics. D3 primarily renders visualizations as SVG elements because:</p>
+    <ul>
+      <li><strong>Scalability:</strong> SVG graphics look sharp at any screen resolution (unlike Canvas/bitmap)</li>
+      <li><strong>DOM integration:</strong> SVG elements are part of the DOM — each rect, circle, line is a selectable node that D3 can bind data to</li>
+      <li><strong>CSS styling:</strong> SVG elements can be styled with CSS (fill, stroke, opacity)</li>
+      <li><strong>Event handling:</strong> Each SVG element can have click, hover, mousemove listeners attached</li>
+    </ul>
+    <div class="formula">SVG Elements used in D3:
+&lt;svg&gt;     — container<br>
+&lt;rect&gt;    — bars in bar chart<br>
+&lt;circle&gt;  — points in scatter plot<br>
+&lt;line&gt;    — axes, connectors<br>
+&lt;path&gt;    — lines, areas, arcs<br>
+&lt;text&gt;    — labels, titles</div>
+
+    <h3>How SVG + DOM + D3 Work Together</h3>
+    <p>D3 creates SVG elements inside the DOM, binds data to them, and updates their visual properties (x, y, width, fill) based on data values — creating a fully data-driven visualization.</p>
+
+    <div class="note">📝 Key point: In D3, every visual element (bar, circle, line) is an SVG element that lives in the DOM — making it easy to select, update, animate, and add interactivity.</div>
+  </div>
+</div>
+
+<!-- ═══ Q14 ═══ -->
+<div class="q-card" id="q14">
+  <div class="q-header">
+    <span class="q-num">Q 14</span>
+    <span class="q-text">Briefly discuss use of D3.js for data visualization with its pros and cons.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25</span>
+  </div>
+  <div class="q-body">
+    <h3>D3.js for Data Visualization</h3>
+    <p>D3.js is used to create web-based data visualizations by binding data to DOM elements and applying transformations. It handles the full pipeline: data loading → binding → rendering → interaction → animation.</p>
+
+    <h3>Typical D3.js Workflow</h3>
+    <ol class="step-list">
+      <li>Load data (CSV, JSON, TSV) using <code>d3.csv()</code> or <code>d3.json()</code></li>
+      <li>Create an SVG container and set dimensions</li>
+      <li>Define scales to map data values to pixel positions</li>
+      <li>Draw axes using <code>d3.axisBottom()</code>, <code>d3.axisLeft()</code></li>
+      <li>Bind data to visual elements using <code>.data()</code> and <code>.enter()</code></li>
+      <li>Add interactivity (tooltips, zoom, filter) using event listeners</li>
+    </ol>
+
+    <div class="two-col">
+      <div class="col-box">
+        <strong>✅ Advantages (Pros)</strong>
+        <ul>
+          <li>Fully customizable — any visualization possible</li>
+          <li>Smooth transitions and animations</li>
+          <li>Full interactivity with user events</li>
+          <li>Integrates with web standards (HTML, CSS, SVG)</li>
+          <li>Open source and free</li>
+          <li>Large community and examples</li>
+          <li>Supports geographic projections (maps)</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <strong>❌ Disadvantages (Cons)</strong>
+        <ul>
+          <li>Steep learning curve — complex API</li>
+          <li>Verbose code for simple charts</li>
+          <li>No built-in chart templates</li>
+          <li>SVG performance degrades with very large datasets (&gt;10,000 points)</li>
+          <li>Requires JavaScript knowledge</li>
+          <li>Debugging SVG/DOM issues is harder</li>
+          <li>Overkill for simple standard charts</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">📝 Use D3 for custom, interactive, complex visualizations. For simple standard charts use Chart.js or Plotly. Always mention the steep learning curve in exams.</div>
+  </div>
+</div>
+
+<!-- ═══ Q15 ═══ -->
+<div class="q-card" id="q15">
+  <div class="q-header">
+    <span class="q-num">Q 15</span>
+    <span class="q-text">Briefly discuss comparative graphics.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25 OR</span>
+  </div>
+  <div class="q-body">
+    <h3>Comparative Graphics</h3>
+    <p>Comparative graphics are data visualizations specifically designed to help the viewer compare values, quantities, or distributions across different groups, categories, or time periods. They are the most common class of charts used in business and reporting.</p>
+
+    <h3>Key Comparative Chart Types</h3>
+    <h4>1. Bar Chart (most common)</h4>
+    <p>Encodes values as bar lengths. Simple, familiar, effective for comparing 2–20 categories.</p>
+
+    <h4>2. Grouped Bar Chart</h4>
+    <p>Places bars from multiple series side-by-side for the same category. Good for comparing 2–3 series across categories.</p>
+
+    <h4>3. Stacked Bar Chart</h4>
+    <p>Bars are divided into segments showing sub-components. Compares totals and composition simultaneously.</p>
+
+    <h4>4. Slope Graph</h4>
+    <p>Shows how values changed between two time points for multiple entities. Easy to see who went up/down.</p>
+
+    <h4>5. Lollipop Chart</h4>
+    <p>A cleaner version of bar chart with a dot at the end of a thin line. Reduces visual clutter while comparing values.</p>
+
+    <h4>6. Small Multiples (Trellis Chart)</h4>
+    <p>Shows the same chart type repeated for different subgroups, allowing easy comparison of patterns across groups.</p>
+
+    <h3>Design Guidelines for Comparative Graphics</h3>
+    <ul>
+      <li>Always start bar charts from zero to avoid visual distortion</li>
+      <li>Use consistent colors for the same category across all charts</li>
+      <li>Sort bars by value (not alphabetically) to make comparisons easier</li>
+      <li>Limit colors — use a single color family with varying shades, or highlight only the key bar</li>
+    </ul>
+    <div class="note">📝 Comparative graphics answer "which is more/less/bigger/smaller" — keep them simple. One comparison per chart is the goal.</div>
+  </div>
+</div>
+
+<!-- ═══ Q16 ═══ -->
+<div class="q-card" id="q16">
+  <div class="q-header">
+    <span class="q-num">Q 16</span>
+    <span class="q-text">Write a note on The Big Three: Data Storytelling, Data Showcasing and Data Art.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span><span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>The Big Three of Data Visualization</h3>
+    <p>The "Big Three" is a framework that classifies all data visualizations into three fundamental types based on their purpose, audience, and design philosophy. Understanding which category a visualization belongs to is essential for choosing the right approach.</p>
+
+    <div class="diagram">
+      <div class="diagram-title">The Big Three — Purpose Spectrum</div>
+      <svg viewBox="0 0 680 110" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#7a7a72" stroke-width="1.2" stroke-linecap="round"/></marker></defs>
+        <rect x="20"  y="25" width="190" height="60" rx="9" fill="#eaf3de" stroke="#3a6b3a" stroke-width="1.5"/>
+        <text x="115" y="50" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#2a6a2a">Data Storytelling</text>
+        <text x="115" y="68" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Communicate insights</text>
+        <text x="115" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Narrative-driven</text>
+        <line x1="212" y1="55" x2="240" y2="55" stroke="#7a7a72" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <rect x="244" y="25" width="192" height="60" rx="9" fill="#faeeda" stroke="#854f0b" stroke-width="1.5"/>
+        <text x="340" y="50" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#854f0b">Data Showcasing</text>
+        <text x="340" y="68" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Present data accurately</text>
+        <text x="340" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Exploration-driven</text>
+        <line x1="438" y1="55" x2="466" y2="55" stroke="#7a7a72" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <rect x="470" y="25" width="190" height="60" rx="9" fill="#e4eeee" stroke="#1e6e6e" stroke-width="1.5"/>
+        <text x="565" y="50" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#1e6e6e">Data Art</text>
+        <text x="565" y="68" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Aesthetic expression</text>
+        <text x="565" y="80" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Creativity-driven</td>
+        <!-- Spectrum labels -->
+        <text x="50"  y="105" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">← More Communication</text>
+        <text x="510" y="105" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">More Artistic →</text>
+      </svg>
+    </div>
+
+    <h4>1. Data Storytelling</h4>
+    <p><strong>Definition:</strong> Data storytelling is the practice of building a narrative around data insights to communicate a clear message to a specific audience. It combines data, narrative, and visuals to explain what happened, why it matters, and what should be done.</p>
+    <p><strong>Key Characteristics:</strong></p>
+    <ul>
+      <li>Has a clear beginning, middle, and end (narrative arc)</li>
+      <li>Designed for a specific audience with a specific goal</li>
+      <li>Uses annotations, callouts, and highlights to guide attention</li>
+      <li>The visualization serves the story — not the other way around</li>
+    </ul>
+    <p><strong>Tools &amp; Charts Used:</strong> Annotated line charts, slope graphs, small multiples, infographics, scrollytelling web pages.</p>
+    <p><strong>Example:</strong> A news article that uses animated charts to tell the story of how COVID-19 spread across continents, with annotations at key events.</p>
+
+    <h4>2. Data Showcasing</h4>
+    <p><strong>Definition:</strong> Data showcasing presents data clearly, accurately, and completely so that the audience can explore it, draw their own conclusions, and make decisions. The focus is on the data itself, not on a predetermined story.</p>
+    <p><strong>Key Characteristics:</strong></p>
+    <ul>
+      <li>Designed for analysts, experts, or decision-makers</li>
+      <li>Interactive — allows filtering, drilling down, zooming</li>
+      <li>Multiple perspectives shown simultaneously (dashboards)</li>
+      <li>Accuracy and completeness are paramount</li>
+    </ul>
+    <p><strong>Tools &amp; Charts Used:</strong> Interactive dashboards (Tableau, Power BI), scatter plots, heatmaps, box plots, pivot tables.</p>
+    <p><strong>Example:</strong> A sales dashboard showing revenue by region, product, and time period with interactive filters for the sales team.</p>
+
+    <h4>3. Data Art</h4>
+    <p><strong>Definition:</strong> Data art uses data as raw creative material to produce visually stunning or emotionally evocative works where aesthetic impact is the primary goal. Strict accuracy or information transfer may be secondary to visual beauty.</p>
+    <p><strong>Key Characteristics:</strong></p>
+    <ul>
+      <li>Prioritizes aesthetic experience over information clarity</li>
+      <li>Pushes creative and technical boundaries</li>
+      <li>Often displayed in galleries, exhibitions, or public installations</li>
+      <li>May use physical media — LED displays, 3D printing, projections</li>
+    </ul>
+    <p><strong>Tools &amp; Charts Used:</strong> Network graphs, chord diagrams, generative art algorithms, Processing/p5.js, custom D3 visualizations.</p>
+    <p><strong>Example:</strong> A visualization of all Wikipedia edits as a flowing river of colored streams, each color representing a different contributor country — displayed as a gallery installation.</p>
+
+    <h3>Summary Comparison</h3>
+    <table>
+      <tr><th>Dimension</th><th>Data Storytelling</th><th>Data Showcasing</th><th>Data Art</th></tr>
+      <tr><td>Primary goal</td><td>Communicate insight</td><td>Present &amp; explore data</td><td>Artistic expression</td></tr>
+      <tr><td>Audience</td><td>General public</td><td>Analysts / Experts</td><td>Art community / Anyone</td></tr>
+      <tr><td>Interactivity</td><td>Low to medium</td><td>High</td><td>Varies</td></tr>
+      <tr><td>Accuracy priority</td><td>High</td><td>Very High</td><td>Lower</td></tr>
+      <tr><td>Design focus</td><td>Clarity + Narrative</td><td>Completeness + Usability</td><td>Beauty + Impact</td></tr>
+    </table>
+
+    <div class="note">📝 7M answer tip: Write ~1.5 paragraphs for each of the three, include a real-world example for each, and end with the comparison table. The diagram earns extra marks.</div>
+  </div>
+</div>
+
+<!-- ═══ Q17 ═══ -->
+<div class="q-card" id="q17">
+  <div class="q-header">
+    <span class="q-num">Q 17</span>
+    <span class="q-text">Discuss Brainstorm, Define the purpose, and Choose a functional design steps for target audience.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span>
+  </div>
+  <div class="q-body">
+    <h3>Introduction</h3>
+    <p>Before creating any data visualization, the designer must go through three critical pre-design steps: <strong>Brainstorm, Define the Purpose,</strong> and <strong>Choose a Functional Design</strong>. These steps ensure the final visualization serves its intended audience effectively.</p>
+
+    <h3>Step 1 — Brainstorm</h3>
+    <p>Brainstorming is the open, creative exploration phase where all ideas about what to visualize and how are considered without judgment.</p>
+    <p><strong>Activities during brainstorming:</strong></p>
+    <ul>
+      <li>Identify all available data sources and what data you have</li>
+      <li>List all potential insights, questions, or stories the data could tell</li>
+      <li>Sketch rough ideas on paper — no need for perfection at this stage</li>
+      <li>Consider different chart types, layouts, and perspectives</li>
+      <li>Think about the context: What is happening? Why? So what?</li>
+      <li>Brainstorm with the team — different viewpoints lead to better ideas</li>
+    </ul>
+    <p><strong>Output:</strong> A list of possible visualization concepts and rough sketches.</p>
+
+    <h3>Step 2 — Define the Purpose</h3>
+    <p>Defining purpose means answering the fundamental question: <em>"Why are we creating this visualization and for whom?"</em> Without a clear purpose, even beautiful visualizations fail to communicate.</p>
+    <p><strong>Key questions to answer:</strong></p>
+    <ul>
+      <li><strong>What is the message?</strong> — What single insight or story should the viewer take away?</li>
+      <li><strong>Who is the audience?</strong> — Executives? Scientists? The general public? Children?</li>
+      <li><strong>What is the context?</strong> — Where will it be shown? Print, web, presentation, mobile?</li>
+      <li><strong>What action should it trigger?</strong> — Awareness? Decision? Behavior change?</li>
+      <li><strong>What type of visualization is needed?</strong> — Storytelling, Showcasing, or Data Art?</li>
+    </ul>
+    <p><strong>Output:</strong> A clear purpose statement, e.g.: "Show the sales team which products underperformed last quarter so they can plan corrective actions."</p>
+
+    <h3>Step 3 — Choose a Functional Design for Target Audience</h3>
+    <p>Once the purpose is clear, the designer selects the visual form, chart type, color palette, and level of interactivity appropriate for the target audience.</p>
+
+    <h4>Audience-Based Design Choices</h4>
+    <table>
+      <tr><th>Target Audience</th><th>Design Approach</th><th>Chart Types</th></tr>
+      <tr><td>General Public</td><td>Simple, annotated, colorful, minimal jargon</td><td>Bar, Pie, Infographic</td></tr>
+      <tr><td>Business Executives</td><td>High-level summary, KPIs, dashboard style</td><td>Gauge, Scorecard, Summary table</td></tr>
+      <tr><td>Data Analysts</td><td>Detailed, interactive, allow exploration</td><td>Scatter, Heatmap, Box plot</td></tr>
+      <tr><td>Scientists / Researchers</td><td>Precise, minimal decoration, error bars shown</td><td>Error bars, confidence intervals, histograms</td></tr>
+      <tr><td>Children / Students</td><td>Fun, colorful, simple, stories &amp; characters</td><td>Pictographs, simple bar/pie</td></tr>
+    </table>
+
+    <p><strong>Functional design principles for any audience:</strong></p>
+    <ul>
+      <li>Use pre-attentive attributes (color, size, position) to draw attention to key data</li>
+      <li>Eliminate chart junk — every element must earn its place</li>
+      <li>Use color purposefully — not decoratively</li>
+      <li>Ensure accessibility (color-blind safe palettes, alt-text, sufficient contrast)</li>
+      <li>Test with a real member of the target audience before finalizing</li>
+    </ul>
+
+    <div class="note">📝 These three steps are pre-design, not the actual building steps. Always link "define purpose" directly to "audience" — the audience determines everything about the design.</div>
+  </div>
+</div>
+
+<!-- ═══ Q18 ═══ -->
+<div class="q-card" id="q18">
+  <div class="q-header">
+    <span class="q-num">Q 18</span>
+    <span class="q-text">Explain how D3.js can be used to create interactive data visualizations. Provide a simple example.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>D3.js for Interactive Visualizations</h3>
+    <p>D3.js enables interactivity in data visualizations by attaching JavaScript event listeners to SVG elements in the DOM. Common interactions include: tooltips on hover, highlighting on click, zoom and pan, animated transitions, and data filtering via controls.</p>
+
+    <h3>Key Interactivity Mechanisms in D3</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <strong>Event Listeners</strong>
+        <p><code>.on("mouseover", fn)</code>, <code>.on("click", fn)</code>, <code>.on("mouseout", fn)</code> — attach browser events to any SVG element.</p>
+      </div>
+      <div class="col-box">
+        <strong>Transitions</strong>
+        <p><code>.transition().duration(500)</code> — smoothly animate changes in position, size, color when data updates.</p>
+      </div>
+      <div class="col-box">
+        <strong>Tooltips</strong>
+        <p>A hidden HTML div shown near the cursor on hover, displaying data values for the element under the mouse.</p>
+      </div>
+      <div class="col-box">
+        <strong>Zoom / Pan</strong>
+        <p><code>d3.zoom()</code> — allows users to zoom in and pan around large charts (maps, scatter plots with many points).</p>
+      </div>
+    </div>
+
+    <h3>Simple Example — Interactive Bar Chart with Tooltip</h3>
+    <div class="formula">// 1. Data
+const data = [<br>
+  { city: "Ahmedabad", temp: 38 },<br>
+  { city: "Mumbai",    temp: 32 },<br>
+  { city: "Delhi",     temp: 41 },<br>
+  { city: "Chennai",   temp: 35 }<br>
+];<br><br>
+
+// 2. SVG Setup<br>
+const svg = d3.select("#chart")<br>
+  .append("svg")<br>
+  .attr("width", 500)<br>
+  .attr("height", 300);<br><br>
+
+// 3. Scales<br>
+const xScale = d3.scaleBand()<br>
+  .domain(data.map(d => d.city))<br>
+  .range([0, 500]).padding(0.3);<br><br>
+
+const yScale = d3.scaleLinear()<br>
+  .domain([0, 50]).range([250, 0]);<br><br>
+
+// 4. Tooltip (hidden div)<br>
+const tooltip = d3.select("body").append("div")<br>
+  .style("position","absolute")<br>
+  .style("background","#333")<br>
+  .style("color","#fff")<br>
+  .style("padding","6px 10px")<br>
+  .style("border-radius","4px")<br>
+  .style("display","none");<br>
+<br>
+// 5. Bars with Interactivity<br>
+svg.selectAll("rect")<br>
+  .data(data)<br>
+  .enter()<br>
+  .append("rect")<br>
+  .attr("x", d => xScale(d.city))<br>
+  .attr("y", d => yScale(d.temp))<br>
+  .attr("width", xScale.bandwidth())<br>
+  .attr("height", d => 250 - yScale(d.temp))<br>
+  .attr("fill", "#3a6b3a")<br>
+  .on("mouseover", function(event, d) {<br>
+    d3.select(this).attr("fill", "#b04a1a"); // Highlight<br>
+    tooltip.style("display","block")<br>
+      .html(d.city + ": " + d.temp + "°C")<br>
+      .style("left", (event.pageX+10)+"px")<br>
+      .style("top",  (event.pageY-20)+"px");<br>
+  })<br>
+  .on("mouseout", function() {<br>
+    d3.select(this).attr("fill", "#3a6b3a"); // Restore<br>
+    tooltip.style("display","none");<br>
+  });<br>
+<br>
+// 6. Axes<br>
+svg.append("g").attr("transform","translate(0,250)")<br>
+   .call(d3.axisBottom(xScale));<br>
+svg.append("g").call(d3.axisLeft(yScale));</div>
+
+    <h3>What the Example Does</h3>
+    <ul>
+      <li>Creates a bar chart of city temperatures using D3 scales</li>
+      <li>On <strong>mouseover</strong>: bar turns orange and a tooltip shows the city name and temperature</li>
+      <li>On <strong>mouseout</strong>: bar returns to green and tooltip hides</li>
+      <li>Axes are drawn using D3's built-in axis generator</li>
+    </ul>
+
+    <div class="note">📝 For a 7M exam answer: explain the concept of event listeners + transitions + tooltip pattern. Include the code example with step-by-step comments. You don't need to memorize exact syntax — understanding the logic earns marks.</div>
+  </div>
+</div>
+
+<!-- ═══ Q19 ═══ -->
+<div class="q-card" id="q19">
+  <div class="q-header">
+    <span class="q-num">Q 19</span>
+    <span class="q-text">Analyze design principles for data visualization.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'23</span>
+  </div>
+  <div class="q-body">
+    <h3>Design Principles for Data Visualization</h3>
+    <p>Effective data visualization is governed by a set of well-established design principles. Following these principles ensures that visualizations are clear, accurate, and meaningful to the target audience.</p>
+
+    <h4>1. Principle of Clarity (Simplicity)</h4>
+    <p>Every element of the visualization must serve a purpose. Remove anything that does not directly help the viewer understand the data. <em>Edward Tufte's</em> concept of "chart junk" — unnecessary gridlines, borders, 3D effects, decorative icons — must be eliminated.</p>
+    <ul>
+      <li>Use a clear, descriptive title</li>
+      <li>Label axes directly; minimize legends when possible</li>
+      <li>Use white space generously to separate elements</li>
+    </ul>
+
+    <h4>2. Principle of Accuracy</h4>
+    <p>Visualizations must faithfully represent the data. Distortions — intentional or accidental — mislead viewers.</p>
+    <ul>
+      <li>Bar charts must start at zero (truncated axes exaggerate differences)</li>
+      <li>Pie charts must sum to 100%</li>
+      <li>Area must be proportional to values (avoid 3D charts that distort area)</li>
+      <li>Scale must be consistent across all comparable charts</li>
+    </ul>
+
+    <h4>3. Principle of Efficiency (Data-to-Ink Ratio)</h4>
+    <p><em>Tufte's data-to-ink ratio:</em> Maximize the proportion of "ink" (pixels) used to represent data, not decoration. A well-designed chart shows maximum information with minimum visual complexity.</p>
+
+    <h4>4. Principle of Appropriate Chart Choice</h4>
+    <p>Choose the chart type based on what the data is and what comparison you want to show.</p>
+    <table>
+      <tr><th>Data Relationship</th><th>Best Chart</th></tr>
+      <tr><td>Compare categories</td><td>Bar chart</td></tr>
+      <tr><td>Show trend over time</td><td>Line chart</td></tr>
+      <tr><td>Part-to-whole</td><td>Pie / Donut chart (≤5 slices)</td></tr>
+      <tr><td>Correlation</td><td>Scatter plot</td></tr>
+      <tr><td>Distribution</td><td>Histogram / Box plot</td></tr>
+      <tr><td>Geographic data</td><td>Choropleth map</td></tr>
+    </table>
+
+    <h4>5. Principle of Color Use</h4>
+    <p>Color is one of the most powerful visual channels but is often misused.</p>
+    <ul>
+      <li><strong>Use color to encode data:</strong> not for decoration</li>
+      <li><strong>Sequential palette:</strong> for ordered data (light to dark)</li>
+      <li><strong>Diverging palette:</strong> for data with a meaningful midpoint (e.g., profit/loss)</li>
+      <li><strong>Categorical palette:</strong> for nominal groups (visually distinct hues)</li>
+      <li>Always check color-blind accessibility (avoid red-green alone)</li>
+      <li>Limit to 5–7 colors maximum in one chart</li>
+    </ul>
+
+    <h4>6. Principle of Pre-attentive Attributes</h4>
+    <p>Pre-attentive attributes are visual properties that the brain processes automatically, before conscious thought — in under 500ms. Use them to direct the viewer's attention instantly.</p>
+    <div class="two-col">
+      <div class="col-box"><strong>Pre-attentive attributes:</strong><p>Color hue, Color intensity, Size, Length, Orientation, Shape, Motion, Position</p></div>
+      <div class="col-box"><strong>Application:</strong><p>Highlight one bar in orange while all others are grey → eye goes there instantly. Use size to show magnitude without labels.</p></div>
+    </div>
+
+    <h4>7. Principle of Audience-First Design</h4>
+    <p>Every design decision — chart type, color, complexity, level of detail — must be made based on who will view the visualization and in what context. A chart perfect for a data scientist may completely fail with a general audience.</p>
+
+    <h4>8. Gestalt Principles of Visual Perception</h4>
+    <ul>
+      <li><strong>Proximity:</strong> Elements close together are perceived as related</li>
+      <li><strong>Similarity:</strong> Elements with same color/shape are perceived as a group</li>
+      <li><strong>Enclosure:</strong> Elements surrounded by a border are seen as one group</li>
+      <li><strong>Continuity:</strong> Eyes follow continuous lines or curves naturally</li>
+    </ul>
+
+    <div class="note">📝 For 7M: Cover at least 5-6 principles with brief explanations. Mention Tufte's data-to-ink ratio, pre-attentive attributes, and the chart-choice table. These earn maximum marks.</div>
+  </div>
+</div>
+
+<!-- ═══ Q20 ═══ -->
+<div class="q-card" id="q20">
+  <div class="q-header">
+    <span class="q-num">Q 20</span>
+    <span class="q-text">Explain 'The Big Three' in Data Visualization in detail.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'24</span>
+  </div>
+  <div class="q-body">
+    <p>This is the same core topic as Q16 — please refer to Q16 for the complete 7M answer covering Data Storytelling, Data Showcasing, and Data Art with examples and the comparison table.</p>
+
+    <h3>Additional Detail — Sum'24 Focus</h3>
+    <h4>Data Storytelling — Extended</h4>
+    <p>Effective data storytelling has three components that must work together:</p>
+    <ul>
+      <li><strong>Data:</strong> The factual foundation — must be accurate and relevant</li>
+      <li><strong>Narrative:</strong> The verbal explanation that provides context, causation, and implication</li>
+      <li><strong>Visuals:</strong> The charts and graphics that make the data memorable and accessible</li>
+    </ul>
+    <p>A story without data is just an opinion. Data without a story is just a spreadsheet. The combination is what creates impact.</p>
+
+    <h4>Data Showcasing — Extended</h4>
+    <p>A good showcase visualization is built around the principle of <strong>IBCS (International Business Communication Standards)</strong>: standardized chart types, consistent scaling, and clear labeling to allow rapid accurate reading by expert audiences.</p>
+
+    <h4>Data Art — Extended</h4>
+    <p>Famous examples of data art include:</p>
+    <ul>
+      <li>Giorgia Lupi's hand-drawn data postcards — "Dear Data" project</li>
+      <li>Nadieh Bremer's flower visualizations of music listening habits</li>
+      <li>Nicholas Felton's annual personal data reports (printed as books)</li>
+    </ul>
+    <div class="note">📝 For Sum'24: Examiners expect all three types defined with examples. Add the extended content above to differentiate your answer from a basic 3M response.</div>
+  </div>
+</div>
+
+<!-- ═══ Q21 ═══ -->
+<div class="q-card" id="q21">
+  <div class="q-header">
+    <span class="q-num">Q 21</span>
+    <span class="q-text">What is D3.js? Explain .selection, .selectAll and .data() in brief.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'24</span>
+  </div>
+  <div class="q-body">
+    <h3>What is D3.js?</h3>
+    <p><strong>D3.js</strong> (Data-Driven Documents) is a JavaScript library for creating dynamic, interactive, and data-driven visualizations in web browsers. It manipulates the DOM by binding datasets to HTML/SVG elements and applying transformations based on data values.</p>
+    <p>Created by Mike Bostock in 2011. Uses web standards: HTML, SVG, CSS, and JavaScript.</p>
+
+    <h3>Core D3 Methods — Selection and Data Binding</h3>
+
+    <h4>1. d3.select() — Single Element Selection</h4>
+    <p><code>d3.select(selector)</code> selects the <strong>first matching DOM element</strong> and returns a D3 selection object. Used to select a container, a specific element, or to modify one element.</p>
+    <div class="formula">// Select the first &lt;p&gt; element on the page<br>
+const para = d3.select("p");<br>
+<br>
+// Select by ID<br>
+const chart = d3.select("#myChart");<br>
+<br>
+// Select by class<br>
+const title = d3.select(".chart-title");<br>
+<br>
+// Chain methods to modify it<br>
+d3.select("body")<br>
+  .style("background-color", "#f5f5f5")<br>
+  .append("h1")<br>
+  .text("My D3 Chart");</div>
+    <p><strong>Key point:</strong> <code>select()</code> returns a D3 selection wrapping a single element. All subsequent chained methods apply to that element.</p>
+
+    <h4>2. d3.selectAll() — Multiple Element Selection</h4>
+    <p><code>d3.selectAll(selector)</code> selects <strong>all matching DOM elements</strong> and returns a D3 selection object containing all of them. Used to manipulate or bind data to multiple elements at once.</p>
+    <div class="formula">// Select ALL &lt;circle&gt; elements in the SVG<br>
+const circles = d3.selectAll("circle");<br>
+<br>
+// Select all elements with class "bar"<br>
+const bars = d3.selectAll(".bar");<br>
+<br>
+// Apply attributes to ALL selected elements<br>
+d3.selectAll("rect")<br>
+  .attr("fill", "#3a6b3a")<br>
+  .attr("rx", 4)<br>
+  .style("opacity", 0.8);<br>
+<br>
+// Count: selection.size()<br>
+console.log(bars.size()); // number of matched elements</div>
+    <p><strong>Key point:</strong> <code>selectAll()</code> is used before <code>.data()</code> to prepare for data binding — it creates the set of DOM elements that will be matched with data points.</p>
+
+    <h4>3. .data() — Data Binding</h4>
+    <p><code>.data(dataset)</code> is the most important D3 method. It <strong>binds an array of data values to a selection of DOM elements</strong>, creating a one-to-one mapping between data points and visual elements.</p>
+    <div class="formula">const dataset = [30, 50, 80, 45, 60];<br>
+<br>
+// Bind data to rect elements<br>
+const bars = d3.select("svg")<br>
+  .selectAll("rect")      // Select all rects (may not exist yet)<br>
+  .data(dataset);         // Bind data array to selection<br>
+<br>
+// .enter() handles new elements (data without DOM elements)<br>
+bars.enter()<br>
+  .append("rect")         // Create a &lt;rect&gt; for each data point<br>
+  .attr("x", (d, i) => i * 60)      // d = data value, i = index<br>
+  .attr("y", d => 200 - d)          // Use data value for height<br>
+  .attr("width", 50)<br>
+  .attr("height", d => d)           // Bar height = data value<br>
+  .attr("fill", "#3a6b3a");</div>
+
+    <h3>The Enter-Update-Exit Pattern</h3>
+    <p>When <code>.data()</code> is called, D3 computes three sets:</p>
+    <table>
+      <tr><th>Set</th><th>Meaning</th><th>Handled by</th></tr>
+      <tr><td>Enter</td><td>Data points with no corresponding DOM element yet</td><td><code>.enter().append()</code></td></tr>
+      <tr><td>Update</td><td>Data points that already have a DOM element</td><td>Direct attribute calls on selection</td></tr>
+      <tr><td>Exit</td><td>DOM elements with no corresponding data point</td><td><code>.exit().remove()</code></td></tr>
+    </table>
+
+    <div class="formula">// Full Enter-Update-Exit pattern<br>
+const rects = svg.selectAll("rect").data(newData);<br>
+<br>
+rects.enter().append("rect")   // NEW elements<br>
+  .attr("fill","#3a6b3a");<br>
+<br>
+rects.attr("width", d => d);   // UPDATE existing elements<br>
+<br>
+rects.exit().remove();         // REMOVE elements with no data</div>
+
+    <div class="note">📝 Key: select() = one element, selectAll() = many elements, data() = bind array to selection. The callback (d, i) in attribute functions gives you the data value (d) and index (i) for each element.</div>
+  </div>
+</div>
+
+<!-- ═══ Q22 ═══ -->
+<div class="q-card" id="q22">
+  <div class="q-header">
+    <span class="q-num">Q 22</span>
+    <span class="q-text">Write a note on types of target audience and suitable graphics for data visualization.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'24 OR</span>
+  </div>
+  <div class="q-body">
+    <h3>Target Audience in Data Visualization</h3>
+    <p>The target audience is the single most important factor in designing a data visualization. A chart that is perfect for a data scientist can completely fail with a non-technical executive, and vice versa. The audience determines: chart complexity, level of interactivity, amount of annotation, use of jargon, and design style.</p>
+
+    <h3>Types of Target Audience</h3>
+
+    <h4>1. General Public / Lay Audience</h4>
+    <ul>
+      <li><strong>Background:</strong> No technical expertise, limited time, varied literacy levels</li>
+      <li><strong>Needs:</strong> Immediate clarity, simple narrative, minimal jargon, emotional engagement</li>
+      <li><strong>Suitable Graphics:</strong> Simple bar charts, pie charts, pictographs, annotated infographics, icon arrays</li>
+      <li><strong>Design approach:</strong> Bold headlines, large fonts, strong colors, one key insight only, annotations that explain what the viewer is seeing</li>
+      <li><strong>Example context:</strong> Newspaper article, social media post, government health campaign</li>
+    </ul>
+
+    <h4>2. Business Executives / Decision Makers</h4>
+    <ul>
+      <li><strong>Background:</strong> Domain experts, time-pressed, high-level view preferred</li>
+      <li><strong>Needs:</strong> KPIs, summary metrics, trend direction, comparison to targets</li>
+      <li><strong>Suitable Graphics:</strong> Dashboards with gauge charts, scorecards, sparklines, bullet charts, traffic-light indicators</li>
+      <li><strong>Design approach:</strong> Compact, clean, highlights exceptions only, clear comparison to benchmark</li>
+      <li><strong>Example context:</strong> Executive dashboard, board presentation, weekly business review</li>
+    </ul>
+
+    <h4>3. Data Analysts / Technical Experts</h4>
+    <ul>
+      <li><strong>Background:</strong> Statistical literacy, comfortable with complexity, want to explore data</li>
+      <li><strong>Needs:</strong> Full detail, interactivity, multiple views, raw data access</li>
+      <li><strong>Suitable Graphics:</strong> Scatter plots, box plots, heatmaps, histograms, parallel coordinates, interactive filters</li>
+      <li><strong>Design approach:</strong> Dense information, interactive, allow drill-down, show distributions and outliers</li>
+      <li><strong>Example context:</strong> Analytics platform, Jupyter notebook, Tableau workbook for data team</li>
+    </ul>
+
+    <h4>4. Scientific / Academic Audience</h4>
+    <ul>
+      <li><strong>Background:</strong> Deep domain expertise, value precision over aesthetics</li>
+      <li><strong>Needs:</strong> Statistical rigor, confidence intervals, error bars, reproducibility</li>
+      <li><strong>Suitable Graphics:</strong> Histograms with overlaid density curves, forest plots, error bar charts, survival curves, Q-Q plots</li>
+      <li><strong>Design approach:</strong> Minimal decoration, precise labeling, include sample size and p-values</li>
+      <li><strong>Example context:</strong> Research paper figure, scientific journal, conference poster</li>
+    </ul>
+
+    <h4>5. Children / Students</h4>
+    <ul>
+      <li><strong>Background:</strong> Limited prior knowledge, short attention spans, learn through engagement</li>
+      <li><strong>Needs:</strong> Fun, relatable context, simple concepts, visual delight</li>
+      <li><strong>Suitable Graphics:</strong> Pictographs (icons instead of bars), animated charts, color-coded simple bar/pie, story-based visualizations</li>
+      <li><strong>Design approach:</strong> Bright colors, familiar images, very few data points, gamified if possible</li>
+      <li><strong>Example context:</strong> Educational app, classroom textbook, museum exhibit</li>
+    </ul>
+
+    <h3>Summary Table</h3>
+    <table>
+      <tr><th>Audience</th><th>Complexity</th><th>Best Chart Types</th><th>Key Priority</th></tr>
+      <tr><td>General Public</td><td>Low</td><td>Bar, Pie, Infographic, Pictograph</td><td>Clarity &amp; Engagement</td></tr>
+      <tr><td>Executives</td><td>Low-Medium</td><td>Dashboard, Gauge, Bullet, Sparkline</td><td>KPIs &amp; Trends</td></tr>
+      <tr><td>Analysts</td><td>High</td><td>Scatter, Heatmap, Box Plot, Interactive</td><td>Detail &amp; Exploration</td></tr>
+      <tr><td>Scientists</td><td>High</td><td>Error bars, Histograms, Statistical charts</td><td>Precision &amp; Rigor</td></tr>
+      <tr><td>Children</td><td>Very Low</td><td>Pictograph, Animated, Simple Bar/Pie</td><td>Fun &amp; Simplicity</td></tr>
+    </table>
+
+    <div class="note">📝 7M tip: Write 2–3 lines for each audience type, mention specific chart types, and include the summary table. Relate audience back to the Big Three: general public → storytelling; analysts → showcasing; artists/creative → data art.</div>
+  </div>
+</div>
+
+<!-- ═══ Q23 ═══ -->
+<div class="q-card" id="q23">
+  <div class="q-header">
+    <span class="q-num">Q 23</span>
+    <span class="q-text">Write a note on D3-DOM selection methods with appropriate examples. / Write a note on big three principles of data visualization.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25</span>
+  </div>
+  <div class="q-body">
+    <h3>D3-DOM Selection Methods</h3>
+    <p>D3 provides a powerful set of methods to select, manipulate, and create DOM elements. These are the foundation of all D3 visualizations.</p>
+
+    <h4>1. d3.select(selector)</h4>
+    <p>Selects the first DOM element matching the CSS selector. Returns a D3 selection object for one element.</p>
+    <div class="formula">d3.select("body")          // Select &lt;body&gt; tag<br>
+d3.select("#chart")        // Select element with id="chart"<br>
+d3.select(".title")        // Select first element with class="title"<br>
+d3.select("svg > rect")    // Select first rect inside svg</div>
+
+    <h4>2. d3.selectAll(selector)</h4>
+    <p>Selects all DOM elements matching the selector. Returns a selection wrapping all matched elements.</p>
+    <div class="formula">d3.selectAll("circle")      // Select ALL circle elements<br>
+d3.selectAll(".bar")        // Select ALL elements with class bar<br>
+d3.selectAll("g.axis")      // All g elements with class axis<br>
+<br>
+// Apply to all elements at once<br>
+d3.selectAll("rect")<br>
+  .attr("rx", 4)            // Round all bar corners</div>
+
+    <h4>3. selection.append(elementType)</h4>
+    <p>Appends a new child DOM element to each element in the selection. Returns a selection of the newly created elements.</p>
+    <div class="formula">// Add an SVG to the body<br>
+const svg = d3.select("body")<br>
+  .append("svg")<br>
+  .attr("width", 500)<br>
+  .attr("height", 300);<br>
+<br>
+// Add a circle inside the SVG<br>
+svg.append("circle")<br>
+  .attr("cx", 100).attr("cy", 100).attr("r", 40)<br>
+  .attr("fill", "#3a6b3a");</div>
+
+    <h4>4. selection.attr(name, value)</h4>
+    <p>Gets or sets an HTML/SVG attribute. When value is a function, it receives (d, i) — data value and index — for each element.</p>
+    <div class="formula">selection.attr("width", 50)              // Set fixed width<br>
+selection.attr("x", (d, i) => i * 60)   // Computed from index<br>
+selection.attr("height", d => d.value)   // Computed from data</div>
+
+    <h4>5. selection.style(name, value)</h4>
+    <p>Sets a CSS style property on selected elements.</p>
+    <div class="formula">d3.select("svg")<br>
+  .style("border", "1px solid #ddd")<br>
+  .style("background", "#f9f9f9");</div>
+
+    <h4>6. selection.text(value)</h4>
+    <p>Sets the text content of selected elements.</p>
+    <div class="formula">d3.selectAll("text")<br>
+  .text(d => d.label)    // Set text from data value</div>
+
+    <h4>7. selection.remove()</h4>
+    <p>Removes selected elements from the DOM. Used in the Exit pattern when data is removed.</p>
+    <div class="formula">d3.selectAll(".bar").exit().remove()   // Remove bars with no data</div>
+
+    <h4>8. selection.on(event, handler)</h4>
+    <p>Attaches an event listener to selected elements for interactivity.</p>
+    <div class="formula">d3.selectAll("rect")<br>
+  .on("mouseover", function(event, d) {<br>
+    d3.select(this).attr("fill", "#b04a1a");<br>
+    console.log("Value:", d);<br>
+  })<br>
+  .on("mouseout", function() {<br>
+    d3.select(this).attr("fill", "#3a6b3a");<br>
+  });</div>
+
+    <h3>Complete Mini-Example — All Methods Together</h3>
+    <div class="formula">const data = [40, 70, 55, 90, 30];<br>
+<br>
+const svg = d3.select("#chart").append("svg")<br>
+              .attr("width", 300).attr("height", 150);<br>
+<br>
+svg.selectAll("rect")          // selectAll<br>
+  .data(data)                  // bind data<br>
+  .enter()                     // enter (new elements)<br>
+  .append("rect")              // append rect for each<br>
+  .attr("x", (d, i) => i*55)  // attr using index<br>
+  .attr("y", d => 130 - d)    // attr using data value<br>
+  .attr("width", 45)<br>
+  .attr("height", d => d)<br>
+  .attr("fill","#3a6b3a")<br>
+  .on("mouseover", function() {<br>
+    d3.select(this).style("opacity", 0.6);  // style<br>
+  })<br>
+  .on("mouseout", function() {<br>
+    d3.select(this).style("opacity", 1);<br>
+  });<br>
+<br>
+svg.selectAll("text")<br>
+  .data(data).enter()<br>
+  .append("text")<br>
+  .attr("x", (d, i) => i*55 + 22)<br>
+  .attr("y", d => 125 - d)<br>
+  .text(d => d)                // text from data<br>
+  .attr("text-anchor","middle")<br>
+  .attr("font-size", 11);</div>
+
+    <div class="note">📝 For the OR variant (Big Three Principles) — refer to Q16 for the complete answer. For D3-DOM, cover: select, selectAll, append, attr, style, text, on — with one code example each.</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:24px 0;color:var(--ink3);font-size:13px;border-top:1px solid var(--border);margin-top:12px;">
+  Chapter 4 Complete · 24 Questions Answered · GTU 3161613 — Data Analysis &amp; Visualization<br>
+  <span style="font-size:11px;margin-top:4px;display:block;">Data Visualization Design · D3.js · Big Three · Standard Charts · Design Principles</span>
+</div>
+
+</div>
+</body>
+</html>

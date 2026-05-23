@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAV — Chapter 5 Answer Booklet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f7f5f0;
+    --card: #ffffff;
+    --ink: #1a1a18;
+    --ink2: #4a4a45;
+    --ink3: #7a7a72;
+    --accent: #2d5a8e;
+    --accent2: #c8502a;
+    --green: #2a7a4b;
+    --border: #e0ddd6;
+    --mark3: #eaf3de;
+    --mark3t: #2a7a4b;
+    --mark4: #e6f1fb;
+    --mark4t: #185fa5;
+    --mark7: #faeeda;
+    --mark7t: #854f0b;
+    --diag-bg: #f0eee8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .page-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 32px 40px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .page-header h1 { font-size: 18px; font-weight: 600; }
+  .page-header p { font-size: 12px; opacity: 0.75; margin-top: 3px; }
+  .progress { font-size: 12px; background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; white-space: nowrap; }
+
+  .toc {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .toc-label { font-size: 11px; color: var(--ink3); text-transform: uppercase; letter-spacing: .05em; margin-right: 4px; }
+  .toc a { font-size: 12px; padding: 3px 10px; border-radius: 14px; background: var(--bg); color: var(--ink2); text-decoration: none; border: 1px solid var(--border); transition: all .15s; }
+  .toc a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    scroll-margin-top: 100px;
+  }
+
+  .q-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: #fafaf8;
+  }
+  .q-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #e6f1fb;
+    border-radius: 6px;
+    padding: 3px 8px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .q-text { font-family: 'Crimson Pro', serif; font-size: 18px; color: var(--ink); line-height: 1.4; flex: 1; }
+  .mark-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .m3 { background: var(--mark3); color: var(--mark3t); }
+  .m4 { background: var(--mark4); color: var(--mark4t); }
+  .m7 { background: var(--mark7); color: var(--mark7t); }
+
+  .exam-tags { display: flex; gap: 5px; flex-wrap: wrap; padding: 8px 24px 12px; background: #fafaf8; border-bottom: 1px solid var(--border); }
+  .exam-tag { font-size: 10px; padding: 2px 8px; border-radius: 8px; background: var(--bg); color: var(--ink3); border: 1px solid var(--border); }
+
+  .q-body { padding: 24px; }
+
+  h3 { font-size: 14px; font-weight: 600; color: var(--accent); margin: 20px 0 8px; text-transform: uppercase; letter-spacing: .04em; }
+  h3:first-child { margin-top: 0; }
+  h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin: 14px 0 6px; }
+
+  p { margin-bottom: 10px; color: var(--ink2); }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { padding-left: 20px; margin-bottom: 10px; color: var(--ink2); }
+  li { margin-bottom: 5px; }
+
+  .highlight {
+    background: linear-gradient(to right, #fffbe6, #fff);
+    border-left: 3px solid var(--accent2);
+    padding: 10px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .formula {
+    font-family: 'DM Mono', monospace;
+    background: #f0eee8;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 12px 0;
+    color: var(--accent);
+    overflow-x: auto;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th { background: var(--accent); color: #fff; padding: 8px 12px; text-align: left; font-weight: 500; }
+  td { padding: 7px 12px; border-bottom: 1px solid var(--border); color: var(--ink2); }
+  tr:nth-child(even) td { background: #fafaf8; }
+
+  .diagram {
+    background: var(--diag-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 18px 0;
+    text-align: center;
+  }
+  .diagram-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ink3);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .diagram svg { max-width: 100%; }
+
+  .step-list { counter-reset: step; list-style: none; padding: 0; }
+  .step-list li {
+    counter-increment: step;
+    padding: 8px 12px 8px 44px;
+    position: relative;
+    margin-bottom: 6px;
+    background: var(--bg);
+    border-radius: 8px;
+    color: var(--ink2);
+    font-size: 14px;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    width: 22px; height: 22px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .col-box { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+  .col-box strong { font-size: 13px; color: var(--ink); display: block; margin-bottom: 6px; }
+  .col-box p, .col-box li { font-size: 13px; }
+
+  .note {
+    background: #eaf3de;
+    border-left: 3px solid var(--green);
+    padding: 8px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--green);
+    margin: 10px 0;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .page-header { padding: 18px 16px; }
+    .toc { padding: 12px 16px; }
+    .container { padding: 20px 12px 60px; }
+    .q-header { padding: 14px 16px 12px; }
+    .q-body { padding: 16px; }
+    .two-col { grid-template-columns: 1fr; }
+    .exam-tags { padding: 8px 16px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div>
+    <h1>Data Analysis &amp; Visualization — 3161613</h1>
+    <p>Chapter 5: Web-Based Applications &amp; Spatial Visualization | GTU Exam Answers</p>
+  </div>
+  <span class="progress">15 Questions Answered</span>
+</div>
+
+<div class="toc">
+  <span class="toc-label">Jump to:</span>
+  <a href="#q1">Q1 Open-Source Tools</a>
+  <a href="#q2">Q2 Best Practices</a>
+  <a href="#q3">Q3 Spatial Data &amp; Thematic Maps</a>
+  <a href="#q4">Q4 Dashboard Design Note</a>
+  <a href="#q5">Q5 Tableau Public</a>
+  <a href="#q6">Q6 Plotly</a>
+  <a href="#q7">Q7 Buffering &amp; Proximity</a>
+  <a href="#q8">Q8 White Space</a>
+  <a href="#q9">Q9 D3.js</a>
+  <a href="#q10">Q10 Context in Visualization</a>
+  <a href="#q11">Q11 Infographics</a>
+  <a href="#q12">Q12 Visualization Graphs</a>
+  <a href="#q13">Q13 Web Analytics Apps</a>
+  <a href="#q14">Q14 Dashboard Design (7M)</a>
+  <a href="#q15">Q15 HTML &amp; DOM</a>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════════════════════ Q1 ═══ -->
+<div class="q-card" id="q1">
+  <div class="q-header">
+    <span class="q-num">Q 1</span>
+    <span class="q-text">List out open source web-based application tools for visualization design. / List various Open-Source Web-Based Data Visualization Platforms. Explain any one.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span><span class="exam-tag">Sum'24</span>
+  </div>
+  <div class="q-body">
+    <h3>Open-Source Web-Based Visualization Tools</h3>
+    <table>
+      <tr><th>Tool</th><th>Primary Use</th><th>Language/Tech</th></tr>
+      <tr><td><strong>D3.js</strong></td><td>Custom interactive charts &amp; SVG-based visualizations</td><td>JavaScript</td></tr>
+      <tr><td><strong>Plotly</strong></td><td>Interactive scientific/business charts; dashboards</td><td>Python, JS, R</td></tr>
+      <tr><td><strong>Tableau Public</strong></td><td>Drag-and-drop BI dashboards (free public version)</td><td>Desktop + Web</td></tr>
+      <tr><td><strong>Chart.js</strong></td><td>Simple HTML5 canvas-based charts for web</td><td>JavaScript</td></tr>
+      <tr><td><strong>Grafana</strong></td><td>Real-time metrics monitoring dashboards</td><td>Web-based</td></tr>
+      <tr><td><strong>Apache Superset</strong></td><td>Business intelligence &amp; data exploration</td><td>Python/Web</td></tr>
+      <tr><td><strong>Vega-Lite</strong></td><td>Declarative grammar for statistical visualizations</td><td>JSON/JS</td></tr>
+      <tr><td><strong>Infogr.am</strong></td><td>Infographic and report creation</td><td>Web-based SaaS</td></tr>
+    </table>
+
+    <h3>Detailed Explanation — D3.js</h3>
+    <p><strong>D3.js (Data-Driven Documents)</strong> is a JavaScript library for producing dynamic, interactive data visualizations in web browsers using HTML, SVG, and CSS.</p>
+    <ul>
+      <li><strong>Data Binding:</strong> Binds data to DOM elements and applies transformations based on data values.</li>
+      <li><strong>Flexibility:</strong> Can create any type of chart — bar, line, pie, choropleth maps, force-directed graphs, treemaps, etc.</li>
+      <li><strong>Transitions &amp; Animations:</strong> Supports smooth animated transitions when data changes.</li>
+      <li><strong>Open-Source &amp; Free:</strong> Available on GitHub with large community support.</li>
+      <li><strong>Scalable Vector Graphics (SVG):</strong> Produces resolution-independent visuals, ideal for all screen sizes.</li>
+    </ul>
+    <div class="highlight">D3.js is widely used because it gives developers full control over the visual output — from simple bar charts to complex geographic maps and network diagrams.</div>
+    <div class="note">📝 Exam tip: List at least 5–6 tools with names. If asked to explain one, choose D3.js or Plotly — they have the richest feature sets to describe.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q2 ═══ -->
+<div class="q-card" id="q2">
+  <div class="q-header">
+    <span class="q-num">Q 2</span>
+    <span class="q-text">Describe "Less is More" and "Stay Current" best practices for design planning.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span>
+  </div>
+  <div class="q-body">
+    <h3>Best Practice 1 — "Less is More"</h3>
+    <p>The principle of <strong>"Less is More"</strong> in data visualization design means removing all unnecessary elements that do not add informational value, so the audience can focus on the core message.</p>
+    <ul>
+      <li><strong>Remove Chartjunk:</strong> Eliminate decorative elements, excessive gridlines, 3D effects, shadows, and unnecessary borders that distract from the data.</li>
+      <li><strong>Minimize Color:</strong> Use color only to highlight key insights, not for decoration. Stick to 2–3 colors maximum per chart.</li>
+      <li><strong>Simplify Labels:</strong> Avoid cluttered axis labels, redundant legends, or excessive data labels on every data point.</li>
+      <li><strong>White Space:</strong> Use generous white space to give the visualization breathing room and improve readability.</li>
+      <li><strong>One Chart — One Message:</strong> Each chart should communicate a single, clear insight. If it tries to say everything, it says nothing.</li>
+    </ul>
+    <div class="highlight">Edward Tufte's concept of "data-ink ratio" supports this: maximize the proportion of ink used to display actual data vs. non-data ink.</div>
+
+    <h3>Best Practice 2 — "Stay Current"</h3>
+    <p>The principle of <strong>"Stay Current"</strong> means ensuring that data visualizations always reflect the most recent, accurate, and relevant data.</p>
+    <ul>
+      <li><strong>Live/Dynamic Data:</strong> Connect dashboards to live databases or APIs so data refreshes automatically (e.g., real-time sales dashboard).</li>
+      <li><strong>Scheduled Updates:</strong> For batch data, schedule regular refreshes (daily, weekly) so stakeholders are never looking at stale information.</li>
+      <li><strong>Version Control:</strong> Track data source versions so you know which dataset a visualization is based on.</li>
+      <li><strong>Date Stamps:</strong> Always display "Last Updated" timestamps on dashboards so users know data recency.</li>
+      <li><strong>Tool Updates:</strong> Keep visualization libraries and platforms updated to use the latest features and security patches.</li>
+    </ul>
+    <div class="note">📝 Exam tip: For "Less is More" mention chartjunk reduction and Tufte's data-ink ratio. For "Stay Current" mention live data connections and date stamps.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q3 ═══ -->
+<div class="q-card" id="q3">
+  <div class="q-header">
+    <span class="q-num">Q 3</span>
+    <span class="q-text">Defining spatial data and understanding its use in thematic maps. / Describe maps used for visualizing spatial data.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'24</span><span class="exam-tag">Win'23</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Spatial Data?</h3>
+    <p><strong>Spatial data</strong> (also called geospatial data) is data that describes the location, shape, and characteristics of objects or phenomena on or near the Earth's surface. It is referenced by geographic coordinates (latitude, longitude).</p>
+
+    <div class="two-col">
+      <div class="col-box">
+        <strong>Vector Data</strong>
+        <p>Represents features as points, lines, and polygons. E.g., city locations (points), roads (lines), country boundaries (polygons).</p>
+      </div>
+      <div class="col-box">
+        <strong>Raster Data</strong>
+        <p>Represents features as a grid of cells/pixels. E.g., satellite imagery, elevation maps, land-use maps.</p>
+      </div>
+    </div>
+
+    <h3>Types of Maps for Visualizing Spatial Data</h3>
+
+    <h4>1. Choropleth Map</h4>
+    <p>Uses color shading to represent the magnitude of a variable across geographic regions. Darker shading = higher value.</p>
+    <p><strong>Use:</strong> Election results by state, population density by district, COVID-19 cases by country.</p>
+
+    <h4>2. Heat Map (Density Map)</h4>
+    <p>Shows the concentration/density of data points across a geographic area using a color gradient (cool to hot).</p>
+    <p><strong>Use:</strong> Crime hotspots, traffic congestion areas, earthquake frequency zones.</p>
+
+    <h4>3. Dot Distribution Map</h4>
+    <p>Each dot represents a fixed quantity of a phenomenon. Used to show distribution and concentration.</p>
+    <p><strong>Use:</strong> Population distribution, crop yield locations.</p>
+
+    <h4>4. Proportional Symbol Map</h4>
+    <p>Uses symbols (circles, squares) whose size is proportional to the data value at each location.</p>
+    <p><strong>Use:</strong> City population sizes, earthquake magnitudes.</p>
+
+    <h4>5. Thematic Map</h4>
+    <p>Designed to show a specific theme or attribute rather than just the terrain. Combines spatial context with statistical data.</p>
+    <p><strong>Sub-types:</strong> Isopleth maps (contour lines of equal value), flow maps (movement of goods/people), cartogram (area distorted by data value).</p>
+
+    <h4>6. Choropleth vs Cartogram</h4>
+    <table>
+      <tr><th>Choropleth</th><th>Cartogram</th></tr>
+      <tr><td>Color encodes data; geography is accurate</td><td>Area size encodes data; geography is distorted</td></tr>
+      <tr><td>Best when region sizes are similar</td><td>Best when region sizes vary greatly</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: Mention at least 4 map types with their use cases. Choropleth and heat map are the most important ones.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q4 ═══ -->
+<div class="q-card" id="q4">
+  <div class="q-header">
+    <span class="q-num">Q 4</span>
+    <span class="q-text">Write short note on Dashboard Design.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'23</span>
+  </div>
+  <div class="q-body">
+    <h3>What is a Dashboard?</h3>
+    <p>A <strong>dashboard</strong> is a visual display of the most important information needed to achieve one or more objectives, consolidated on a single screen so the information can be monitored at a glance.</p>
+    <p>Dashboards are used in business intelligence, analytics, monitoring systems, and performance tracking.</p>
+
+    <h3>Key Principles of Dashboard Design</h3>
+    <ul>
+      <li><strong>Know Your Audience:</strong> Design for the specific user — executives need high-level KPIs; analysts need detailed drill-down capabilities.</li>
+      <li><strong>Highlight Key Metrics (KPIs):</strong> Place the most important numbers prominently at the top-left (F-pattern reading).</li>
+      <li><strong>Choose the Right Chart Types:</strong> Use bar charts for comparison, line charts for trends, pie charts only for simple proportions (max 5 slices).</li>
+      <li><strong>Use White Space:</strong> Do not overcrowd the dashboard. White space helps users focus on individual components.</li>
+      <li><strong>Consistent Color Scheme:</strong> Use a consistent palette. Reserve red/orange for alerts and green for positive indicators.</li>
+      <li><strong>Interactive Filters:</strong> Allow users to filter data by date range, region, or category for dynamic exploration.</li>
+      <li><strong>Data Freshness Indicator:</strong> Always show when the data was last updated.</li>
+    </ul>
+
+    <h3>Types of Dashboards</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>Operational</strong><p>Real-time data. E.g., server monitoring, live sales tracking.</p></div>
+      <div class="col-box"><strong>Analytical</strong><p>Historical trends for deeper analysis. E.g., quarterly business review.</p></div>
+      <div class="col-box"><strong>Strategic</strong><p>High-level KPIs for executive decision-making.</p></div>
+      <div class="col-box"><strong>Tactical</strong><p>Mid-level managers tracking departmental performance.</p></div>
+    </div>
+    <div class="note">📝 Exam tip: Mention the 3 types of dashboards and at least 4–5 design principles. This is a popular question.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q5 ═══ -->
+<div class="q-card" id="q5">
+  <div class="q-header">
+    <span class="q-num">Q 5</span>
+    <span class="q-text">Write a note on Tableau Public.</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Tableau Public?</h3>
+    <p><strong>Tableau Public</strong> is a free, cloud-based version of Tableau that allows anyone to create interactive data visualizations and publish them to the web. It is widely used by journalists, students, researchers, and data enthusiasts.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>Drag-and-Drop Interface:</strong> No coding required. Users drag fields onto the canvas to build charts and dashboards intuitively.</li>
+      <li><strong>Wide Chart Library:</strong> Supports bar charts, line charts, scatter plots, maps, treemaps, heat maps, Gantt charts, and more.</li>
+      <li><strong>Interactive Dashboards:</strong> Multiple visualizations can be combined into interactive dashboards with filters and actions.</li>
+      <li><strong>Map Integration:</strong> Built-in geographic data allows instant creation of choropleth maps and symbol maps by simply dragging location fields.</li>
+      <li><strong>Data Sources:</strong> Connects to Excel, CSV, Google Sheets, and web-based data. (Note: Tableau Public does not support live database connections — data must be published with the workbook.)</li>
+      <li><strong>Public Gallery:</strong> All published visualizations are publicly accessible at public.tableau.com. Users can download and modify others' work.</li>
+      <li><strong>Storytelling:</strong> Story points feature allows creating a narrative flow through multiple visualizations.</li>
+    </ul>
+
+    <h3>Limitations of Tableau Public</h3>
+    <ul>
+      <li>All work is publicly visible — not suitable for confidential data.</li>
+      <li>Storage limit of 10 GB per user.</li>
+      <li>No live database connections or scheduled refresh.</li>
+    </ul>
+
+    <div class="highlight">Tableau Public is ideal for learning data visualization, portfolio projects, and publishing open-data stories for public audiences.</div>
+    <div class="note">📝 Exam tip: Mention drag-and-drop, map support, public gallery, and the limitation that data is publicly visible.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q6 ═══ -->
+<div class="q-card" id="q6">
+  <div class="q-header">
+    <span class="q-num">Q 6</span>
+    <span class="q-text">Write a note on Plotly for data visualization. / Write a note on 'Visualizing and collaborating with Plotly'.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25</span><span class="exam-tag">Sum'23</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Plotly?</h3>
+    <p><strong>Plotly</strong> is an open-source data visualization library available for Python, R, JavaScript, and other languages. It enables creation of interactive, publication-quality charts for web browsers without requiring frontend expertise.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>Interactive Charts:</strong> All Plotly charts are interactive by default — users can hover to see data values, zoom in/out, pan, and toggle data series on/off in the legend.</li>
+      <li><strong>Wide Chart Types:</strong> Supports 40+ chart types including scatter, bar, line, pie, 3D surface, contour, bubble, candlestick, choropleth maps, and sunburst diagrams.</li>
+      <li><strong>Plotly Express:</strong> A high-level API for creating charts in one line of Python code. Ideal for rapid exploratory data analysis.</li>
+      <li><strong>Dash Framework:</strong> Plotly's Dash is a Python framework to build full analytical web applications and dashboards without writing any HTML/JS directly.</li>
+      <li><strong>Cross-Language:</strong> Same look-and-feel across Python (<code>plotly</code>), R (<code>plotly</code>), and JavaScript (<code>Plotly.js</code>).</li>
+    </ul>
+
+    <h3>Visualizing with Plotly</h3>
+    <div class="formula">import plotly.express as px
+df = px.data.iris()<br>
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")<br>
+fig.show()</div>
+    <p>The above creates an interactive scatter plot with color-coded species, hover tooltips, and zoom controls — in just 3 lines of Python.</p>
+
+    <h3>Collaborating with Plotly</h3>
+    <ul>
+      <li><strong>Plotly Chart Studio:</strong> Cloud-based platform to upload, share, and collaborate on charts. Team members can view and edit shared visualizations via a URL.</li>
+      <li><strong>Embedding:</strong> Charts can be embedded in websites, Jupyter notebooks, or shared as standalone HTML files.</li>
+      <li><strong>Export Options:</strong> Charts can be exported as PNG, SVG, PDF, or interactive HTML for sharing with stakeholders who don't have Plotly installed.</li>
+      <li><strong>Version History:</strong> Plotly Chart Studio maintains version history of published charts.</li>
+    </ul>
+
+    <table>
+      <tr><th>Feature</th><th>Plotly Express</th><th>Plotly Graph Objects</th></tr>
+      <tr><td>Complexity</td><td>High-level, simple API</td><td>Low-level, full control</td></tr>
+      <tr><td>Code Lines</td><td>1–3 lines per chart</td><td>10–20 lines per chart</td></tr>
+      <tr><td>Customization</td><td>Limited</td><td>Complete customization</td></tr>
+      <tr><td>Best For</td><td>Quick EDA, prototyping</td><td>Production dashboards</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: Mention interactivity, Dash for dashboards, Plotly Express for quick charts, and Chart Studio for collaboration.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q7 ═══ -->
+<div class="q-card" id="q7">
+  <div class="q-header">
+    <span class="q-num">Q 7</span>
+    <span class="q-text">Explain Buffering and Proximity functions to extract information from spatial dataset. / Explain buffering and proximity analysis in GIS.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span><span class="exam-tag">Sum'24</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Buffering in GIS?</h3>
+    <p><strong>Buffering</strong> is a spatial operation that creates a zone (buffer) of a specified distance around a geographic feature (point, line, or polygon). All areas within that distance are included in the buffer zone.</p>
+    <p><strong>Purpose:</strong> To identify features or areas within a certain proximity to another feature.</p>
+
+    <div class="diagram">
+      <div class="diagram-title">Buffer Zones Around Different Feature Types</div>
+      <svg viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <!-- Point buffer -->
+        <circle cx="110" cy="90" r="60" fill="#e6f1fb" stroke="#2d5a8e" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <circle cx="110" cy="90" r="8" fill="#2d5a8e"/>
+        <text x="110" y="165" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a4a45">Point Buffer</text>
+        <text x="110" y="32" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#2d5a8e">500m radius</text>
+
+        <!-- Line buffer -->
+        <line x1="270" y1="60" x2="400" y2="120" stroke="#2a7a4b" stroke-width="3"/>
+        <path d="M258,42 Q280,30 310,55 Q350,75 412,130 Q420,145 398,138 Q370,125 330,105 Q295,85 260,78 Z" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.5" stroke-dasharray="6 3" fill-opacity="0.6"/>
+        <text x="335" y="165" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a4a45">Line Buffer (Road)</text>
+
+        <!-- Polygon buffer -->
+        <rect x="490" y="65" width="80" height="60" rx="4" fill="#faeeda" stroke="#854f0b" stroke-width="2"/>
+        <rect x="470" y="45" width="120" height="100" rx="10" fill="none" stroke="#854f0b" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <text x="530" y="165" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#4a4a45">Polygon Buffer</text>
+        <text x="530" y="32" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#854f0b">Outer buffer zone</text>
+      </svg>
+    </div>
+
+    <h4>Types of Buffers</h4>
+    <ul>
+      <li><strong>Single Buffer:</strong> One zone at a fixed distance. E.g., 500m buffer around a school.</li>
+      <li><strong>Multiple Ring Buffer:</strong> Concentric zones at increasing distances. E.g., 100m, 200m, 500m rings around a pollution source.</li>
+      <li><strong>Variable Width Buffer:</strong> Different widths for different features based on an attribute. E.g., wider buffer for highways vs. local roads.</li>
+    </ul>
+
+    <h4>Real-World Applications of Buffering</h4>
+    <ul>
+      <li>Find all hospitals within 5 km of an accident site</li>
+      <li>Identify residential zones within 200m of a polluted river (environmental planning)</li>
+      <li>Determine areas within 1 km of a proposed new school (education planning)</li>
+      <li>Find all ATMs within 300m of a shopping mall</li>
+    </ul>
+
+    <h3>What is Proximity Analysis?</h3>
+    <p><strong>Proximity analysis</strong> is a broader GIS technique to determine spatial relationships based on distance between features — specifically, how close or far features are from one another.</p>
+
+    <h4>Key Proximity Functions</h4>
+    <ul>
+      <li><strong>Near Analysis:</strong> Calculates the distance from each feature to the nearest feature in another dataset. E.g., distance from each house to the nearest fire station.</li>
+      <li><strong>Point Distance:</strong> Calculates distances between all points within a maximum search radius.</li>
+      <li><strong>Thiessen/Voronoi Polygons:</strong> Creates polygons such that any location within a polygon is closer to its center point than to any other point. Used for service area analysis (which hospital serves each area?).</li>
+    </ul>
+
+    <table>
+      <tr><th>Buffering</th><th>Proximity Analysis</th></tr>
+      <tr><td>Creates a zone around a feature</td><td>Measures distance between features</td></tr>
+      <tr><td>Results in a polygon layer</td><td>Results in distance attributes</td></tr>
+      <tr><td>Used for spatial selection</td><td>Used for distance computation</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: Draw a simple diagram of a point buffer. Mention at least 2 real-world use cases for buffering and explain Voronoi polygons for proximity.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q8 ═══ -->
+<div class="q-card" id="q8">
+  <div class="q-header">
+    <span class="q-num">Q 8</span>
+    <span class="q-text">Discuss the significance of white space in dashboard design. / Compare and contrast three web-based applications for data visualization.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>Significance of White Space in Dashboard Design</h3>
+    <p><strong>White space</strong> (also called negative space) refers to the empty or blank areas between visual elements in a dashboard — between charts, around text, between columns, and in margins. It does NOT have to be literally white; it is simply space with no visual content.</p>
+
+    <h4>Why White Space Matters</h4>
+    <ul>
+      <li><strong>Reduces Cognitive Load:</strong> Cluttered dashboards overwhelm the viewer. White space gives the brain room to process information one piece at a time, reducing mental effort.</li>
+      <li><strong>Improves Readability:</strong> Text surrounded by adequate white space is significantly easier to read. Studies show line spacing (a form of white space) increases comprehension by up to 20%.</li>
+      <li><strong>Creates Visual Hierarchy:</strong> White space guides the viewer's eye. More white space around an element makes it appear more important and draws attention to it first.</li>
+      <li><strong>Groups Related Elements:</strong> Using less white space between related charts and more space between unrelated sections creates natural groupings (Gestalt principle of proximity).</li>
+      <li><strong>Conveys Professionalism:</strong> Well-spaced dashboards look polished and credible. Cramped dashboards look hasty and amateur.</li>
+      <li><strong>Prevents Accidental Interactions:</strong> In interactive dashboards, adequate spacing between clickable filters/buttons prevents accidental clicks.</li>
+    </ul>
+
+    <div class="highlight">Rule of thumb: If removing an element makes the dashboard look better, remove it. If adding space between elements makes it clearer, add it. Less is more.</div>
+
+    <h3>Comparison — Three Web-Based Visualization Applications</h3>
+    <table>
+      <tr><th>Feature</th><th>Tableau Public</th><th>Plotly / Dash</th><th>D3.js</th></tr>
+      <tr><td>Ease of Use</td><td>Very Easy (drag-drop)</td><td>Moderate (Python code)</td><td>Difficult (JS coding)</td></tr>
+      <tr><td>Interactivity</td><td>High</td><td>Very High</td><td>Fully Custom</td></tr>
+      <tr><td>Chart Types</td><td>40+ built-in</td><td>40+ built-in</td><td>Unlimited (custom)</td></tr>
+      <tr><td>Coding Required</td><td>No</td><td>Yes (Python/R)</td><td>Yes (JavaScript)</td></tr>
+      <tr><td>Deployment</td><td>Tableau Public site</td><td>Web server / Cloud</td><td>Any website</td></tr>
+      <tr><td>Best For</td><td>Business users</td><td>Data scientists</td><td>Web developers</td></tr>
+      <tr><td>Cost</td><td>Free (public data)</td><td>Free (open-source)</td><td>Free (open-source)</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: For white space, mention cognitive load, visual hierarchy, and Gestalt grouping. The comparison table always earns full marks.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q9 ═══ -->
+<div class="q-card" id="q9">
+  <div class="q-header">
+    <span class="q-num">Q 9</span>
+    <span class="q-text">Write a note on D3.js for data visualization.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'23</span>
+  </div>
+  <div class="q-body">
+    <h3>What is D3.js?</h3>
+    <p><strong>D3.js (Data-Driven Documents)</strong> is an open-source JavaScript library created by Mike Bostock in 2011. It uses HTML, SVG, and CSS to bind data to DOM elements and transform them into visual representations in a web browser.</p>
+
+    <h3>Core Concepts of D3.js</h3>
+
+    <h4>1. Data Binding</h4>
+    <p>D3's most powerful concept is binding data to DOM elements. When data changes, D3 can enter new elements, update existing ones, or exit/remove obsolete ones (enter-update-exit pattern).</p>
+    <div class="formula">d3.select("body")<br>
+  .selectAll("p")<br>
+  .data([10, 20, 30])<br>
+  .enter()<br>
+  .append("p")<br>
+  .text(d => "Value: " + d);</div>
+
+    <h4>2. Scales</h4>
+    <p>D3 provides scale functions to map data values (domain) to visual values (range). E.g., mapping a data value of 1000 to a pixel position of 300px on screen.</p>
+
+    <h4>3. SVG-Based Rendering</h4>
+    <p>D3 uses Scalable Vector Graphics (SVG) to render charts — making them infinitely scalable and crisp at any resolution. This is different from canvas-based tools like Chart.js.</p>
+
+    <h4>4. Transitions &amp; Animations</h4>
+    <p>D3 supports smooth animated transitions between states, making visualizations engaging and easier to follow when data updates.</p>
+    <div class="formula">d3.select("circle")<br>
+  .transition()<br>
+  .duration(750)<br>
+  .attr("cx", 200)<br>
+  .attr("r", 30);</div>
+
+    <h4>5. Geographic (Geo) Support</h4>
+    <p>D3 has powerful geographic projections (Mercator, orthographic, etc.) and can render GeoJSON data as interactive maps.</p>
+
+    <h3>Types of Visualizations Possible with D3.js</h3>
+    <ul>
+      <li>Bar charts, line charts, scatter plots, pie/donut charts</li>
+      <li>Choropleth maps, bubble maps</li>
+      <li>Force-directed network graphs</li>
+      <li>Treemaps, sunburst diagrams, Sankey diagrams</li>
+      <li>Word clouds, calendar heatmaps</li>
+    </ul>
+
+    <h3>Advantages and Limitations</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <strong>Advantages</strong>
+        <ul>
+          <li>Complete creative control over output</li>
+          <li>Any visualization imaginable is possible</li>
+          <li>Excellent browser performance</li>
+          <li>Large community and example gallery</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <strong>Limitations</strong>
+        <ul>
+          <li>Steep learning curve (requires JS, SVG, CSS knowledge)</li>
+          <li>More code for standard charts vs. Plotly/Chart.js</li>
+          <li>Not suitable for non-coders</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">📝 Exam tip: Explain data binding, SVG rendering, and at least 3 visualization types. The code snippet demonstrates understanding and earns extra marks.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q10 ═══ -->
+<div class="q-card" id="q10">
+  <div class="q-header">
+    <span class="q-num">Q 10</span>
+    <span class="q-text">Explain context in data visualization in brief.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'23</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Context in Data Visualization?</h3>
+    <p><strong>Context</strong> in data visualization refers to the background information, reference points, and surrounding details that help the audience correctly interpret and understand what the data means. Without context, even accurate data can be misleading or meaningless.</p>
+
+    <div class="highlight">A chart that shows "sales dropped by 15%" means very little without context. Did all competitors also drop by 20%? Was it during a recession? Was this seasonal? Context answers these questions.</div>
+
+    <h3>Types of Context in Visualization</h3>
+
+    <h4>1. Temporal Context (Time Reference)</h4>
+    <p>Showing data relative to time helps identify whether current values are improving or declining. Add reference lines for previous period, same period last year, or trend lines.</p>
+    <p><strong>Example:</strong> Showing this quarter's revenue alongside last quarter and same quarter last year.</p>
+
+    <h4>2. Comparative Context (Benchmarks)</h4>
+    <p>Compare current performance against targets, industry averages, competitors, or historical norms. This transforms a number from isolated to meaningful.</p>
+    <p><strong>Example:</strong> A bar of "72% customer satisfaction" is much more meaningful if the industry average of 65% is shown as a reference line.</p>
+
+    <h4>3. Geographical Context</h4>
+    <p>When showing regional data, displaying it on a map provides geographic context that table formats cannot. Users immediately understand spatial relationships.</p>
+
+    <h4>4. Statistical Context</h4>
+    <p>Including confidence intervals, error bars, or standard deviation ranges on charts tells the audience how certain or uncertain the data is — preventing over-confidence in estimates.</p>
+
+    <h4>5. Annotations and Labels</h4>
+    <p>Adding text annotations directly on charts to explain outliers, events, or important data points provides critical context. E.g., marking "COVID lockdown begins" on a revenue chart.</p>
+
+    <h3>Consequences of Missing Context</h3>
+    <ul>
+      <li>Viewers may misinterpret trends as positive when they are actually negative relative to goals</li>
+      <li>Small absolute changes may look dramatic without scale context</li>
+      <li>Correlation may be mistaken for causation without background information</li>
+    </ul>
+    <div class="note">📝 Exam tip: Give concrete examples for each type of context. Emphasize that context transforms data into insights.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q11 ═══ -->
+<div class="q-card" id="q11">
+  <div class="q-header">
+    <span class="q-num">Q 11</span>
+    <span class="q-text">What is Infographics? Discuss Infogr.am or Piktochart.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'24</span>
+  </div>
+  <div class="q-body">
+    <h3>What is an Infographic?</h3>
+    <p>An <strong>infographic</strong> (information graphic) is a visual representation of information, data, or knowledge designed to present complex information quickly and clearly using a combination of charts, icons, illustrations, text, and color.</p>
+    <p>Unlike raw charts, infographics tell a story — they guide the viewer through data in a structured narrative flow.</p>
+
+    <h4>Types of Infographics</h4>
+    <ul>
+      <li><strong>Statistical:</strong> Data-heavy with charts and numbers. E.g., annual report summaries.</li>
+      <li><strong>Timeline:</strong> Show events or processes in chronological order.</li>
+      <li><strong>Process/Flowchart:</strong> Step-by-step how-to guides or workflows.</li>
+      <li><strong>Comparison:</strong> Side-by-side comparison of options or products.</li>
+      <li><strong>Geographic:</strong> Data mapped onto regions or areas.</li>
+    </ul>
+
+    <h3>Infogr.am</h3>
+    <p><strong>Infogr.am</strong> (now rebranded as Infogram) is a cloud-based web tool for creating interactive infographics, charts, maps, and reports without coding.</p>
+    <ul>
+      <li><strong>Easy Interface:</strong> Drag-and-drop editor with pre-built templates. Users simply click a template, replace sample data with their own, and publish.</li>
+      <li><strong>Chart Types:</strong> Over 35 chart types including bar, line, pie, maps, and word clouds.</li>
+      <li><strong>Data Import:</strong> Import data directly from Excel, Google Sheets, or manually enter data in the tool's built-in table.</li>
+      <li><strong>Interactive Output:</strong> Published infographics are interactive — users can hover to see exact values.</li>
+      <li><strong>Collaboration:</strong> Teams can work on the same infographic simultaneously (paid plans).</li>
+      <li><strong>Embedding:</strong> Infographics can be embedded in websites, blogs, or shared via social media links.</li>
+      <li><strong>Free Tier:</strong> Basic features available free; advanced features require subscription.</li>
+    </ul>
+
+    <h3>Piktochart (Alternative)</h3>
+    <p><strong>Piktochart</strong> is another web-based infographic tool focused on creating visually rich infographics, presentations, and reports using templates. It offers more design customization than Infogr.am but is less focused on data-driven charts.</p>
+
+    <table>
+      <tr><th>Feature</th><th>Infogr.am</th><th>Piktochart</th></tr>
+      <tr><td>Focus</td><td>Data-driven charts &amp; infographics</td><td>Design-rich visual stories</td></tr>
+      <tr><td>Data Import</td><td>Excel, Google Sheets</td><td>Manual, limited import</td></tr>
+      <tr><td>Interactivity</td><td>Yes</td><td>Limited</td></tr>
+      <tr><td>Best For</td><td>Data journalists, analysts</td><td>Marketers, educators</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: Define infographic first, then list features of Infogr.am (or Piktochart) — at least 5 features for full marks.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q12 ═══ -->
+<div class="q-card" id="q12">
+  <div class="q-header">
+    <span class="q-num">Q 12</span>
+    <span class="q-text">Discuss data visualization graphs. / Analyze the importance of choosing the right chart types in dashboard design.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25</span><span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>Major Types of Data Visualization Graphs</h3>
+
+    <h4>1. Bar Chart (Column Chart)</h4>
+    <p>Uses rectangular bars to compare values across categories. Horizontal bars work better when category names are long.</p>
+    <p><strong>Best for:</strong> Comparison across categories. E.g., sales by region, marks by subject.</p>
+
+    <h4>2. Line Chart</h4>
+    <p>Connects data points with lines to show trends over time. Each point represents a value at a specific time.</p>
+    <p><strong>Best for:</strong> Time-series data, trends. E.g., stock price over 6 months, temperature over a year.</p>
+
+    <h4>3. Pie / Donut Chart</h4>
+    <p>Divides a circle into slices proportional to each category's share of the total.</p>
+    <p><strong>Best for:</strong> Part-to-whole relationships with few categories (≤5). E.g., market share breakdown.</p>
+    <p><strong>Avoid when:</strong> Categories are close in value (hard to distinguish visually) or when there are more than 5 categories.</p>
+
+    <h4>4. Scatter Plot</h4>
+    <p>Shows the relationship/correlation between two numeric variables as dots on a 2D plane.</p>
+    <p><strong>Best for:</strong> Correlation analysis, outlier detection. E.g., relationship between study hours and marks.</p>
+
+    <h4>5. Histogram</h4>
+    <p>Shows the frequency distribution of a continuous variable by dividing data into bins (ranges).</p>
+    <p><strong>Best for:</strong> Understanding data distribution, skewness, and outliers.</p>
+
+    <h4>6. Heat Map</h4>
+    <p>Uses color intensity to show values in a matrix format. Can be geographic or table-based.</p>
+    <p><strong>Best for:</strong> Correlation matrices, website click patterns, calendar-based data.</p>
+
+    <h4>7. Box Plot (Box-and-Whisker)</h4>
+    <p>Shows the five-number summary (min, Q1, median, Q3, max) and outliers for a dataset.</p>
+    <p><strong>Best for:</strong> Comparing distributions across groups, detecting outliers.</p>
+
+    <h4>8. Area Chart</h4>
+    <p>Similar to a line chart but the area below the line is filled with color. Useful for showing volume over time.</p>
+
+    <h3>Choosing the Right Chart — Decision Guide</h3>
+    <table>
+      <tr><th>Purpose</th><th>Recommended Chart</th></tr>
+      <tr><td>Compare categories</td><td>Bar / Column Chart</td></tr>
+      <tr><td>Show trend over time</td><td>Line Chart / Area Chart</td></tr>
+      <tr><td>Show part of a whole</td><td>Pie / Donut Chart (≤5 slices)</td></tr>
+      <tr><td>Show correlation</td><td>Scatter Plot</td></tr>
+      <tr><td>Show distribution</td><td>Histogram / Box Plot</td></tr>
+      <tr><td>Show density/intensity</td><td>Heat Map</td></tr>
+      <tr><td>Show hierarchy</td><td>Treemap / Sunburst</td></tr>
+      <tr><td>Show geographic data</td><td>Choropleth Map</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: For each chart type, mention what it is best for and one example. The decision guide table is very useful for showing understanding.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q13 ═══ -->
+<div class="q-card" id="q13">
+  <div class="q-header">
+    <span class="q-num">Q 13</span>
+    <span class="q-text">Explain popular web analytics applications used by data scientists. / What is web analytics? Explain use of various applications for web analytics.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25</span><span class="exam-tag">Sum'24</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Web Analytics?</h3>
+    <p><strong>Web analytics</strong> is the collection, measurement, analysis, and reporting of website data to understand and optimize web usage. It tracks how users find, navigate, and interact with websites.</p>
+
+    <h4>Key Metrics in Web Analytics</h4>
+    <ul>
+      <li><strong>Page Views:</strong> Total number of pages viewed</li>
+      <li><strong>Unique Visitors:</strong> Number of distinct users visiting the site</li>
+      <li><strong>Bounce Rate:</strong> % of users who leave after viewing only one page</li>
+      <li><strong>Session Duration:</strong> Average time users spend on the site</li>
+      <li><strong>Conversion Rate:</strong> % of visitors who complete a desired goal (purchase, signup)</li>
+      <li><strong>Traffic Sources:</strong> Where visitors come from (organic search, social, direct, referral)</li>
+    </ul>
+
+    <h3>Popular Web Analytics Applications</h3>
+
+    <h4>1. Google Analytics (GA4)</h4>
+    <p>The most widely used free web analytics platform by Google. GA4 is the latest version, using an event-based data model.</p>
+    <ul>
+      <li>Tracks real-time users, sessions, page views, conversions</li>
+      <li>Audience reports: demographics, interests, devices</li>
+      <li>Acquisition reports: which channels bring traffic</li>
+      <li>Integration with Google Ads, Search Console, BigQuery</li>
+    </ul>
+
+    <h4>2. Adobe Analytics</h4>
+    <p>Enterprise-grade analytics platform for large organizations. Offers advanced segmentation, custom variables, and real-time analysis.</p>
+    <ul>
+      <li>More customizable than Google Analytics</li>
+      <li>Supports complex attribution modeling</li>
+      <li>Integrates with Adobe Experience Cloud</li>
+    </ul>
+
+    <h4>3. Matomo (formerly Piwik)</h4>
+    <p>Open-source, self-hosted web analytics platform. Popular for organizations that need full data privacy and ownership.</p>
+    <ul>
+      <li>Data stays on your own server — GDPR compliant</li>
+      <li>Similar features to Google Analytics</li>
+      <li>No data sharing with third parties</li>
+    </ul>
+
+    <h4>4. Hotjar</h4>
+    <p>Behavioral analytics tool that complements traditional web analytics. Provides heatmaps, session recordings, and user surveys.</p>
+    <ul>
+      <li><strong>Heatmaps:</strong> Visual representation of where users click, move, and scroll</li>
+      <li><strong>Session Recordings:</strong> Replay individual user sessions to understand behavior</li>
+      <li><strong>Funnel Analysis:</strong> Track where users drop off in conversion funnels</li>
+    </ul>
+
+    <h4>5. Mixpanel</h4>
+    <p>Product analytics tool focused on tracking user interactions with web and mobile applications (event-based tracking).</p>
+
+    <table>
+      <tr><th>Tool</th><th>Best For</th><th>Cost</th></tr>
+      <tr><td>Google Analytics</td><td>General web analytics</td><td>Free</td></tr>
+      <tr><td>Adobe Analytics</td><td>Enterprise analytics</td><td>Paid</td></tr>
+      <tr><td>Matomo</td><td>Privacy-focused analytics</td><td>Free (self-hosted)</td></tr>
+      <tr><td>Hotjar</td><td>User behavior &amp; UX</td><td>Free + Paid</td></tr>
+      <tr><td>Mixpanel</td><td>Product/event analytics</td><td>Free + Paid</td></tr>
+    </table>
+    <div class="note">📝 Exam tip: Define web analytics, list key metrics (bounce rate, conversion rate, sessions), then explain at least 3 tools with their unique features.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q14 ═══ -->
+<div class="q-card" id="q14">
+  <div class="q-header">
+    <span class="q-num">Q 14</span>
+    <span class="q-text">Discuss various points to design dashboard for data visualization. / List and explain steps to focusing on the audience while designing dashboard. / Analyze design principles for data visualization. / Identifying and explaining essential elements in dashboard design.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span><span class="exam-tag">Win'24</span><span class="exam-tag">Win'23</span><span class="exam-tag">Sum'24</span><span class="exam-tag">Sum'25</span>
+  </div>
+  <div class="q-body">
+    <h3>Dashboard Design — Comprehensive Guide</h3>
+
+    <h4>1. Know Your Audience (Focus on the User)</h4>
+    <p>The most critical step in dashboard design is understanding who will use it and for what purpose.</p>
+    <ol class="step-list">
+      <li><strong>Identify User Roles:</strong> Is the audience an executive (wants high-level KPIs), a manager (wants departmental performance), or an analyst (wants drill-down details)? Design accordingly.</li>
+      <li><strong>Understand Decision Needs:</strong> What decisions will this dashboard support? E.g., "Should we increase marketing spend in Region X?" — design charts that directly answer this.</li>
+      <li><strong>Assess Technical Literacy:</strong> A technical audience can handle complex charts like scatter matrices; a general audience needs simple bar and line charts with clear labels.</li>
+      <li><strong>Determine Update Frequency:</strong> Operational users need real-time data; strategic users may be fine with weekly or monthly refreshes.</li>
+      <li><strong>Gather Feedback Iteratively:</strong> Share prototypes with actual users before finalizing. Real users will find confusing elements that designers miss.</li>
+    </ol>
+
+    <h4>2. Choose the Right Charts and Visuals</h4>
+    <ul>
+      <li>Match chart type to the type of insight: comparison → bar, trend → line, proportion → pie/donut, correlation → scatter plot</li>
+      <li>Avoid 3D charts — they distort perception of values and add no information</li>
+      <li>Limit pie charts to 5 or fewer slices; otherwise use a bar chart</li>
+      <li>Use sparklines for showing trends in small spaces</li>
+    </ul>
+
+    <h4>3. Establish Visual Hierarchy</h4>
+    <p>The most important information should visually dominate the dashboard. Achieve this through:</p>
+    <ul>
+      <li><strong>Size:</strong> Larger elements attract attention first. Place key KPI numbers in large font at the top.</li>
+      <li><strong>Position:</strong> Western cultures read top-left first (F-pattern). Put the most critical metric there.</li>
+      <li><strong>Color:</strong> Use a neutral palette for background and accent colors (red, green) only for critical alerts or highlights.</li>
+      <li><strong>Contrast:</strong> High contrast between the metric and its background draws the eye immediately.</li>
+    </ul>
+
+    <h4>4. Use Color Strategically</h4>
+    <ul>
+      <li>Limit to 3–5 colors maximum across the entire dashboard</li>
+      <li>Use consistent color meaning: <strong>Red = alert/bad</strong>, <strong>Green = good/on track</strong>, <strong>Blue/Gray = neutral</strong></li>
+      <li>Ensure color-blind accessibility — do not rely on red/green alone; use patterns or icons as secondary indicators</li>
+      <li>Use sequential color scales (light to dark) for quantitative data, diverging scales for data with a meaningful midpoint</li>
+    </ul>
+
+    <h4>5. Apply "Less is More" — Remove Chartjunk</h4>
+    <ul>
+      <li>Remove unnecessary gridlines, borders, and backgrounds</li>
+      <li>Eliminate redundant legends when data labels are sufficient</li>
+      <li>Do not put too many charts on one screen — each chart must earn its place</li>
+      <li>Use white space generously between sections to reduce cognitive load</li>
+    </ul>
+
+    <h4>6. Essential Elements of Every Dashboard</h4>
+    <div class="two-col">
+      <div class="col-box">
+        <strong>KPI Cards / Scorecard Tiles</strong>
+        <p>Single large numbers showing key metrics like Total Revenue, Active Users, or Customer Satisfaction Score with comparison to target or prior period.</p>
+      </div>
+      <div class="col-box">
+        <strong>Trend Charts</strong>
+        <p>Line or area charts showing performance over time. Essential for spotting improving or declining trends.</p>
+      </div>
+      <div class="col-box">
+        <strong>Filters / Slicers</strong>
+        <p>Allow users to slice data by date range, region, product category, etc. for dynamic exploration.</p>
+      </div>
+      <div class="col-box">
+        <strong>Data Freshness Label</strong>
+        <p>"Last updated: [date/time]" so users know how current the data is. Critical for trust in the dashboard.</p>
+      </div>
+      <div class="col-box">
+        <strong>Title &amp; Context</strong>
+        <p>Clear dashboard title, subtitle explaining scope (e.g., "Q3 FY2025 — North Region"), and brief descriptions for complex charts.</p>
+      </div>
+      <div class="col-box">
+        <strong>Alert / Conditional Formatting</strong>
+        <p>Highlight values that exceed thresholds (red if below target, green if above) for immediate attention.</p>
+      </div>
+    </div>
+
+    <h4>7. Design Principles for Data Visualization</h4>
+    <table>
+      <tr><th>Principle</th><th>Description</th><th>Example</th></tr>
+      <tr><td>Accuracy</td><td>Data must be correctly represented without distortion</td><td>Y-axis must start at 0 for bar charts</td></tr>
+      <tr><td>Clarity</td><td>Viewer should understand the message instantly</td><td>Clear titles, axis labels, units</td></tr>
+      <tr><td>Efficiency</td><td>Convey maximum information with minimum ink</td><td>Remove redundant gridlines</td></tr>
+      <tr><td>Aesthetics</td><td>Visually pleasing designs encourage engagement</td><td>Consistent fonts and aligned elements</td></tr>
+      <tr><td>Interactivity</td><td>Allow users to explore data themselves</td><td>Hover tooltips, drill-down, filters</td></tr>
+      <tr><td>Accessibility</td><td>Usable by people with visual impairments</td><td>Color-blind safe palettes, alt text</td></tr>
+      <tr><td>Responsiveness</td><td>Works well on different screen sizes</td><td>Mobile-friendly layout</td></tr>
+    </table>
+
+    <h4>8. Layout and Navigation</h4>
+    <ul>
+      <li><strong>Above the Fold:</strong> The most critical information should be visible without scrolling</li>
+      <li><strong>Logical Flow:</strong> Arrange charts so they tell a story from overview (top) to detail (bottom)</li>
+      <li><strong>Consistent Grid:</strong> Align all charts to an invisible grid for a polished, professional look</li>
+      <li><strong>Navigation Tabs:</strong> For complex dashboards, use tabs to organize by topic (e.g., Sales | Marketing | Operations)</li>
+    </ul>
+
+    <div class="diagram">
+      <div class="diagram-title">Recommended Dashboard Layout Structure</div>
+      <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <!-- Title bar -->
+        <rect x="10" y="10" width="660" height="35" rx="6" fill="#2d5a8e"/>
+        <text x="340" y="32" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">Dashboard Title | Filters: [Date] [Region] [Product]</text>
+        <!-- KPI row -->
+        <rect x="10" y="55" width="155" height="55" rx="6" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.2"/>
+        <text x="87" y="77" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#2a7a4b" font-weight="600">Total Revenue</text>
+        <text x="87" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#2a7a4b">₹2.4M</text>
+        <rect x="175" y="55" width="155" height="55" rx="6" fill="#e6f1fb" stroke="#185fa5" stroke-width="1.2"/>
+        <text x="252" y="77" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#185fa5" font-weight="600">Active Users</text>
+        <text x="252" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#185fa5">12,840</text>
+        <rect x="340" y="55" width="155" height="55" rx="6" fill="#faeeda" stroke="#854f0b" stroke-width="1.2"/>
+        <text x="417" y="77" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#854f0b" font-weight="600">Conversion Rate</text>
+        <text x="417" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#854f0b">3.8%</text>
+        <rect x="505" y="55" width="165" height="55" rx="6" fill="#fcebeb" stroke="#a32d2d" stroke-width="1.2"/>
+        <text x="587" y="77" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#a32d2d" font-weight="600">Bounce Rate</text>
+        <text x="587" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#a32d2d">42% ↑</text>
+        <!-- Charts row -->
+        <rect x="10" y="120" width="420" height="130" rx="6" fill="#f7f5f0" stroke="#e0ddd6" stroke-width="1"/>
+        <text x="220" y="140" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#7a7a72" font-weight="600">TREND CHART — Revenue over 12 Months</text>
+        <polyline points="30,235 90,215 150,220 210,195 270,180 330,175 390,160 410,165" fill="none" stroke="#2d5a8e" stroke-width="2"/>
+        <rect x="440" y="120" width="230" height="130" rx="6" fill="#f7f5f0" stroke="#e0ddd6" stroke-width="1"/>
+        <text x="555" y="140" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#7a7a72" font-weight="600">BREAKDOWN — By Category</text>
+        <rect x="455" y="150" width="60" height="90" rx="3" fill="#2a7a4b"/>
+        <rect x="525" y="170" width="60" height="70" rx="3" fill="#185fa5"/>
+        <rect x="595" y="190" width="60" height="50" rx="3" fill="#854f0b"/>
+        <!-- Last updated -->
+        <text x="670" y="258" text-anchor="end" font-family="DM Sans,sans-serif" font-size="10" fill="#7a7a72">Last updated: 23 May 2026 09:00 AM</text>
+      </svg>
+    </div>
+
+    <div class="note">📝 Exam tip: This is the highest-mark question in Chapter 5 and appears almost every semester. Cover audience focus, chart selection, color strategy, essential elements, and design principles. The layout diagram earns extra marks.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q15 ═══ -->
+<div class="q-card" id="q15">
+  <div class="q-header">
+    <span class="q-num">Q 15</span>
+    <span class="q-text">Explain HTML and DOM in data visualization with appropriate example.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'25</span>
+  </div>
+  <div class="q-body">
+    <h3>HTML in Data Visualization</h3>
+    <p><strong>HTML (HyperText Markup Language)</strong> is the standard markup language for creating web pages. In the context of data visualization, HTML provides the structural skeleton — the container elements that hold charts, tables, labels, and interactive controls.</p>
+
+    <h4>Role of HTML in Visualization</h4>
+    <ul>
+      <li>Provides <code>&lt;div&gt;</code>, <code>&lt;canvas&gt;</code>, and <code>&lt;svg&gt;</code> elements as containers for rendering charts</li>
+      <li>Creates input controls (dropdowns, sliders, date pickers) for user interaction with visualizations</li>
+      <li>Structures the layout of dashboards using divs and grid/flexbox CSS</li>
+      <li>Embeds visualization libraries via <code>&lt;script&gt;</code> tags</li>
+    </ul>
+
+    <div class="formula">&lt;!-- HTML structure for a visualization --&gt;<br>
+&lt;div id="dashboard"&gt;<br>
+  &lt;h2&gt;Sales Dashboard&lt;/h2&gt;<br>
+  &lt;select id="regionFilter"&gt;<br>
+    &lt;option&gt;North&lt;/option&gt;<br>
+    &lt;option&gt;South&lt;/option&gt;<br>
+  &lt;/select&gt;<br>
+  &lt;div id="chartContainer"&gt;&lt;/div&gt;   &lt;!-- D3.js renders SVG here --&gt;<br>
+  &lt;canvas id="myChart"&gt;&lt;/canvas&gt;      &lt;!-- Chart.js renders here --&gt;<br>
+&lt;/div&gt;</div>
+
+    <h3>DOM (Document Object Model)</h3>
+    <p>The <strong>DOM (Document Object Model)</strong> is a programming interface for HTML documents. It represents the page as a tree structure where each HTML element is a node. JavaScript (and D3.js) can access and manipulate this tree dynamically to create, update, or delete elements — making visualizations interactive and data-driven.</p>
+
+    <div class="diagram">
+      <div class="diagram-title">DOM Tree Structure for a Visualization Page</div>
+      <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="arrD" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><circle cx="5" cy="5" r="3" fill="#7a7a72"/></marker></defs>
+        <!-- Document -->
+        <rect x="290" y="10" width="100" height="32" rx="6" fill="#2d5a8e"/>
+        <text x="340" y="30" text-anchor="middle" font-family="DM Mono,monospace" font-size="12" fill="#fff">document</text>
+        <!-- html -->
+        <rect x="290" y="62" width="100" height="32" rx="6" fill="#185fa5" fill-opacity="0.85"/>
+        <text x="340" y="82" text-anchor="middle" font-family="DM Mono,monospace" font-size="12" fill="#fff">&lt;html&gt;</text>
+        <line x1="340" y1="42" x2="340" y2="62" stroke="#7a7a72" stroke-width="1.5"/>
+        <!-- head + body -->
+        <rect x="160" y="114" width="100" height="32" rx="6" fill="#2a7a4b" fill-opacity="0.85"/>
+        <text x="210" y="134" text-anchor="middle" font-family="DM Mono,monospace" font-size="12" fill="#fff">&lt;head&gt;</text>
+        <rect x="420" y="114" width="100" height="32" rx="6" fill="#854f0b" fill-opacity="0.85"/>
+        <text x="470" y="134" text-anchor="middle" font-family="DM Mono,monospace" font-size="12" fill="#fff">&lt;body&gt;</text>
+        <line x1="310" y1="94" x2="210" y2="114" stroke="#7a7a72" stroke-width="1.5"/>
+        <line x1="370" y1="94" x2="470" y2="114" stroke="#7a7a72" stroke-width="1.5"/>
+        <!-- head children -->
+        <rect x="60" y="170" width="100" height="28" rx="5" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1"/>
+        <text x="110" y="188" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" fill="#2a7a4b">&lt;title&gt;</text>
+        <rect x="170" y="170" width="100" height="28" rx="5" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1"/>
+        <text x="220" y="188" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" fill="#2a7a4b">&lt;script&gt;</text>
+        <line x1="210" y1="146" x2="110" y2="170" stroke="#7a7a72" stroke-width="1"/>
+        <line x1="210" y1="146" x2="220" y2="170" stroke="#7a7a72" stroke-width="1"/>
+        <!-- body children -->
+        <rect x="350" y="170" width="80" height="28" rx="5" fill="#faeeda" stroke="#854f0b" stroke-width="1"/>
+        <text x="390" y="188" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" fill="#854f0b">&lt;div&gt;</text>
+        <rect x="440" y="170" width="80" height="28" rx="5" fill="#faeeda" stroke="#854f0b" stroke-width="1"/>
+        <text x="480" y="188" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" fill="#854f0b">&lt;svg&gt;</text>
+        <rect x="530" y="170" width="100" height="28" rx="5" fill="#faeeda" stroke="#854f0b" stroke-width="1"/>
+        <text x="580" y="188" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" fill="#854f0b">&lt;canvas&gt;</text>
+        <line x1="470" y1="146" x2="390" y2="170" stroke="#7a7a72" stroke-width="1"/>
+        <line x1="470" y1="146" x2="480" y2="170" stroke="#7a7a72" stroke-width="1"/>
+        <line x1="470" y1="146" x2="580" y2="170" stroke="#7a7a72" stroke-width="1"/>
+        <!-- SVG child -->
+        <rect x="430" y="215" width="100" height="22" rx="4" fill="#e6f1fb" stroke="#185fa5" stroke-width="1"/>
+        <text x="480" y="230" text-anchor="middle" font-family="DM Mono,monospace" font-size="10" fill="#185fa5">&lt;circle&gt; &lt;rect&gt;</text>
+        <line x1="480" y1="198" x2="480" y2="215" stroke="#7a7a72" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <h3>How D3.js Uses the DOM for Visualization</h3>
+    <p>D3.js directly manipulates the DOM to create and update SVG elements based on data. This is the key mechanism that makes D3 so powerful for dynamic, data-driven visualization.</p>
+
+    <div class="formula">// D3.js: Select DOM element, bind data, create SVG rectangles (bar chart)<br>
+const data = [30, 80, 45, 60, 20, 90, 50];<br>
+const svg = d3.select("#chartContainer")<br>
+              .append("svg")          // Creates &lt;svg&gt; node in DOM<br>
+              .attr("width", 400)<br>
+              .attr("height", 200);<br>
+<br>
+svg.selectAll("rect")                 // Select all &lt;rect&gt; nodes (empty initially)<br>
+   .data(data)                        // Bind data array to DOM selection<br>
+   .enter()                           // For each new data point...<br>
+   .append("rect")                    // ...append a &lt;rect&gt; element to SVG in DOM<br>
+   .attr("x", (d, i) => i * 55)      // Set x position based on index<br>
+   .attr("y", d => 200 - d)          // Set y position based on data value<br>
+   .attr("width", 40)<br>
+   .attr("height", d => d)           // Height driven by data<br>
+   .attr("fill", "#2d5a8e");</div>
+
+    <h3>Key DOM Operations in Visualization</h3>
+    <table>
+      <tr><th>DOM Operation</th><th>Method (D3)</th><th>Purpose in Visualization</th></tr>
+      <tr><td>Select element</td><td><code>d3.select()</code></td><td>Target the chart container div</td></tr>
+      <tr><td>Create element</td><td><code>.append()</code></td><td>Add SVG, circle, rect, text nodes</td></tr>
+      <tr><td>Set attribute</td><td><code>.attr()</code></td><td>Set width, height, color, position</td></tr>
+      <tr><td>Bind data</td><td><code>.data()</code></td><td>Link dataset to DOM elements</td></tr>
+      <tr><td>Add event</td><td><code>.on("click", fn)</code></td><td>Make charts interactive on click/hover</td></tr>
+      <tr><td>Update style</td><td><code>.style()</code></td><td>Change color, opacity, font dynamically</td></tr>
+      <tr><td>Remove element</td><td><code>.exit().remove()</code></td><td>Remove chart elements when data shrinks</td></tr>
+    </table>
+
+    <h3>HTML5 Canvas vs SVG in DOM</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <strong>SVG (Scalable Vector Graphics)</strong>
+        <p>Each shape is a DOM node. Can be styled with CSS and handled with JS events individually. Best for interactive, scalable charts. Used by D3.js.</p>
+      </div>
+      <div class="col-box">
+        <strong>Canvas (HTML5)</strong>
+        <p>Draws on a bitmap surface — not part of DOM tree. Faster for rendering thousands of elements but harder to make interactive. Used by Chart.js.</p>
+      </div>
+    </div>
+
+    <div class="highlight">Summary: HTML provides the structure and containers for visualization. The DOM is the live, in-memory tree representation of that HTML that JavaScript (and D3.js) manipulates dynamically to bind data to visual elements and create interactive charts.</div>
+    <div class="note">📝 Exam tip: Draw the DOM tree diagram. Show the D3 code example with comments. Explain the enter-update-exit pattern and the difference between SVG and Canvas DOM elements.</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:24px 0;color:var(--ink3);font-size:13px;border-top:1px solid var(--border);margin-top:12px;">
+  Chapter 5 Complete · 15 Questions Answered · GTU 3161613 — Data Analysis &amp; Visualization<br>
+  <span style="font-size:11px;margin-top:4px;display:block;">Covers: Web Tools · Spatial Data &amp; GIS · Dashboard Design · D3.js · Plotly · Tableau · HTML &amp; DOM · Web Analytics</span>
+</div>
+
+</div>
+</body>
+</html>

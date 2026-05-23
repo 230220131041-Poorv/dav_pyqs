@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAV — Chapter 6 Answer Booklet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f7f5f0;
+    --card: #ffffff;
+    --ink: #1a1a18;
+    --ink2: #4a4a45;
+    --ink3: #7a7a72;
+    --accent: #2d5a8e;
+    --accent2: #c8502a;
+    --green: #2a7a4b;
+    --border: #e0ddd6;
+    --mark3: #eaf3de;
+    --mark3t: #2a7a4b;
+    --mark4: #e6f1fb;
+    --mark4t: #185fa5;
+    --mark7: #faeeda;
+    --mark7t: #854f0b;
+    --diag-bg: #f0eee8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .page-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 32px 40px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .page-header h1 { font-size: 18px; font-weight: 600; }
+  .page-header p { font-size: 12px; opacity: 0.75; margin-top: 3px; }
+  .progress { font-size: 12px; background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; white-space: nowrap; }
+
+  .toc {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .toc-label { font-size: 11px; color: var(--ink3); text-transform: uppercase; letter-spacing: .05em; margin-right: 4px; }
+  .toc a { font-size: 12px; padding: 3px 10px; border-radius: 14px; background: var(--bg); color: var(--ink2); text-decoration: none; border: 1px solid var(--border); transition: all .15s; }
+  .toc a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    scroll-margin-top: 100px;
+  }
+
+  .q-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: #fafaf8;
+  }
+  .q-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #e6f1fb;
+    border-radius: 6px;
+    padding: 3px 8px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .q-text { font-family: 'Crimson Pro', serif; font-size: 18px; color: var(--ink); line-height: 1.4; flex: 1; }
+  .mark-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .m3 { background: var(--mark3); color: var(--mark3t); }
+  .m4 { background: var(--mark4); color: var(--mark4t); }
+  .m7 { background: var(--mark7); color: var(--mark7t); }
+
+  .exam-tags { display: flex; gap: 5px; flex-wrap: wrap; padding: 8px 24px 12px; background: #fafaf8; border-bottom: 1px solid var(--border); }
+  .exam-tag { font-size: 10px; padding: 2px 8px; border-radius: 8px; background: var(--bg); color: var(--ink3); border: 1px solid var(--border); }
+
+  .q-body { padding: 24px; }
+
+  h3 { font-size: 14px; font-weight: 600; color: var(--accent); margin: 20px 0 8px; text-transform: uppercase; letter-spacing: .04em; }
+  h3:first-child { margin-top: 0; }
+  h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin: 14px 0 6px; }
+
+  p { margin-bottom: 10px; color: var(--ink2); }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { padding-left: 20px; margin-bottom: 10px; color: var(--ink2); }
+  li { margin-bottom: 5px; }
+
+  .highlight {
+    background: linear-gradient(to right, #fffbe6, #fff);
+    border-left: 3px solid var(--accent2);
+    padding: 10px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .formula {
+    font-family: 'DM Mono', monospace;
+    background: #f0eee8;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 12px 0;
+    color: var(--accent);
+    overflow-x: auto;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th { background: var(--accent); color: #fff; padding: 8px 12px; text-align: left; font-weight: 500; }
+  td { padding: 7px 12px; border-bottom: 1px solid var(--border); color: var(--ink2); }
+  tr:nth-child(even) td { background: #fafaf8; }
+
+  .diagram {
+    background: var(--diag-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 18px 0;
+    text-align: center;
+  }
+  .diagram-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ink3);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .diagram svg { max-width: 100%; }
+
+  .step-list { counter-reset: step; list-style: none; padding: 0; }
+  .step-list li {
+    counter-increment: step;
+    padding: 8px 12px 8px 44px;
+    position: relative;
+    margin-bottom: 6px;
+    background: var(--bg);
+    border-radius: 8px;
+    color: var(--ink2);
+    font-size: 14px;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    width: 22px; height: 22px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .col-box { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+  .col-box strong { font-size: 13px; color: var(--ink); display: block; margin-bottom: 6px; }
+  .col-box p, .col-box li { font-size: 13px; }
+
+  .note {
+    background: #eaf3de;
+    border-left: 3px solid var(--green);
+    padding: 8px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: var(--green);
+    margin: 10px 0;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .page-header { padding: 18px 16px; }
+    .toc { padding: 12px 16px; }
+    .container { padding: 20px 12px 60px; }
+    .q-header { padding: 14px 16px 12px; }
+    .q-body { padding: 16px; }
+    .two-col { grid-template-columns: 1fr; }
+    .exam-tags { padding: 8px 16px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div>
+    <h1>Data Analysis &amp; Visualization — 3161613</h1>
+    <p>Chapter 6: Data Science for E-Commerce Growth | GTU Exam Answers</p>
+  </div>
+  <span class="progress">6 Questions Answered</span>
+</div>
+
+<div class="toc">
+  <span class="toc-label">Jump to:</span>
+  <a href="#q1">Q1 Data Science for Growth</a>
+  <a href="#q2">Q2 Customer Retention &amp; Churn</a>
+  <a href="#q3">Q3 ML for Fraud Detection</a>
+  <a href="#q4">Q4 Applications of Data Science</a>
+  <a href="#q5">Q5 AARRR Sales Funnel</a>
+  <a href="#q6">Q6 Importance of Data Analysis</a>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════════════════════ Q1 ═══ -->
+<div class="q-card" id="q1">
+  <div class="q-header">
+    <span class="q-num">Q 1</span>
+    <span class="q-text">Explain data science for driving growth in E-commerce.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'23</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Data Science in E-Commerce?</h3>
+    <p>Data science in e-commerce refers to the application of statistical analysis, machine learning, and data visualization techniques to the massive amounts of data generated by online retail platforms — including customer behavior, transactions, search queries, reviews, and logistics — to make smarter business decisions and drive measurable growth.</p>
+    <p>E-commerce platforms like Amazon, Flipkart, and Myntra generate terabytes of data daily. Data science converts this raw data into revenue-generating strategies.</p>
+
+    <h3>Key Ways Data Science Drives E-Commerce Growth</h3>
+
+    <h4>1. Personalized Product Recommendations</h4>
+    <p>Recommendation engines analyze a customer's browsing history, purchase history, and behavior of similar users to suggest products they are likely to buy.</p>
+    <ul>
+      <li><strong>Collaborative Filtering:</strong> "Customers like you also bought X"</li>
+      <li><strong>Content-Based Filtering:</strong> "Because you viewed Y, you may like Z"</li>
+      <li><strong>Impact:</strong> Amazon attributes ~35% of its revenue to its recommendation engine.</li>
+    </ul>
+
+    <h4>2. Dynamic Pricing</h4>
+    <p>Machine learning models adjust product prices in real-time based on demand, competitor prices, time of day, user segment, and inventory levels.</p>
+    <ul>
+      <li>Airlines and hotels use this heavily (surge pricing)</li>
+      <li>E-commerce sites apply it during flash sales and festive seasons</li>
+      <li>Maximizes revenue per unit without losing price-sensitive customers</li>
+    </ul>
+
+    <h4>3. Customer Segmentation</h4>
+    <p>Clustering algorithms (K-Means, DBSCAN) group customers into segments based on purchasing behavior, demographics, and lifetime value (RFM analysis — Recency, Frequency, Monetary).</p>
+    <ul>
+      <li>High-value customers receive premium loyalty offers</li>
+      <li>At-risk customers receive win-back discounts</li>
+      <li>New customers receive onboarding incentives</li>
+    </ul>
+
+    <h4>4. Demand Forecasting &amp; Inventory Management</h4>
+    <p>Time series models (ARIMA, Prophet, LSTM) predict future demand for each product, allowing businesses to maintain optimal inventory levels.</p>
+    <ul>
+      <li>Prevents stockouts (lost sales) and overstock (wasted capital)</li>
+      <li>Helps plan procurement and warehouse capacity ahead of peak seasons</li>
+    </ul>
+
+    <h4>5. Marketing Campaign Optimization</h4>
+    <p>A/B testing and multi-armed bandit algorithms determine which ad creatives, email subject lines, or landing page designs convert best. Predictive models identify which customer segments to target for each campaign.</p>
+
+    <h4>6. Search &amp; Discovery Optimization</h4>
+    <p>Natural Language Processing (NLP) improves on-site search by understanding user intent even with misspellings or vague queries. Better search results mean higher add-to-cart rates.</p>
+
+    <h4>7. Sentiment Analysis &amp; Review Mining</h4>
+    <p>NLP models analyze customer reviews and social media mentions to extract product feedback, identify quality issues early, and understand brand perception.</p>
+
+    <div class="diagram">
+      <div class="diagram-title">Data Science Growth Flywheel in E-Commerce</div>
+      <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs>
+          <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#2d5a8e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <!-- Center -->
+        <ellipse cx="340" cy="130" rx="70" ry="45" fill="#2d5a8e"/>
+        <text x="340" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">Data Science</text>
+        <text x="340" y="143" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#cce0f5">E-Commerce</text>
+        <!-- Surrounding nodes -->
+        <!-- Top -->
+        <rect x="255" y="10" width="170" height="40" rx="8" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.2"/>
+        <text x="340" y="34" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#2a7a4b">Personalized Recommendations</text>
+        <line x1="340" y1="85" x2="340" y2="50" stroke="#2a7a4b" stroke-width="1.5" marker-end="url(#arr1)"/>
+        <!-- Right -->
+        <rect x="530" y="60" width="140" height="40" rx="8" fill="#e6f1fb" stroke="#185fa5" stroke-width="1.2"/>
+        <text x="600" y="78" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#185fa5">Dynamic</text>
+        <text x="600" y="93" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#185fa5">Pricing</text>
+        <line x1="410" y1="105" x2="530" y2="90" stroke="#185fa5" stroke-width="1.5" marker-end="url(#arr1)"/>
+        <!-- Bottom right -->
+        <rect x="500" y="170" width="160" height="40" rx="8" fill="#faeeda" stroke="#854f0b" stroke-width="1.2"/>
+        <text x="580" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#854f0b">Demand</text>
+        <text x="580" y="202" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#854f0b">Forecasting</text>
+        <line x1="405" y1="155" x2="500" y2="180" stroke="#854f0b" stroke-width="1.5" marker-end="url(#arr1)"/>
+        <!-- Bottom left -->
+        <rect x="20" y="170" width="160" height="40" rx="8" fill="#fcebeb" stroke="#a32d2d" stroke-width="1.2"/>
+        <text x="100" y="188" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#a32d2d">Fraud</text>
+        <text x="100" y="202" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#a32d2d">Detection</text>
+        <line x1="275" y1="155" x2="180" y2="180" stroke="#a32d2d" stroke-width="1.5" marker-end="url(#arr1)"/>
+        <!-- Left -->
+        <rect x="10" y="60" width="155" height="40" rx="8" fill="#eeedfe" stroke="#534ab7" stroke-width="1.2"/>
+        <text x="87" y="78" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#534ab7">Customer</text>
+        <text x="87" y="93" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#534ab7">Segmentation</text>
+        <line x1="270" y1="105" x2="165" y2="90" stroke="#534ab7" stroke-width="1.5" marker-end="url(#arr1)"/>
+        <!-- Bottom center -->
+        <rect x="255" y="215" width="170" height="40" rx="8" fill="#f0e8fb" stroke="#7a3ab7" stroke-width="1.2"/>
+        <text x="340" y="233" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#7a3ab7">Sentiment &amp; Review</text>
+        <text x="340" y="248" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="600" fill="#7a3ab7">Analysis (NLP)</text>
+        <line x1="340" y1="175" x2="340" y2="215" stroke="#7a3ab7" stroke-width="1.5" marker-end="url(#arr1)"/>
+      </svg>
+    </div>
+
+    <h3>Business Impact — Key Metrics Improved by Data Science</h3>
+    <table>
+      <tr><th>Business Goal</th><th>Data Science Technique</th><th>Outcome</th></tr>
+      <tr><td>Increase Revenue</td><td>Recommendation Engine</td><td>Higher average order value</td></tr>
+      <tr><td>Reduce Costs</td><td>Demand Forecasting</td><td>Lower inventory holding costs</td></tr>
+      <tr><td>Retain Customers</td><td>Churn Prediction Model</td><td>Reduced customer attrition</td></tr>
+      <tr><td>Prevent Losses</td><td>Fraud Detection ML</td><td>Fewer fraudulent transactions</td></tr>
+      <tr><td>Improve Marketing ROI</td><td>A/B Testing, Segmentation</td><td>Better-targeted campaigns</td></tr>
+      <tr><td>Faster Delivery</td><td>Route Optimization (ML)</td><td>Improved customer satisfaction</td></tr>
+    </table>
+
+    <div class="note">📝 Exam tip: Structure your answer around 5–6 applications with a real-world example for each. The growth flywheel diagram earns extra marks. Always mention Amazon as a reference example.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q2 ═══ -->
+<div class="q-card" id="q2">
+  <div class="q-header">
+    <span class="q-num">Q 2</span>
+    <span class="q-text">Evaluate the role of data science in customer retention for e-commerce. What strategies reduce churn?</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Customer Churn?</h3>
+    <p><strong>Customer churn</strong> (also called customer attrition) is when a customer stops purchasing from an e-commerce platform and moves to a competitor. Retaining existing customers is far more cost-effective than acquiring new ones — research shows acquiring a new customer costs 5–7× more than retaining an existing one.</p>
+    <div class="formula">Churn Rate = (Customers Lost in Period / Customers at Start of Period) × 100%</div>
+
+    <h3>Role of Data Science in Customer Retention</h3>
+
+    <h4>1. Churn Prediction Models</h4>
+    <p>Machine learning models analyze customer behavior patterns to identify customers who are at high risk of churning before they actually leave — giving the business time to intervene.</p>
+    <ul>
+      <li><strong>Features Used:</strong> Days since last purchase, purchase frequency, average order value, number of support complaints, app login frequency, cart abandonment rate, coupon usage decline</li>
+      <li><strong>Algorithms:</strong> Logistic Regression, Random Forest, XGBoost, Neural Networks</li>
+      <li><strong>Output:</strong> A churn probability score (0–1) for each customer. Customers above threshold (e.g., 0.7) are flagged for retention action.</li>
+    </ul>
+
+    <h4>2. RFM Analysis (Recency, Frequency, Monetary)</h4>
+    <p>RFM scoring segments customers based on three dimensions to identify loyal vs. at-risk customers:</p>
+    <table>
+      <tr><th>Dimension</th><th>Meaning</th><th>High Score = </th></tr>
+      <tr><td><strong>Recency (R)</strong></td><td>How recently did the customer buy?</td><td>Bought very recently</td></tr>
+      <tr><td><strong>Frequency (F)</strong></td><td>How often do they buy?</td><td>Buys frequently</td></tr>
+      <tr><td><strong>Monetary (M)</strong></td><td>How much do they spend?</td><td>High-value customer</td></tr>
+    </table>
+    <p>Customers with low R, low F, and declining M are at-risk churners. Data science automates this scoring for millions of customers.</p>
+
+    <h4>3. Customer Lifetime Value (CLV) Prediction</h4>
+    <p>Predictive models estimate how much revenue a customer will generate over their entire relationship with the business. High-CLV customers receive more investment in retention; low-CLV customers may not be worth expensive retention efforts.</p>
+    <div class="formula">CLV = Average Order Value × Purchase Frequency × Customer Lifespan</div>
+
+    <h4>4. Personalized Retention Campaigns</h4>
+    <p>Data science enables hyper-personalized outreach to at-risk customers rather than generic bulk emails:</p>
+    <ul>
+      <li>Send a discount coupon specifically for the product category the customer last browsed</li>
+      <li>Trigger a "We miss you" email exactly when the customer's typical re-purchase window is expiring</li>
+      <li>Push notification with a personalized offer if the customer hasn't opened the app in 2 weeks</li>
+    </ul>
+
+    <h3>Strategies to Reduce Churn</h3>
+
+    <div class="two-col">
+      <div class="col-box">
+        <strong>Loyalty Programs</strong>
+        <p>Points-based rewards, tiered membership (Silver/Gold/Platinum), and cashback schemes incentivize repeat purchases. Data science identifies which reward types drive highest retention for each customer segment.</p>
+      </div>
+      <div class="col-box">
+        <strong>Proactive Customer Service</strong>
+        <p>Predict delivery issues before the customer complains and proactively notify them. Use NLP on support tickets to detect frustrated customers early and escalate to human agents.</p>
+      </div>
+      <div class="col-box">
+        <strong>Cart Abandonment Recovery</strong>
+        <p>ML identifies customers who abandoned carts and triggers automated reminders with increasing incentives (reminder → small discount → larger discount) to complete the purchase.</p>
+      </div>
+      <div class="col-box">
+        <strong>Subscription Models</strong>
+        <p>Prime-like subscription programs (free delivery, exclusive deals) create switching costs that significantly reduce churn. Data science identifies which customers are most likely to convert to subscriptions.</p>
+      </div>
+      <div class="col-box">
+        <strong>A/B Testing Retention Tactics</strong>
+        <p>Continuously test which retention messages, offers, and channels (email, SMS, push notification) perform best for different customer segments.</p>
+      </div>
+      <div class="col-box">
+        <strong>Feedback Loop Analysis</strong>
+        <p>Sentiment analysis on reviews and NPS (Net Promoter Score) surveys identifies specific pain points (slow delivery, poor return process) that cause churn, enabling targeted fixes.</p>
+      </div>
+    </div>
+
+    <div class="diagram">
+      <div class="diagram-title">Customer Retention Pipeline Using Data Science</div>
+      <svg viewBox="0 0 680 90" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#2d5a8e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <rect x="5"   y="20" width="105" height="50" rx="8" fill="#e6f1fb" stroke="#2d5a8e" stroke-width="1.2"/>
+        <text x="57"  y="41" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#2d5a8e">Collect</text>
+        <text x="57"  y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Behaviour Data</text>
+        <line x1="110" y1="45" x2="130" y2="45" stroke="#2d5a8e" stroke-width="1.5" marker-end="url(#arr2)"/>
+        <rect x="132" y="20" width="105" height="50" rx="8" fill="#eaf3de" stroke="#2a7a4b" stroke-width="1.2"/>
+        <text x="184" y="41" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#2a7a4b">RFM /</text>
+        <text x="184" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Segmentation</text>
+        <line x1="237" y1="45" x2="257" y2="45" stroke="#2d5a8e" stroke-width="1.5" marker-end="url(#arr2)"/>
+        <rect x="259" y="20" width="115" height="50" rx="8" fill="#faeeda" stroke="#854f0b" stroke-width="1.2"/>
+        <text x="316" y="41" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#854f0b">Churn</text>
+        <text x="316" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Prediction Model</text>
+        <line x1="374" y1="45" x2="394" y2="45" stroke="#2d5a8e" stroke-width="1.5" marker-end="url(#arr2)"/>
+        <rect x="396" y="20" width="120" height="50" rx="8" fill="#fcebeb" stroke="#a32d2d" stroke-width="1.2"/>
+        <text x="456" y="41" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#a32d2d">Flag At-Risk</text>
+        <text x="456" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Customers</text>
+        <line x1="516" y1="45" x2="536" y2="45" stroke="#2d5a8e" stroke-width="1.5" marker-end="url(#arr2)"/>
+        <rect x="538" y="20" width="135" height="50" rx="8" fill="#eeedfe" stroke="#534ab7" stroke-width="1.2"/>
+        <text x="605" y="41" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="#534ab7">Personalized</text>
+        <text x="605" y="56" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#4a4a45">Retention Campaign</text>
+      </svg>
+    </div>
+
+    <div class="note">📝 Exam tip: Define churn rate with formula, explain RFM analysis with table, describe the churn prediction ML pipeline, and list at least 4 retention strategies with examples.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q3 ═══ -->
+<div class="q-card" id="q3">
+  <div class="q-header">
+    <span class="q-num">Q 3</span>
+    <span class="q-text">Analyze the role of machine learning in detecting fraud on e-commerce platforms.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'24</span>
+  </div>
+  <div class="q-body">
+    <h3>Why is Fraud Detection Critical in E-Commerce?</h3>
+    <p>E-commerce fraud includes fake orders, stolen credit card usage, account takeovers, return fraud, and coupon abuse. It costs businesses billions in losses, chargebacks, and reputational damage. Manual review is too slow for the volume of online transactions — machine learning enables real-time, automated fraud detection at scale.</p>
+
+    <h3>Types of E-Commerce Fraud</h3>
+    <div class="two-col">
+      <div class="col-box"><strong>Payment/Card Fraud</strong><p>Using stolen credit card details to make purchases. Most common type.</p></div>
+      <div class="col-box"><strong>Account Takeover (ATO)</strong><p>Hackers gain access to a legitimate user's account using stolen credentials.</p></div>
+      <div class="col-box"><strong>Return Fraud</strong><p>Claiming refunds for products never returned, or returning different/damaged items.</p></div>
+      <div class="col-box"><strong>Fake Reviews</strong><p>Competitors or sellers post fake positive/negative reviews to manipulate rankings.</p></div>
+      <div class="col-box"><strong>Promo/Coupon Abuse</strong><p>Creating multiple fake accounts to exploit first-time user discounts repeatedly.</p></div>
+      <div class="col-box"><strong>Click Fraud</strong><p>Bots or competitors clicking on paid ads to drain advertising budgets.</p></div>
+    </div>
+
+    <h3>Machine Learning Approaches for Fraud Detection</h3>
+
+    <h4>1. Supervised Learning — Classification</h4>
+    <p>When labeled historical data (fraudulent vs. legitimate transactions) is available, supervised ML models learn patterns that distinguish fraud.</p>
+    <ul>
+      <li><strong>Logistic Regression:</strong> Baseline model; predicts probability of fraud</li>
+      <li><strong>Random Forest:</strong> Ensemble of decision trees; robust and handles class imbalance well</li>
+      <li><strong>XGBoost / Gradient Boosting:</strong> High accuracy; widely used in production fraud systems</li>
+      <li><strong>Neural Networks:</strong> Capture complex, non-linear patterns in transaction data</li>
+    </ul>
+    <p><strong>Key Challenge:</strong> Class imbalance — fraud transactions may be only 0.1% of all transactions. Techniques like SMOTE (oversampling) or cost-sensitive learning address this.</p>
+
+    <h4>2. Unsupervised Learning — Anomaly Detection</h4>
+    <p>When labeled fraud data is scarce, unsupervised models identify transactions that deviate significantly from normal behavior.</p>
+    <ul>
+      <li><strong>Isolation Forest:</strong> Isolates anomalies by randomly partitioning data; anomalies are isolated quickly</li>
+      <li><strong>Autoencoders (Deep Learning):</strong> Learn to reconstruct normal transactions; high reconstruction error = anomaly</li>
+      <li><strong>DBSCAN Clustering:</strong> Points that don't belong to any cluster are flagged as outliers/fraud</li>
+    </ul>
+
+    <h4>3. Graph-Based ML — Network Analysis</h4>
+    <p>Fraudsters often operate in rings (connected networks of fake accounts, shared payment methods, or shipping addresses). Graph neural networks (GNNs) detect these fraud rings by analyzing relationships between accounts, devices, and transactions.</p>
+
+    <h4>4. Real-Time Scoring</h4>
+    <p>Trained ML models are deployed as APIs that score every transaction in milliseconds before it is approved. Features are extracted from the transaction in real-time and passed to the model, which returns a fraud probability score. High-risk transactions are blocked or sent for manual review.</p>
+
+    <h3>Features Used in Fraud Detection Models</h3>
+    <table>
+      <tr><th>Feature Category</th><th>Examples</th></tr>
+      <tr><td>Transaction Features</td><td>Transaction amount, time of day, payment method, currency</td></tr>
+      <tr><td>Behavioral Features</td><td>Typing speed, mouse movement, time spent on page, device fingerprint</td></tr>
+      <tr><td>Historical Features</td><td>Average spend, usual purchase categories, typical delivery address</td></tr>
+      <tr><td>Network Features</td><td>IP address reputation, number of accounts from same device, shared addresses</td></tr>
+      <tr><td>Velocity Features</td><td>Number of orders placed in last 1 hour, failed payment attempts</td></tr>
+    </table>
+
+    <h3>Fraud Detection Pipeline</h3>
+    <ol class="step-list">
+      <li><strong>Data Collection:</strong> Collect transaction logs, user behavior events, device data, and IP information</li>
+      <li><strong>Feature Engineering:</strong> Create derived features (velocity, behavioral biometrics, network graph features)</li>
+      <li><strong>Model Training:</strong> Train on labeled historical fraud data using Random Forest / XGBoost</li>
+      <li><strong>Real-Time Scoring:</strong> Deploy model as REST API; score every transaction before approval</li>
+      <li><strong>Alert &amp; Action:</strong> Block high-risk transactions, challenge medium-risk with OTP/CAPTCHA, allow low-risk</li>
+      <li><strong>Feedback Loop:</strong> Confirmed fraud cases are added to training data to continuously improve the model</li>
+    </ol>
+
+    <h3>Evaluation Metrics for Fraud Models</h3>
+    <table>
+      <tr><th>Metric</th><th>Why It Matters for Fraud</th></tr>
+      <tr><td><strong>Precision</strong></td><td>Of all flagged transactions, how many were truly fraudulent? (Low precision = blocking legitimate customers)</td></tr>
+      <tr><td><strong>Recall (Sensitivity)</strong></td><td>Of all actual fraud, how many did the model catch? (Low recall = missed fraud losses)</td></tr>
+      <tr><td><strong>F1-Score</strong></td><td>Harmonic mean of Precision and Recall; best single metric for imbalanced classes</td></tr>
+      <tr><td><strong>AUC-ROC</strong></td><td>Overall discriminative ability of the model across all thresholds</td></tr>
+    </table>
+
+    <div class="highlight">The key trade-off in fraud detection: a model that is too aggressive blocks legitimate customers (poor experience); a model that is too lenient misses fraud (financial loss). The threshold is tuned based on business risk appetite.</div>
+    <div class="note">📝 Exam tip: Cover supervised vs unsupervised approaches, list the feature types used, describe the real-time pipeline, and mention the precision-recall trade-off. This question tests depth of ML knowledge.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q4 ═══ -->
+<div class="q-card" id="q4">
+  <div class="q-header">
+    <span class="q-num">Q 4</span>
+    <span class="q-text">Discuss applications of data science in E-commerce.</span>
+    <span class="mark-badge m7">7 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'23</span>
+  </div>
+  <div class="q-body">
+    <h3>Overview</h3>
+    <p>Data science is embedded in virtually every aspect of modern e-commerce — from the moment a customer lands on the website to post-delivery support. Below are the major application areas with detailed explanation.</p>
+
+    <h4>1. Recommendation Systems</h4>
+    <p>The most visible application of data science in e-commerce. Recommendation engines power "Customers also bought", "Recommended for you", and "Frequently bought together" features.</p>
+    <ul>
+      <li><strong>Collaborative Filtering:</strong> Recommends based on similar users' preferences</li>
+      <li><strong>Content-Based Filtering:</strong> Recommends based on attributes of items the user liked</li>
+      <li><strong>Hybrid Systems:</strong> Combine both for better accuracy (used by Netflix, Amazon)</li>
+    </ul>
+
+    <h4>2. Price Optimization (Dynamic Pricing)</h4>
+    <p>ML algorithms continuously adjust prices based on real-time demand signals, competitor pricing (web scraping + ML), customer willingness-to-pay, and inventory levels. Ensures maximum revenue without losing customers to competitors.</p>
+
+    <h4>3. Search Engine Optimization (On-Site Search)</h4>
+    <p>NLP-powered search understands user intent, handles typos (fuzzy matching), and ranks results by predicted conversion probability rather than just keyword relevance. Elasticsearch + ML ranking models are commonly used.</p>
+
+    <h4>4. Supply Chain &amp; Logistics Optimization</h4>
+    <ul>
+      <li><strong>Demand Forecasting:</strong> Predicts how much of each product to stock at each warehouse</li>
+      <li><strong>Route Optimization:</strong> Graph algorithms (Dijkstra's, ML-based) find fastest delivery routes</li>
+      <li><strong>Delivery Time Prediction:</strong> Regression models estimate delivery ETAs shown to customers</li>
+    </ul>
+
+    <h4>5. Customer Lifetime Value (CLV) &amp; Segmentation</h4>
+    <p>Predictive CLV models help prioritize marketing spend — invest more in retaining high-CLV customers. K-Means clustering segments customers into groups for targeted marketing campaigns.</p>
+
+    <h4>6. Fraud Detection &amp; Risk Management</h4>
+    <p>Real-time ML models (Random Forest, XGBoost) score every transaction for fraud risk. Anomaly detection flags unusual behavior like bulk orders from a new account, multiple failed payment attempts, or orders shipped to unusual addresses. (See Q3 for detailed coverage.)</p>
+
+    <h4>7. Customer Support Automation</h4>
+    <ul>
+      <li><strong>Chatbots (NLP):</strong> Handle common queries (order status, return process, refund policy) without human agents — available 24/7</li>
+      <li><strong>Ticket Classification:</strong> NLP classifies incoming support tickets by issue type and routes them to the right team</li>
+      <li><strong>Sentiment Analysis:</strong> Detects negative sentiment in chat to escalate to senior agents proactively</li>
+    </ul>
+
+    <h4>8. Visual Search &amp; Image Recognition</h4>
+    <p>Convolutional Neural Networks (CNNs) allow customers to search using product images instead of text. E.g., photograph a dress you like and find similar items. Used by Pinterest, ASOS, and Flipkart.</p>
+
+    <h4>9. A/B Testing &amp; Conversion Rate Optimization</h4>
+    <p>Statistical hypothesis testing compares two versions of a webpage, email, or app feature to determine which drives more conversions. Multi-armed bandit algorithms adaptively allocate more traffic to the better-performing variant in real time.</p>
+
+    <h4>10. Review &amp; Sentiment Analysis</h4>
+    <p>NLP models extract star ratings, aspect-level sentiments (e.g., "battery life is poor" but "design is great"), and trending topics from thousands of customer reviews — giving product teams actionable feedback at scale.</p>
+
+    <table>
+      <tr><th>Application</th><th>Data Science Technique</th><th>Business Outcome</th></tr>
+      <tr><td>Recommendations</td><td>Collaborative / Content filtering</td><td>↑ Average Order Value</td></tr>
+      <tr><td>Dynamic Pricing</td><td>Regression, RL</td><td>↑ Revenue per unit</td></tr>
+      <tr><td>Demand Forecasting</td><td>ARIMA, LSTM</td><td>↓ Inventory costs</td></tr>
+      <tr><td>Fraud Detection</td><td>Random Forest, XGBoost</td><td>↓ Fraud losses</td></tr>
+      <tr><td>Churn Prediction</td><td>Logistic Regression, XGBoost</td><td>↑ Customer retention</td></tr>
+      <tr><td>Chatbots</td><td>NLP, Transformers</td><td>↓ Support costs</td></tr>
+      <tr><td>Visual Search</td><td>CNN, Computer Vision</td><td>↑ Search conversions</td></tr>
+      <tr><td>A/B Testing</td><td>Hypothesis Testing</td><td>↑ Conversion Rate</td></tr>
+    </table>
+
+    <div class="note">📝 Exam tip: List at least 7–8 applications with the technique used and the business outcome. The summary table is very effective for 7M answers and saves time.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q5 ═══ -->
+<div class="q-card" id="q5">
+  <div class="q-header">
+    <span class="q-num">Q 5</span>
+    <span class="q-text">Explain AARRR of the e-commerce sales funnel.</span>
+    <span class="mark-badge m4">4 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Sum'24</span>
+  </div>
+  <div class="q-body">
+    <h3>What is AARRR?</h3>
+    <p><strong>AARRR</strong> (pronounced "Pirate Metrics") is a framework developed by Dave McClure that defines the five key stages of a customer's lifecycle with an e-commerce business. Each stage has specific metrics that data science teams track, analyze, and optimize to drive growth.</p>
+    <p>AARRR stands for: <strong>Acquisition → Activation → Retention → Revenue → Referral</strong></p>
+
+    <div class="diagram">
+      <div class="diagram-title">AARRR E-Commerce Sales Funnel</div>
+      <svg viewBox="0 0 680 290" xmlns="http://www.w3.org/2000/svg" width="100%">
+        <!-- Funnel shapes -->
+        <!-- A1 Acquisition -->
+        <polygon points="100,10 580,10 540,62 140,62" fill="#2d5a8e"/>
+        <text x="340" y="30" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">A — ACQUISITION</text>
+        <text x="340" y="50" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#cce0f5">How do users find you? (SEO, Ads, Social, Referral)</text>
+        <!-- A2 Activation -->
+        <polygon points="140,68 540,68 500,120 180,120" fill="#185fa5"/>
+        <text x="340" y="88" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">A — ACTIVATION</text>
+        <text x="340" y="108" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#cce0f5">First good experience — Sign up, first purchase</text>
+        <!-- R1 Retention -->
+        <polygon points="180,126 500,126 460,178 220,178" fill="#2a7a4b"/>
+        <text x="340" y="146" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">R — RETENTION</text>
+        <text x="340" y="166" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#d0f0e0">Do users come back? Repeat purchases</text>
+        <!-- R2 Revenue -->
+        <polygon points="220,184 460,184 420,236 260,236" fill="#854f0b"/>
+        <text x="340" y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">R — REVENUE</text>
+        <text x="340" y="224" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#faeeda">Monetization — CLV, AOV, Upsell</text>
+        <!-- R3 Referral -->
+        <polygon points="260,242 420,242 390,280 290,280" fill="#a32d2d"/>
+        <text x="340" y="262" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#fff">R — REFERRAL</text>
+        <text x="340" y="278" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#ffd0d0">Word of mouth, reviews, NPS</text>
+      </svg>
+    </div>
+
+    <h3>Detailed Explanation of Each Stage</h3>
+
+    <h4>1. Acquisition — "How do customers find us?"</h4>
+    <p>This stage tracks all the channels through which new visitors arrive at the e-commerce platform.</p>
+    <ul>
+      <li><strong>Channels:</strong> Organic search (SEO), paid ads (Google, Facebook), social media, email campaigns, affiliate marketing, content marketing</li>
+      <li><strong>Key Metrics:</strong> Cost Per Acquisition (CPA), Click-Through Rate (CTR), traffic by channel</li>
+      <li><strong>Data Science Role:</strong> Attribution modeling determines which channel combination drove a conversion; ML optimizes ad bidding</li>
+    </ul>
+
+    <h4>2. Activation — "Do users have a great first experience?"</h4>
+    <p>Activation is when a new visitor takes their first meaningful action — creating an account, adding a product to cart, or making their first purchase.</p>
+    <ul>
+      <li><strong>Key Metrics:</strong> Sign-up rate, first purchase conversion rate, time-to-first-purchase</li>
+      <li><strong>Data Science Role:</strong> A/B testing onboarding flows; personalized welcome offers based on acquisition source</li>
+    </ul>
+
+    <h4>3. Retention — "Do users come back?"</h4>
+    <p>Retaining customers for repeat purchases is the most profitable stage. Existing customers spend 67% more than new customers on average.</p>
+    <ul>
+      <li><strong>Key Metrics:</strong> Repeat purchase rate, churn rate, Day 30/60/90 retention cohorts</li>
+      <li><strong>Data Science Role:</strong> Churn prediction models, RFM segmentation, personalized re-engagement campaigns</li>
+    </ul>
+
+    <h4>4. Revenue — "How do we maximize revenue per customer?"</h4>
+    <p>This stage focuses on increasing the value extracted from each customer — not just acquiring more customers.</p>
+    <ul>
+      <li><strong>Key Metrics:</strong> Average Order Value (AOV), Customer Lifetime Value (CLV), Revenue per Visitor</li>
+      <li><strong>Data Science Role:</strong> Upselling/cross-selling recommendations, dynamic pricing, coupon targeting</li>
+    </ul>
+
+    <h4>5. Referral — "Do customers tell others?"</h4>
+    <p>Satisfied customers become brand ambassadors — the lowest-cost customer acquisition channel.</p>
+    <ul>
+      <li><strong>Key Metrics:</strong> Net Promoter Score (NPS), referral conversion rate, viral coefficient</li>
+      <li><strong>Data Science Role:</strong> Identify high-NPS customers to enroll in referral programs; sentiment analysis on reviews</li>
+    </ul>
+
+    <table>
+      <tr><th>Stage</th><th>Key Question</th><th>Primary Metric</th><th>DS Technique</th></tr>
+      <tr><td>Acquisition</td><td>How do they find us?</td><td>CPA, CTR</td><td>Attribution modeling</td></tr>
+      <tr><td>Activation</td><td>First good experience?</td><td>Sign-up rate</td><td>A/B Testing</td></tr>
+      <tr><td>Retention</td><td>Do they come back?</td><td>Churn rate</td><td>Churn prediction</td></tr>
+      <tr><td>Revenue</td><td>How much do they spend?</td><td>CLV, AOV</td><td>Dynamic pricing, CLV model</td></tr>
+      <tr><td>Referral</td><td>Do they recommend us?</td><td>NPS, referral rate</td><td>Sentiment analysis</td></tr>
+    </table>
+
+    <div class="note">📝 Exam tip: Draw the funnel diagram and define each of the 5 stages. For each stage, mention one key metric and one data science technique. The summary table is perfect for 4M answers.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ Q6 ═══ -->
+<div class="q-card" id="q6">
+  <div class="q-header">
+    <span class="q-num">Q 6</span>
+    <span class="q-text">Explain importance of data analysis (general / e-commerce context).</span>
+    <span class="mark-badge m3">3 M</span>
+  </div>
+  <div class="exam-tags">
+    <span class="exam-tag">Win'23</span>
+  </div>
+  <div class="q-body">
+    <h3>What is Data Analysis?</h3>
+    <p><strong>Data analysis</strong> is the process of inspecting, cleaning, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.</p>
+
+    <h3>Importance of Data Analysis — General</h3>
+    <ul>
+      <li><strong>Informed Decision-Making:</strong> Data analysis replaces guesswork and intuition with evidence-based decisions. Businesses that make data-driven decisions are 23× more likely to acquire customers (McKinsey).</li>
+      <li><strong>Identifying Trends and Patterns:</strong> Analysis reveals hidden patterns in data that are not visible to the naked eye — seasonal trends, customer behavior cycles, market shifts.</li>
+      <li><strong>Problem Identification:</strong> Data analysis helps pinpoint the root cause of problems. E.g., analyzing support ticket data reveals which product feature is causing the most complaints.</li>
+      <li><strong>Performance Measurement:</strong> KPIs and metrics track whether business goals are being met and flag areas needing intervention.</li>
+      <li><strong>Risk Management:</strong> Predictive analysis identifies risks before they materialize — financial risks, supply chain disruptions, customer churn.</li>
+      <li><strong>Competitive Advantage:</strong> Businesses that effectively analyze market data gain insights into competitor strategies and emerging customer needs faster than rivals.</li>
+      <li><strong>Cost Reduction:</strong> Operational data analysis identifies inefficiencies in processes, supply chains, and resource utilization that can be eliminated.</li>
+    </ul>
+
+    <h3>Importance Specifically in E-Commerce</h3>
+    <ul>
+      <li><strong>Customer Understanding:</strong> Analyzing clickstream data, purchase history, and search queries reveals exactly what customers want — enabling hyper-personalized experiences at scale.</li>
+      <li><strong>Inventory Optimization:</strong> Demand analysis prevents costly stockouts during peak seasons and reduces overstock that ties up capital.</li>
+      <li><strong>Marketing ROI:</strong> Channel attribution analysis shows which marketing spend generates the most revenue, allowing budget reallocation from low-ROI to high-ROI channels.</li>
+      <li><strong>Pricing Strategy:</strong> Price elasticity analysis determines the optimal price point for each product to maximize either volume or margin.</li>
+      <li><strong>Real-Time Operations:</strong> E-commerce generates millions of data events per day (clicks, carts, orders). Real-time analysis enables immediate responses — a flash sale can be launched the moment competitor prices drop.</li>
+    </ul>
+
+    <div class="highlight">In e-commerce, data is a direct competitive asset. Every interaction a customer has with the platform generates data that, when analyzed, translates into better products, lower costs, and higher revenue.</div>
+
+    <div class="note">📝 Exam tip: Mention at least 5 points for the general importance, and then 3–4 specific e-commerce applications. Keep it concise for 3M — one or two lines per point is sufficient.</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:24px 0;color:var(--ink3);font-size:13px;border-top:1px solid var(--border);margin-top:12px;">
+  Chapter 6 Complete · 6 Questions Answered · GTU 3161613 — Data Analysis &amp; Visualization<br>
+  <span style="font-size:11px;margin-top:4px;display:block;">Covers: E-Commerce Growth · Customer Retention &amp; Churn · Fraud Detection · AARRR Funnel · Importance of Data Analysis</span>
+</div>
+
+</div>
+</body>
+</html>
