@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-M1G9DSDTPD');
 </script>
 <meta charset="UTF-8">
@@ -17,27 +16,27 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
   :root {
-    --bg: #e9eaf0;
-    --card: #181c27;
-    --card2: #1e2336;
-    --ink: #08080a;
-    --ink2: #303238;
-    --ink3: #323645;
-    --accent: #7c6af7;
-    --accent2: #e96b6b;
-    --green: #4ecb8d;
-    --teal: #38bdf8;
-    --border: #252c42;
-    --border2: #2e3650;
-    --mark-p: rgba(124,106,247,0.12);
-    --mark-pt: #a89cf7;
-    --mark-g: rgba(78,203,141,0.12);
-    --mark-gt: #4ecb8d;
-    --mark-o: rgba(233,107,107,0.12);
-    --mark-ot: #e96b6b;
-    --mark-t: rgba(56,189,248,0.12);
-    --mark-tt: #38bdf8;
-    --glow: 0 0 30px rgba(124,106,247,0.15);
+    --bg: #f4f5f9;
+    --card: #ffffff;
+    --card2: #f8f9fc;
+    --ink: #0f1117;
+    --ink2: #2d3142;
+    --ink3: #6b7280;
+    --accent: #5b4ee8;
+    --accent2: #d94f4f;
+    --green: #16a05e;
+    --teal: #0891b2;
+    --border: #e2e5ef;
+    --border2: #d1d5e8;
+    --mark-p: rgba(91,78,232,0.08);
+    --mark-pt: #5b4ee8;
+    --mark-g: rgba(22,160,94,0.1);
+    --mark-gt: #16a05e;
+    --mark-o: rgba(217,79,79,0.1);
+    --mark-ot: #d94f4f;
+    --mark-t: rgba(8,145,178,0.1);
+    --mark-tt: #0891b2;
+    --glow: 0 4px 24px rgba(91,78,232,0.08);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,14 +49,13 @@
     font-size: 15px;
   }
 
-  /* Subtle grid background */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: 
-      linear-gradient(rgba(124,106,247,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(124,106,247,0.03) 1px, transparent 1px);
+    background-image:
+      linear-gradient(rgba(91,78,232,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(91,78,232,0.025) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
@@ -65,7 +63,7 @@
 
   .page-header {
     position: relative;
-    background: linear-gradient(135deg, #13162b 0%, #1a1040 50%, #0f1117 100%);
+    background: linear-gradient(135deg, #eef0fb 0%, #e8e4fc 50%, #f0f4ff 100%);
     border-bottom: 1px solid var(--border2);
     padding: 36px 48px 32px;
     display: flex;
@@ -79,7 +77,7 @@
     position: absolute;
     top: -60px; right: -60px;
     width: 260px; height: 260px;
-    background: radial-gradient(circle, rgba(124,106,247,0.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(91,78,232,0.1) 0%, transparent 70%);
     pointer-events: none;
   }
   .header-chip {
@@ -88,12 +86,12 @@
     text-transform: uppercase;
     color: var(--accent);
     background: var(--mark-p);
-    border: 1px solid rgba(124,106,247,0.3);
+    border: 1px solid rgba(91,78,232,0.2);
     border-radius: 20px;
     padding: 3px 12px;
     margin-bottom: 10px;
     display: inline-block;
-    font-weight: 500;
+    font-weight: 600;
   }
   .page-header h1 {
     font-family: 'Playfair Display', serif;
@@ -110,29 +108,24 @@
     font-weight: 600;
     background: var(--mark-p);
     color: var(--mark-pt);
-    border: 1px solid rgba(124,106,247,0.25);
+    border: 1px solid rgba(91,78,232,0.2);
     padding: 6px 16px;
     border-radius: 20px;
     white-space: nowrap;
   }
-  .subject-tag {
-    font-size: 11px;
-    color: var(--ink3);
-    font-weight: 400;
-  }
+  .subject-tag { font-size: 11px; color: var(--ink3); font-weight: 400; }
 
   .toc {
-    background: var(--card);
+    background: #ffffff;
     border-bottom: 1px solid var(--border);
     padding: 14px 48px;
     display: flex;
     gap: 7px;
     flex-wrap: wrap;
     align-items: center;
-    
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   }
   .toc-label {
     font-size: 10px;
@@ -140,7 +133,7 @@
     text-transform: uppercase;
     letter-spacing: .1em;
     margin-right: 4px;
-    font-weight: 500;
+    font-weight: 600;
   }
   .toc a {
     font-size: 11.5px;
@@ -155,8 +148,8 @@
   }
   .toc a:hover {
     background: var(--mark-p);
-    color: var(--mark-pt);
-    border-color: rgba(124,106,247,0.4);
+    color: var(--accent);
+    border-color: rgba(91,78,232,0.3);
   }
 
   .container {
@@ -175,11 +168,9 @@
     overflow: hidden;
     scroll-margin-top: 80px;
     transition: border-color .2s, box-shadow .2s;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
   }
-  .q-card:hover {
-    border-color: var(--border2);
-    box-shadow: var(--glow);
-  }
+  .q-card:hover { border-color: var(--border2); box-shadow: var(--glow); }
 
   .q-header {
     display: flex;
@@ -194,7 +185,7 @@
     font-weight: 600;
     color: var(--accent);
     background: var(--mark-p);
-    border: 1px solid rgba(124,106,247,0.3);
+    border: 1px solid rgba(91,78,232,0.2);
     border-radius: 8px;
     padding: 3px 9px;
     white-space: nowrap;
@@ -218,9 +209,9 @@
     margin-top: 4px;
     letter-spacing: .03em;
   }
-  .m3 { background: var(--mark-g); color: var(--mark-gt); border: 1px solid rgba(78,203,141,0.2); }
-  .m4 { background: var(--mark-t); color: var(--mark-tt); border: 1px solid rgba(56,189,248,0.2); }
-  .m7 { background: var(--mark-o); color: var(--mark-ot); border: 1px solid rgba(233,107,107,0.2); }
+  .m3 { background: var(--mark-g); color: var(--mark-gt); border: 1px solid rgba(22,160,94,0.2); }
+  .m4 { background: var(--mark-t); color: var(--mark-tt); border: 1px solid rgba(8,145,178,0.2); }
+  .m7 { background: var(--mark-o); color: var(--mark-ot); border: 1px solid rgba(217,79,79,0.2); }
 
   .exam-tags {
     display: flex;
@@ -234,7 +225,7 @@
     font-size: 10px;
     padding: 2px 8px;
     border-radius: 8px;
-    background: rgba(255,255,255,0.04);
+    background: #f0f1f8;
     color: var(--ink3);
     border: 1px solid var(--border2);
     font-weight: 400;
@@ -244,7 +235,7 @@
 
   h3 {
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--accent);
     margin: 24px 0 10px;
     text-transform: uppercase;
@@ -274,33 +265,31 @@
 
   p { margin-bottom: 11px; color: var(--ink2); font-size: 14.5px; }
   p:last-child { margin-bottom: 0; }
-
   ul, ol { padding-left: 20px; margin-bottom: 11px; color: var(--ink2); }
   li { margin-bottom: 6px; font-size: 14px; }
   li strong { color: var(--ink); }
 
   .highlight {
-    background: linear-gradient(135deg, rgba(124,106,247,0.1), rgba(56,189,248,0.06));
+    background: linear-gradient(135deg, rgba(91,78,232,0.06), rgba(8,145,178,0.04));
+    border: 1px solid rgba(91,78,232,0.15);
     border-left: 3px solid var(--accent);
     padding: 12px 18px;
     border-radius: 0 10px 10px 0;
     margin: 14px 0;
     font-size: 14px;
     color: var(--ink);
-    border: 1px solid rgba(124,106,247,0.2);
-    border-left: 3px solid var(--accent);
   }
 
   .formula {
     font-family: 'JetBrains Mono', monospace;
-    background: #0a0d16;
-    border: 1px solid var(--border2);
+    background: #f0f4ff;
+    border: 1px solid #dde3f5;
     border-left: 3px solid var(--teal);
     border-radius: 0 10px 10px 0;
     padding: 14px 18px;
     font-size: 13px;
     margin: 14px 0;
-    color: var(--teal);
+    color: #0e5e7a;
     overflow-x: auto;
     line-height: 1.8;
   }
@@ -315,11 +304,11 @@
     border: 1px solid var(--border);
   }
   th {
-    background: rgba(124,106,247,0.15);
-    color: var(--mark-pt);
+    background: rgba(91,78,232,0.08);
+    color: var(--accent);
     padding: 9px 14px;
     text-align: left;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 12px;
     letter-spacing: .03em;
     border-bottom: 1px solid var(--border2);
@@ -331,10 +320,10 @@
     font-size: 13px;
   }
   tr:last-child td { border-bottom: none; }
-  tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+  tr:nth-child(even) td { background: #fafbff; }
 
   .diagram {
-    background: #0a0d16;
+    background: #f8f9fc;
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 22px;
@@ -347,7 +336,7 @@
     letter-spacing: .1em;
     color: var(--ink3);
     margin-bottom: 16px;
-    font-weight: 600;
+    font-weight: 700;
   }
   .diagram svg { max-width: 100%; }
 
@@ -357,26 +346,25 @@
     padding: 9px 14px 9px 48px;
     position: relative;
     margin-bottom: 7px;
-    background: rgba(255,255,255,0.03);
+    background: #fafbff;
     border: 1px solid var(--border);
     border-radius: 10px;
     color: var(--ink2);
     font-size: 14px;
     transition: background .15s;
   }
-  .step-list li:hover { background: rgba(124,106,247,0.06); }
+  .step-list li:hover { background: rgba(91,78,232,0.04); }
   .step-list li::before {
     content: counter(step);
     position: absolute;
-    left: 14px;
-    top: 9px;
+    left: 14px; top: 9px;
     width: 22px; height: 22px;
     background: var(--mark-p);
     color: var(--accent);
-    border: 1px solid rgba(124,106,247,0.3);
+    border: 1px solid rgba(91,78,232,0.2);
     border-radius: 50%;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -384,65 +372,26 @@
 
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
   .col-box {
-    background: rgba(255,255,255,0.03);
+    background: #fafbff;
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 14px 16px;
     transition: border-color .15s;
   }
   .col-box:hover { border-color: var(--border2); }
-  .col-box strong {
-    font-size: 13px;
-    color: var(--ink);
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-  }
+  .col-box strong { font-size: 13px; color: var(--ink); display: block; margin-bottom: 6px; font-weight: 600; }
   .col-box p, .col-box li { font-size: 13px; margin-bottom: 4px; }
 
-  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 14px 0; }
-
   .note {
-    background: rgba(78,203,141,0.08);
+    background: rgba(22,160,94,0.07);
+    border: 1px solid rgba(22,160,94,0.15);
     border-left: 3px solid var(--green);
     padding: 10px 16px;
     border-radius: 0 10px 10px 0;
     font-size: 13px;
-    color: var(--green);
+    color: #0f6b41;
     margin: 12px 0;
     font-weight: 500;
-    border: 1px solid rgba(78,203,141,0.15);
-    border-left: 3px solid var(--green);
-  }
-
-  .vs-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px; height: 28px;
-    background: var(--mark-o);
-    color: var(--accent2);
-    border-radius: 50%;
-    font-size: 10px;
-    font-weight: 700;
-    border: 1px solid rgba(233,107,107,0.2);
-    margin: 0 4px;
-  }
-
-  .section-divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 20px 0 14px;
-    color: var(--ink3);
-    font-size: 12px;
-    letter-spacing: .05em;
-  }
-  .section-divider::before, .section-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
   }
 
   @media (max-width: 600px) {
@@ -451,7 +400,7 @@
     .container { padding: 20px 14px 60px; }
     .q-header { padding: 16px 18px 14px; }
     .q-body { padding: 18px; }
-    .two-col, .three-col { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
     .exam-tags { padding: 8px 18px 10px; }
   }
 </style>
@@ -491,22 +440,19 @@
 
 <div class="container">
 
-<!-- ═══ Q1 ═══ -->
+<!-- Q1 -->
 <div class="q-card" id="q1">
   <div class="q-header">
     <span class="q-num">Q 1</span>
     <span class="q-text">Define classification. Differentiate cluster and classification.</span>
     <span class="mark-badge m3">3 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'23</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'23</span></div>
   <div class="q-body">
     <h3>What is Classification?</h3>
-    <p><strong>Classification</strong> is a supervised machine learning task that assigns input data into one of several predefined categories (classes) based on learned patterns from labeled training data.</p>
+    <p><strong>Classification</strong> is a supervised machine learning task that assigns input data into one of several predefined categories based on learned patterns from labeled training data.</p>
     <p><strong>Goal:</strong> Learn a mapping function f(X) → Y, where Y is a discrete class label.</p>
     <p><strong>Examples:</strong> Email → Spam or Not Spam; Tumor → Malignant or Benign; Digit image → 0–9.</p>
-
     <h3>Classification vs Clustering</h3>
     <table>
       <tr><th>Aspect</th><th>Classification</th><th>Clustering</th></tr>
@@ -518,161 +464,105 @@
       <tr><td>Algorithms</td><td>KNN, Decision Tree, SVM, NB</td><td>K-Means, DBSCAN, Hierarchical</td></tr>
       <tr><td>Example</td><td>Spam detection</td><td>Customer segmentation</td></tr>
     </table>
-
     <div class="diagram">
       <div class="diagram-title">Classification vs Clustering — Visual Contrast</div>
       <svg viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <defs>
-          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#7c6af7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-        </defs>
-        <!-- CLASSIFICATION side -->
-        <text x="170" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#a89cf7">CLASSIFICATION</text>
-        <!-- Labeled points -->
-        <circle cx="80" cy="80" r="8" fill="#4ecb8d" opacity="0.8"/>
-        <circle cx="110" cy="65" r="8" fill="#4ecb8d" opacity="0.8"/>
-        <circle cx="95" cy="100" r="8" fill="#4ecb8d" opacity="0.8"/>
-        <circle cx="200" cy="80" r="8" fill="#e96b6b" opacity="0.8"/>
-        <circle cx="230" cy="60" r="8" fill="#e96b6b" opacity="0.8"/>
-        <circle cx="215" cy="105" r="8" fill="#e96b6b" opacity="0.8"/>
-        <!-- Unknown point -->
-        <circle cx="150" cy="85" r="8" fill="none" stroke="#f7c94b" stroke-width="2" stroke-dasharray="4 2"/>
-        <text x="150" cy="88" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#f7c94b">?</text>
-        <!-- Arrow -->
-        <line x1="165" y1="85" x2="195" y2="80" stroke="#f7c94b" stroke-width="1.5" marker-end="url(#arr)"/>
-        <!-- Label boxes -->
-        <rect x="68" y="130" width="65" height="22" rx="5" fill="rgba(78,203,141,0.15)" stroke="rgba(78,203,141,0.4)" stroke-width="1"/>
-        <text x="100" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#4ecb8d">Class A</text>
-        <rect x="185" y="130" width="65" height="22" rx="5" fill="rgba(233,107,107,0.15)" stroke="rgba(233,107,107,0.4)" stroke-width="1"/>
-        <text x="217" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#e96b6b">Class B</text>
-        <text x="170" y="170" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7494">Predefined labels — Supervised</text>
-
-        <!-- Divider -->
-        <line x1="340" y1="30" x2="340" y2="165" stroke="#252c42" stroke-width="1.5" stroke-dasharray="6 4"/>
-
-        <!-- CLUSTERING side -->
-        <text x="510" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#38bdf8">CLUSTERING</text>
-        <!-- Cluster A -->
-        <ellipse cx="430" cy="85" rx="42" ry="32" fill="rgba(78,203,141,0.08)" stroke="rgba(78,203,141,0.35)" stroke-width="1.5" stroke-dasharray="5 3"/>
-        <circle cx="415" cy="78" r="7" fill="#4ecb8d" opacity="0.6"/>
-        <circle cx="440" cy="92" r="7" fill="#4ecb8d" opacity="0.6"/>
-        <circle cx="425" cy="68" r="7" fill="#4ecb8d" opacity="0.6"/>
-        <!-- Cluster B -->
-        <ellipse cx="575" cy="85" rx="42" ry="32" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.35)" stroke-width="1.5" stroke-dasharray="5 3"/>
-        <circle cx="560" cy="78" r="7" fill="#38bdf8" opacity="0.6"/>
-        <circle cx="585" cy="92" r="7" fill="#38bdf8" opacity="0.6"/>
-        <circle cx="575" cy="65" r="7" fill="#38bdf8" opacity="0.6"/>
-        <!-- Labels -->
-        <text x="430" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#4ecb8d">Cluster 1</text>
-        <text x="575" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#38bdf8">Cluster 2</text>
-        <text x="510" y="170" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7494">No labels — Unsupervised</text>
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5b4ee8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <text x="170" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#5b4ee8">CLASSIFICATION</text>
+        <circle cx="80" cy="80" r="8" fill="#16a05e" opacity="0.8"/><circle cx="110" cy="65" r="8" fill="#16a05e" opacity="0.8"/><circle cx="95" cy="100" r="8" fill="#16a05e" opacity="0.8"/>
+        <circle cx="200" cy="80" r="8" fill="#d94f4f" opacity="0.8"/><circle cx="230" cy="60" r="8" fill="#d94f4f" opacity="0.8"/><circle cx="215" cy="105" r="8" fill="#d94f4f" opacity="0.8"/>
+        <circle cx="150" cy="85" r="8" fill="none" stroke="#e6900a" stroke-width="2" stroke-dasharray="4 2"/>
+        <text x="150" y="88" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#e6900a">?</text>
+        <line x1="165" y1="85" x2="195" y2="80" stroke="#e6900a" stroke-width="1.5" marker-end="url(#arr)"/>
+        <rect x="68" y="130" width="65" height="22" rx="5" fill="rgba(22,160,94,0.12)" stroke="rgba(22,160,94,0.35)" stroke-width="1"/>
+        <text x="100" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#16a05e">Class A</text>
+        <rect x="185" y="130" width="65" height="22" rx="5" fill="rgba(217,79,79,0.12)" stroke="rgba(217,79,79,0.35)" stroke-width="1"/>
+        <text x="217" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#d94f4f">Class B</text>
+        <text x="170" y="170" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7280">Predefined labels — Supervised</text>
+        <line x1="340" y1="30" x2="340" y2="165" stroke="#e2e5ef" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="510" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#0891b2">CLUSTERING</text>
+        <ellipse cx="430" cy="85" rx="42" ry="32" fill="rgba(22,160,94,0.08)" stroke="rgba(22,160,94,0.3)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <circle cx="415" cy="78" r="7" fill="#16a05e" opacity="0.6"/><circle cx="440" cy="92" r="7" fill="#16a05e" opacity="0.6"/><circle cx="425" cy="68" r="7" fill="#16a05e" opacity="0.6"/>
+        <ellipse cx="575" cy="85" rx="42" ry="32" fill="rgba(8,145,178,0.08)" stroke="rgba(8,145,178,0.3)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <circle cx="560" cy="78" r="7" fill="#0891b2" opacity="0.6"/><circle cx="585" cy="92" r="7" fill="#0891b2" opacity="0.6"/><circle cx="575" cy="65" r="7" fill="#0891b2" opacity="0.6"/>
+        <text x="430" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#16a05e">Cluster 1</text>
+        <text x="575" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#0891b2">Cluster 2</text>
+        <text x="510" y="170" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7280">No labels — Unsupervised</text>
       </svg>
     </div>
-
     <div class="note">📌 Key: Classification uses LABELED data (supervised); Clustering finds NATURAL GROUPS in unlabeled data (unsupervised).</div>
   </div>
 </div>
 
-<!-- ═══ Q2 ═══ -->
+<!-- Q2 -->
 <div class="q-card" id="q2">
   <div class="q-header">
     <span class="q-num">Q 2</span>
     <span class="q-text">Discuss the ways to avoid overfitting in classification.</span>
     <span class="mark-badge m3">3 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'23</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'23</span></div>
   <div class="q-body">
     <h3>What is Overfitting?</h3>
-    <p>Overfitting occurs when a model learns the training data too well — including its noise and outliers — resulting in poor performance on new, unseen data. The model memorizes instead of generalizing.</p>
-
+    <p>Overfitting occurs when a model learns the training data too well — including its noise and outliers — resulting in poor performance on new, unseen data.</p>
     <div class="diagram">
       <div class="diagram-title">Underfitting vs Good Fit vs Overfitting</div>
       <svg viewBox="0 0 680 140" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <!-- Panel 1: Underfitting -->
-        <rect x="10" y="15" width="195" height="115" rx="8" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
-        <text x="107" y="32" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#38bdf8">Underfitting</text>
-        <circle cx="40" cy="115" r="4" fill="#6b7494"/><circle cx="65" cy="100" r="4" fill="#6b7494"/>
-        <circle cx="80" cy="85" r="4" fill="#6b7494"/><circle cx="110" cy="75" r="4" fill="#6b7494"/>
-        <circle cx="135" cy="90" r="4" fill="#6b7494"/><circle cx="160" cy="65" r="4" fill="#6b7494"/>
-        <circle cx="185" cy="80" r="4" fill="#6b7494"/>
-        <line x1="30" y1="110" x2="195" y2="68" stroke="#38bdf8" stroke-width="2"/>
-        <text x="107" y="135" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7494">Too simple</text>
-
-        <!-- Panel 2: Good Fit -->
-        <rect x="242" y="15" width="195" height="115" rx="8" fill="rgba(78,203,141,0.05)" stroke="rgba(78,203,141,0.3)" stroke-width="1"/>
-        <text x="339" y="32" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#4ecb8d">Good Fit ✓</text>
-        <circle cx="265" cy="110" r="4" fill="#6b7494"/><circle cx="285" cy="95" r="4" fill="#6b7494"/>
-        <circle cx="310" cy="80" r="4" fill="#6b7494"/><circle cx="340" cy="75" r="4" fill="#6b7494"/>
-        <circle cx="365" cy="82" r="4" fill="#6b7494"/><circle cx="395" cy="68" r="4" fill="#6b7494"/>
-        <circle cx="420" cy="78" r="4" fill="#6b7494"/>
-        <path d="M255,115 Q300,75 340,73 Q380,72 430,72" fill="none" stroke="#4ecb8d" stroke-width="2"/>
-        <text x="339" y="135" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#4ecb8d">Generalized well</text>
-
-        <!-- Panel 3: Overfitting -->
-        <rect x="474" y="15" width="195" height="115" rx="8" fill="rgba(233,107,107,0.05)" stroke="rgba(233,107,107,0.2)" stroke-width="1"/>
-        <text x="571" y="32" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#e96b6b">Overfitting</text>
-        <circle cx="495" cy="110" r="4" fill="#6b7494"/><circle cx="515" cy="95" r="4" fill="#6b7494"/>
-        <circle cx="540" cy="80" r="4" fill="#6b7494"/><circle cx="570" cy="75" r="4" fill="#6b7494"/>
-        <circle cx="595" cy="82" r="4" fill="#6b7494"/><circle cx="625" cy="68" r="4" fill="#6b7494"/>
-        <circle cx="650" cy="78" r="4" fill="#6b7494"/>
-        <path d="M488,113 C500,108 510,100 520,95 C528,90 533,83 542,80 C548,78 560,74 573,75 C582,76 592,83 598,81 C610,77 630,68 658,75" fill="none" stroke="#e96b6b" stroke-width="2"/>
-        <text x="571" y="135" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#e96b6b">Memorized noise</text>
+        <rect x="10" y="15" width="195" height="115" rx="8" fill="rgba(8,145,178,0.04)" stroke="rgba(8,145,178,0.2)" stroke-width="1"/>
+        <text x="107" y="32" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#0891b2">Underfitting</text>
+        <circle cx="40" cy="115" r="4" fill="#9ca3af"/><circle cx="65" cy="100" r="4" fill="#9ca3af"/><circle cx="80" cy="85" r="4" fill="#9ca3af"/><circle cx="110" cy="75" r="4" fill="#9ca3af"/><circle cx="135" cy="90" r="4" fill="#9ca3af"/><circle cx="160" cy="65" r="4" fill="#9ca3af"/><circle cx="185" cy="80" r="4" fill="#9ca3af"/>
+        <line x1="30" y1="110" x2="195" y2="68" stroke="#0891b2" stroke-width="2"/>
+        <text x="107" y="135" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7280">Too simple</text>
+        <rect x="242" y="15" width="195" height="115" rx="8" fill="rgba(22,160,94,0.04)" stroke="rgba(22,160,94,0.25)" stroke-width="1"/>
+        <text x="339" y="32" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#16a05e">Good Fit ✓</text>
+        <circle cx="265" cy="110" r="4" fill="#9ca3af"/><circle cx="285" cy="95" r="4" fill="#9ca3af"/><circle cx="310" cy="80" r="4" fill="#9ca3af"/><circle cx="340" cy="75" r="4" fill="#9ca3af"/><circle cx="365" cy="82" r="4" fill="#9ca3af"/><circle cx="395" cy="68" r="4" fill="#9ca3af"/><circle cx="420" cy="78" r="4" fill="#9ca3af"/>
+        <path d="M255,115 Q300,75 340,73 Q380,72 430,72" fill="none" stroke="#16a05e" stroke-width="2"/>
+        <text x="339" y="135" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#16a05e">Generalized well</text>
+        <rect x="474" y="15" width="195" height="115" rx="8" fill="rgba(217,79,79,0.04)" stroke="rgba(217,79,79,0.2)" stroke-width="1"/>
+        <text x="571" y="32" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#d94f4f">Overfitting</text>
+        <circle cx="495" cy="110" r="4" fill="#9ca3af"/><circle cx="515" cy="95" r="4" fill="#9ca3af"/><circle cx="540" cy="80" r="4" fill="#9ca3af"/><circle cx="570" cy="75" r="4" fill="#9ca3af"/><circle cx="595" cy="82" r="4" fill="#9ca3af"/><circle cx="625" cy="68" r="4" fill="#9ca3af"/><circle cx="650" cy="78" r="4" fill="#9ca3af"/>
+        <path d="M488,113 C500,108 510,100 520,95 C528,90 533,83 542,80 C548,78 560,74 573,75 C582,76 592,83 598,81 C610,77 630,68 658,75" fill="none" stroke="#d94f4f" stroke-width="2"/>
+        <text x="571" y="135" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#d94f4f">Memorized noise</text>
       </svg>
     </div>
-
     <h3>Ways to Avoid Overfitting</h3>
     <ol class="step-list">
-      <li><strong>Cross-Validation:</strong> Use k-fold cross-validation to evaluate model performance on multiple train/test splits. Detects overfitting before deployment.</li>
-      <li><strong>Regularization:</strong> Add a penalty term to the loss function (L1/Lasso, L2/Ridge) to shrink model coefficients and reduce complexity.</li>
+      <li><strong>Cross-Validation:</strong> Use k-fold cross-validation to evaluate model performance on multiple train/test splits.</li>
+      <li><strong>Regularization:</strong> Add a penalty term to the loss function (L1/Lasso, L2/Ridge) to reduce complexity.</li>
       <li><strong>Pruning (Decision Trees):</strong> Remove branches that have little predictive power to simplify the tree.</li>
-      <li><strong>More Training Data:</strong> More data reduces the chance of memorizing noise; the model must learn general patterns.</li>
-      <li><strong>Reduce Model Complexity:</strong> Use fewer features (feature selection), fewer layers/neurons, or simpler algorithms.</li>
-      <li><strong>Early Stopping:</strong> In iterative algorithms (neural networks), stop training when validation error starts increasing.</li>
-      <li><strong>Dropout (Neural Networks):</strong> Randomly deactivate neurons during training to prevent co-adaptation.</li>
+      <li><strong>More Training Data:</strong> More data reduces the chance of memorizing noise.</li>
+      <li><strong>Reduce Model Complexity:</strong> Use fewer features or simpler algorithms.</li>
+      <li><strong>Early Stopping:</strong> Stop training when validation error starts increasing.</li>
+      <li><strong>Dropout (Neural Networks):</strong> Randomly deactivate neurons during training.</li>
       <li><strong>Ensemble Methods:</strong> Bagging (Random Forest), Boosting average predictions to reduce variance.</li>
     </ol>
-
     <div class="note">📌 Key formula for L2 regularization: Loss = Original Loss + λ·Σ(βᵢ²) where λ controls penalty strength.</div>
   </div>
 </div>
 
-<!-- ═══ Q3 ═══ -->
+<!-- Q3 -->
 <div class="q-card" id="q3">
   <div class="q-header">
     <span class="q-num">Q 3</span>
     <span class="q-text">Discuss model overgeneralization problem in classification.</span>
     <span class="mark-badge m3">3 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'23 OR</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'23 OR</span></div>
   <div class="q-body">
     <h3>Overgeneralization (Underfitting)</h3>
-    <p><strong>Overgeneralization</strong> (also called underfitting) occurs when a model is too simple to capture the underlying patterns in the data. It generalizes too broadly and fails to learn meaningful distinctions, resulting in poor accuracy on both training and test data.</p>
-
+    <p><strong>Overgeneralization</strong> occurs when a model is too simple to capture the underlying patterns. It generalizes too broadly and fails to learn meaningful distinctions, resulting in poor accuracy on both training and test data.</p>
     <div class="two-col">
-      <div class="col-box">
-        <strong>Overfitting (Too Specific)</strong>
-        <p>Model memorizes training data including noise. High train accuracy, low test accuracy. Too complex.</p>
-      </div>
-      <div class="col-box">
-        <strong>Overgeneralization (Too General)</strong>
-        <p>Model is too simple, misses real patterns. Low accuracy on both train and test. Too naive.</p>
-      </div>
+      <div class="col-box"><strong>Overfitting (Too Specific)</strong><p>Model memorizes training data including noise. High train accuracy, low test accuracy.</p></div>
+      <div class="col-box"><strong>Overgeneralization (Too General)</strong><p>Model is too simple, misses real patterns. Low accuracy on both train and test.</p></div>
     </div>
-
     <h3>Causes of Overgeneralization</h3>
     <ul>
       <li><strong>Too simple model:</strong> Using a linear model for non-linear data</li>
       <li><strong>Insufficient features:</strong> Key predictors are missing from the training data</li>
-      <li><strong>Too much regularization:</strong> Overly penalizing the model restricts it from fitting patterns</li>
-      <li><strong>Very small training dataset:</strong> Not enough data for the model to learn meaningful patterns</li>
-      <li><strong>Choosing a large k in KNN:</strong> Very large k makes boundaries too smooth, causing overgeneralization</li>
+      <li><strong>Too much regularization:</strong> Overly penalizing the model restricts learning</li>
+      <li><strong>Very small training dataset:</strong> Not enough data for meaningful patterns</li>
+      <li><strong>Choosing a large k in KNN:</strong> Very large k makes boundaries too smooth</li>
     </ul>
-
     <h3>How to Fix Overgeneralization</h3>
     <ul>
       <li>Use a more complex/flexible model</li>
@@ -681,33 +571,26 @@
       <li>Collect more and better quality training data</li>
       <li>Tune hyperparameters (e.g., reduce k in KNN)</li>
     </ul>
-
-    <div class="highlight">
-      <strong>Bias-Variance Tradeoff:</strong> Overgeneralization = HIGH BIAS (model makes strong assumptions). Overfitting = HIGH VARIANCE (model is too sensitive to training data). The ideal model balances both.
-    </div>
+    <div class="highlight"><strong>Bias-Variance Tradeoff:</strong> Overgeneralization = HIGH BIAS. Overfitting = HIGH VARIANCE. The ideal model balances both.</div>
     <div class="note">📌 Exam tip: Contrast overfitting and overgeneralization clearly. Mention bias-variance tradeoff for full marks.</div>
   </div>
 </div>
 
-<!-- ═══ Q4 ═══ -->
+<!-- Q4 -->
 <div class="q-card" id="q4">
   <div class="q-header">
     <span class="q-num">Q 4</span>
     <span class="q-text">Differentiate supervised and unsupervised learning.</span>
     <span class="mark-badge m3">3 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'24</span><span class="exam-tag">Win'24</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'24</span><span class="exam-tag">Win'24</span></div>
   <div class="q-body">
     <h3>Supervised Learning</h3>
-    <p>In supervised learning, the model is trained on <strong>labeled data</strong> — each input has a corresponding output label. The model learns to map inputs to outputs.</p>
+    <p>The model is trained on <strong>labeled data</strong> — each input has a corresponding output label. The model learns to map inputs to outputs.</p>
     <p><strong>Examples:</strong> Classification (spam/not spam), Regression (house price prediction)</p>
-
     <h3>Unsupervised Learning</h3>
-    <p>In unsupervised learning, the model is trained on <strong>unlabeled data</strong>. It finds hidden patterns, structures, or groupings on its own without any guidance.</p>
+    <p>The model is trained on <strong>unlabeled data</strong>. It finds hidden patterns, structures, or groupings on its own without any guidance.</p>
     <p><strong>Examples:</strong> Clustering (customer segments), Dimensionality Reduction (PCA)</p>
-
     <table>
       <tr><th>Feature</th><th>Supervised Learning</th><th>Unsupervised Learning</th></tr>
       <tr><td>Labels</td><td>Required (labeled data)</td><td>Not required</td></tr>
@@ -718,81 +601,33 @@
       <tr><td>Data needed</td><td>Large labeled dataset</td><td>Any data (labeled/unlabeled)</td></tr>
       <tr><td>Use case</td><td>Classification, Regression</td><td>Clustering, Association, DR</td></tr>
     </table>
-
-    <div class="diagram">
-      <div class="diagram-title">Supervised vs Unsupervised Learning Flow</div>
-      <svg viewBox="0 0 680 130" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <defs>
-          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#7c6af7" stroke-width="1.5" stroke-linecap="round"/>
-          </marker>
-        </defs>
-        <!-- Supervised row -->
-        <text x="30" y="38" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#a89cf7">Supervised</text>
-        <rect x="30" y="44" width="90" height="32" rx="6" fill="rgba(78,203,141,0.12)" stroke="rgba(78,203,141,0.3)" stroke-width="1"/>
-        <text x="75" y="63" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#4ecb8d">Labeled Data</text>
-        <line x1="122" y1="60" x2="145" y2="60" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr2)"/>
-        <rect x="148" y="44" width="80" height="32" rx="6" fill="rgba(124,106,247,0.1)" stroke="rgba(124,106,247,0.3)" stroke-width="1"/>
-        <text x="188" y="63" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#a89cf7">ML Model</text>
-        <line x1="230" y1="60" x2="253" y2="60" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr2)"/>
-        <rect x="256" y="44" width="100" height="32" rx="6" fill="rgba(233,107,107,0.1)" stroke="rgba(233,107,107,0.3)" stroke-width="1"/>
-        <text x="306" y="63" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#e96b6b">Predictions</text>
-        <line x1="358" y1="60" x2="380" y2="60" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr2)"/>
-        <rect x="383" y="44" width="110" height="32" rx="6" fill="rgba(56,189,248,0.1)" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
-        <text x="438" y="63" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#38bdf8">Compare w/ Labels</text>
-        <line x1="495" y1="60" x2="518" y2="60" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr2)"/>
-        <rect x="521" y="44" width="90" height="32" rx="6" fill="rgba(78,203,141,0.15)" stroke="rgba(78,203,141,0.4)" stroke-width="1"/>
-        <text x="566" y="63" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#4ecb8d">Update Model</text>
-
-        <!-- Unsupervised row -->
-        <text x="30" y="108" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#38bdf8">Unsupervised</text>
-        <!-- wait - rethink layout -->
-        <rect x="30" y="112" width="110" height="14" rx="3" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
-        <text x="85" y="123" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#38bdf8">Unlabeled Data →</text>
-        <rect x="155" y="112" width="80" height="14" rx="3" fill="rgba(124,106,247,0.08)" stroke="rgba(124,106,247,0.2)" stroke-width="1"/>
-        <text x="195" y="123" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#a89cf7">Algorithm →</text>
-        <rect x="250" y="112" width="160" height="14" rx="3" fill="rgba(233,107,107,0.08)" stroke="rgba(233,107,107,0.2)" stroke-width="1"/>
-        <text x="330" y="123" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#e96b6b">Patterns / Clusters (No Label Check)</text>
-      </svg>
-    </div>
   </div>
 </div>
 
-<!-- ═══ Q5 ═══ -->
+<!-- Q5 -->
 <div class="q-card" id="q5">
   <div class="q-header">
     <span class="q-num">Q 5</span>
     <span class="q-text">Discuss overfitting problem.</span>
     <span class="mark-badge m3">3 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Win'24</span><span class="exam-tag">Sum'25</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Win'24</span><span class="exam-tag">Sum'25</span></div>
   <div class="q-body">
     <h3>Overfitting Problem</h3>
-    <p><strong>Overfitting</strong> is a modeling error where a machine learning model learns the training data too precisely — including its noise and random fluctuations — and fails to generalize to new unseen data. The model performs excellently on training data but poorly on test/validation data.</p>
-
+    <p><strong>Overfitting</strong> is a modeling error where a model learns the training data too precisely — including noise — and fails to generalize to new unseen data. The model performs excellently on training data but poorly on test/validation data.</p>
     <h3>Causes of Overfitting</h3>
     <ul>
-      <li><strong>Model too complex:</strong> Too many parameters relative to the number of training samples</li>
-      <li><strong>Insufficient training data:</strong> Small dataset forces the model to memorize examples</li>
-      <li><strong>Training for too long:</strong> Iterative models (neural networks) over-train on the same data</li>
+      <li><strong>Model too complex:</strong> Too many parameters relative to training samples</li>
+      <li><strong>Insufficient training data:</strong> Small dataset forces memorization</li>
+      <li><strong>Training for too long:</strong> Iterative models over-train on the same data</li>
       <li><strong>Noisy features:</strong> Irrelevant or redundant features confuse the model</li>
       <li><strong>No regularization:</strong> Without penalty, models grow unchecked in complexity</li>
     </ul>
-
     <h3>How to Detect Overfitting</h3>
     <div class="two-col">
-      <div class="col-box">
-        <strong>Training vs Validation Accuracy</strong>
-        <p>Training accuracy: 99% | Validation accuracy: 65% → Clear sign of overfitting.</p>
-      </div>
-      <div class="col-box">
-        <strong>Learning Curves</strong>
-        <p>Training error decreases but validation error stays high or increases — shows the gap (overfitting region).</p>
-      </div>
+      <div class="col-box"><strong>Training vs Validation Accuracy</strong><p>Training accuracy: 99% | Validation accuracy: 65% → Clear sign of overfitting.</p></div>
+      <div class="col-box"><strong>Learning Curves</strong><p>Training error decreases but validation error stays high or increases.</p></div>
     </div>
-
     <h3>Solutions</h3>
     <ul>
       <li>Use more training data</li>
@@ -802,7 +637,6 @@
       <li>Feature selection / dimensionality reduction</li>
       <li>Early stopping &amp; dropout (neural networks)</li>
     </ul>
-
     <div class="highlight">
       High Training Accuracy + Low Test Accuracy = <strong>Overfitting</strong><br>
       Low Training Accuracy + Low Test Accuracy = <strong>Underfitting (Overgeneralization)</strong>
@@ -810,39 +644,25 @@
   </div>
 </div>
 
-<!-- ═══ Q6 ═══ -->
+<!-- Q6 -->
 <div class="q-card" id="q6">
   <div class="q-header">
     <span class="q-num">Q 6</span>
     <span class="q-text">Write a note on nearest neighbor analysis.</span>
     <span class="mark-badge m3">3 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'25 OR</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'25 OR</span></div>
   <div class="q-body">
     <h3>Nearest Neighbor Analysis</h3>
-    <p><strong>Nearest Neighbor Analysis</strong> is a simple yet powerful technique used in classification and regression that makes predictions based on the similarity of data points in the feature space. The core idea: similar inputs should produce similar outputs.</p>
-
-    <h3>Core Concept</h3>
-    <p>Given a new (unknown) data point, the algorithm finds the most similar (nearest) data points in the training dataset based on a <strong>distance measure</strong>, and uses their labels to predict the output.</p>
-
+    <p><strong>Nearest Neighbor Analysis</strong> is a technique used in classification and regression that makes predictions based on the similarity of data points in the feature space. The core idea: similar inputs should produce similar outputs.</p>
     <div class="two-col">
-      <div class="col-box">
-        <strong>Classification</strong>
-        <p>The majority class among the k nearest neighbors is assigned to the new point (majority voting).</p>
-      </div>
-      <div class="col-box">
-        <strong>Regression</strong>
-        <p>The average value of the k nearest neighbors is used as the predicted output.</p>
-      </div>
+      <div class="col-box"><strong>Classification</strong><p>The majority class among the k nearest neighbors is assigned to the new point (majority voting).</p></div>
+      <div class="col-box"><strong>Regression</strong><p>The average value of the k nearest neighbors is used as the predicted output.</p></div>
     </div>
-
     <h3>Distance Measures Used</h3>
     <div class="formula">Euclidean: d = √[Σ(xᵢ - yᵢ)²]
 Manhattan: d = Σ|xᵢ - yᵢ|
 Minkowski: d = [Σ|xᵢ - yᵢ|ᵖ]^(1/p)</div>
-
     <h3>Applications</h3>
     <ul>
       <li>Recommendation systems (find users similar to you)</li>
@@ -850,25 +670,21 @@ Minkowski: d = [Σ|xᵢ - yᵢ|ᵖ]^(1/p)</div>
       <li>Anomaly detection (far neighbors = outliers)</li>
       <li>Medical diagnosis (find similar patient cases)</li>
     </ul>
-
-    <div class="note">📌 Nearest neighbor analysis is the foundation of KNN algorithm. It is non-parametric (no model trained) and instance-based (lazy learning).</div>
+    <div class="note">📌 Nearest neighbor analysis is the foundation of KNN. It is non-parametric and instance-based (lazy learning).</div>
   </div>
 </div>
 
-<!-- ═══ Q7 ═══ -->
+<!-- Q7 -->
 <div class="q-card" id="q7">
   <div class="q-header">
     <span class="q-num">Q 7</span>
     <span class="q-text">Discuss working of classification in brief.</span>
     <span class="mark-badge m3">3 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'25</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'25</span></div>
   <div class="q-body">
     <h3>Classification — Working Overview</h3>
     <p>Classification is a two-phase process: <strong>Training Phase</strong> and <strong>Testing Phase</strong>.</p>
-
     <h3>Phase 1 — Training Phase</h3>
     <ol class="step-list">
       <li>Collect and preprocess labeled training data (handle missing values, normalization, encoding)</li>
@@ -876,7 +692,6 @@ Minkowski: d = [Σ|xᵢ - yᵢ|ᵖ]^(1/p)</div>
       <li>Train the model by learning patterns and boundaries from labeled data</li>
       <li>Evaluate model on validation data; tune hyperparameters</li>
     </ol>
-
     <h3>Phase 2 — Testing / Prediction Phase</h3>
     <ol class="step-list">
       <li>Input a new unlabeled data instance</li>
@@ -884,34 +699,6 @@ Minkowski: d = [Σ|xᵢ - yᵢ|ᵖ]^(1/p)</div>
       <li>Model predicts the class label based on learned patterns</li>
       <li>Evaluate performance: Accuracy, Precision, Recall, F1-Score</li>
     </ol>
-
-    <div class="diagram">
-      <div class="diagram-title">Classification Workflow</div>
-      <svg viewBox="0 0 680 80" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <defs>
-          <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#7c6af7" stroke-width="1.5" stroke-linecap="round"/>
-          </marker>
-        </defs>
-        <rect x="10" y="20" width="100" height="36" rx="7" fill="rgba(78,203,141,0.12)" stroke="rgba(78,203,141,0.3)" stroke-width="1"/>
-        <text x="60" y="41" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#4ecb8d">Labeled Data</text>
-        <line x1="112" y1="38" x2="132" y2="38" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr3)"/>
-        <rect x="134" y="20" width="110" height="36" rx="7" fill="rgba(124,106,247,0.1)" stroke="rgba(124,106,247,0.3)" stroke-width="1"/>
-        <text x="189" y="41" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#a89cf7">Training Model</text>
-        <line x1="246" y1="38" x2="266" y2="38" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr3)"/>
-        <rect x="268" y="20" width="110" height="36" rx="7" fill="rgba(56,189,248,0.1)" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
-        <text x="323" y="41" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#38bdf8">Learned Classifier</text>
-        <line x1="380" y1="38" x2="400" y2="38" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr3)"/>
-        <rect x="402" y="20" width="100" height="36" rx="7" fill="rgba(233,107,107,0.1)" stroke="rgba(233,107,107,0.3)" stroke-width="1"/>
-        <text x="452" y="34" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#e96b6b">New</text>
-        <text x="452" y="49" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#e96b6b">Instance</text>
-        <line x1="504" y1="38" x2="524" y2="38" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr3)"/>
-        <rect x="526" y="20" width="140" height="36" rx="7" fill="rgba(78,203,141,0.15)" stroke="rgba(78,203,141,0.4)" stroke-width="1"/>
-        <text x="596" y="34" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#4ecb8d">Predicted</text>
-        <text x="596" y="49" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#4ecb8d">Class Label</text>
-      </svg>
-    </div>
-
     <h3>Evaluation Metrics</h3>
     <div class="formula">Accuracy = (TP + TN) / (TP + TN + FP + FN)
 Precision = TP / (TP + FP)
@@ -920,101 +707,72 @@ F1-Score  = 2 × (Precision × Recall) / (Precision + Recall)</div>
   </div>
 </div>
 
-<!-- ═══ Q8 ═══ -->
+<!-- Q8 -->
 <div class="q-card" id="q8">
   <div class="q-header">
     <span class="q-num">Q 8</span>
     <span class="q-text">Explain working of average nearest neighbor (ANN) algorithm with example.</span>
     <span class="mark-badge m4">4 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'23</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'23</span></div>
   <div class="q-body">
     <h3>Average Nearest Neighbor (ANN) Algorithm</h3>
-    <p>The <strong>Average Nearest Neighbor</strong> algorithm extends the nearest neighbor concept by using multiple neighbors and <strong>averaging</strong> their values instead of taking just one nearest neighbor. It reduces the effect of noise from any single neighbor.</p>
-
+    <p>ANN extends nearest neighbor by using multiple neighbors and <strong>averaging</strong> their values instead of taking just one nearest neighbor. It reduces the effect of noise from any single neighbor.</p>
     <h3>Working Steps</h3>
     <ol class="step-list">
       <li>Select the number of neighbors <strong>k</strong></li>
       <li>For a new query point Q, calculate the distance to all training points</li>
       <li>Sort all training points by distance (ascending)</li>
       <li>Select the k nearest neighbors</li>
-      <li>For <strong>regression:</strong> Calculate the <strong>average</strong> of the k neighbors' output values → that is the prediction</li>
+      <li>For <strong>regression:</strong> Calculate the <strong>average</strong> of the k neighbors' output values</li>
       <li>For <strong>classification:</strong> Take the majority vote among k neighbors</li>
     </ol>
-
     <h3>Example — Regression using ANN (k=3)</h3>
-    <p>Predict the price of a house with area = 1600 sq ft. Training data:</p>
+    <p>Predict the price of a house with area = 1600 sq ft.</p>
     <table>
       <tr><th>House</th><th>Area (sq ft)</th><th>Price (₹ Lakh)</th><th>Distance from 1600</th></tr>
-      <tr><td>A</td><td>1400</td><td>45</td><td>|1600–1400| = 200</td></tr>
-      <tr><td>B</td><td>1550</td><td>52</td><td>|1600–1550| = 50 ✓</td></tr>
-      <tr><td>C</td><td>1620</td><td>58</td><td>|1600–1620| = 20 ✓</td></tr>
-      <tr><td>D</td><td>1700</td><td>62</td><td>|1600–1700| = 100 ✓</td></tr>
-      <tr><td>E</td><td>2000</td><td>80</td><td>|1600–2000| = 400</td></tr>
+      <tr><td>A</td><td>1400</td><td>45</td><td>200</td></tr>
+      <tr><td>B</td><td>1550</td><td>52</td><td>50 ✓</td></tr>
+      <tr><td>C</td><td>1620</td><td>58</td><td>20 ✓</td></tr>
+      <tr><td>D</td><td>1700</td><td>62</td><td>100 ✓</td></tr>
+      <tr><td>E</td><td>2000</td><td>80</td><td>400</td></tr>
     </table>
     <p><strong>k=3 Nearest Neighbors:</strong> C (20), B (50), D (100)</p>
     <div class="formula">Average Price = (58 + 52 + 62) / 3 = 172 / 3 = 57.33 ₹ Lakh</div>
     <div class="highlight">Predicted price for a 1600 sq ft house = <strong>₹57.33 Lakh</strong></div>
-
-    <h3>Advantage over Single NN</h3>
-    <p>Averaging k neighbors reduces the impact of a single noisy/outlier neighbor. It provides a smoother and more stable prediction.</p>
-
-    <div class="note">📌 ANN is essentially KNN — the term "Average" emphasizes the averaging step for regression tasks. For classification, it uses majority vote.</div>
+    <div class="note">📌 ANN is essentially KNN — the term "Average" emphasizes the averaging step for regression tasks.</div>
   </div>
 </div>
 
-<!-- ═══ Q9 ═══ -->
+<!-- Q9 -->
 <div class="q-card" id="q9">
   <div class="q-header">
     <span class="q-num">Q 9</span>
     <span class="q-text">Explain the basic concept and usage of nearest neighbor analysis.</span>
     <span class="mark-badge m4">4 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Win'24</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Win'24</span></div>
   <div class="q-body">
-    <h3>Basic Concept of Nearest Neighbor Analysis</h3>
-    <p>The <strong>Nearest Neighbor</strong> principle is based on the assumption: <em>"Objects that are close to each other in the feature space are likely to belong to the same class or have similar output values."</em></p>
-    <p>The algorithm works in the <strong>feature space</strong> — a multi-dimensional space where each axis represents a feature of the data.</p>
-
-    <h3>Key Terminology</h3>
+    <h3>Basic Concept</h3>
+    <p>Based on the assumption: <em>"Objects that are close to each other in the feature space are likely to belong to the same class or have similar output values."</em></p>
     <div class="two-col">
-      <div class="col-box">
-        <strong>Feature Space</strong>
-        <p>The n-dimensional space formed by all features. Each data point is a position in this space.</p>
-      </div>
-      <div class="col-box">
-        <strong>Distance Metric</strong>
-        <p>A function that measures "closeness" between two points. The choice of metric affects results significantly.</p>
-      </div>
-      <div class="col-box">
-        <strong>Query Point</strong>
-        <p>The new, unknown data point for which we want to predict the label or value.</p>
-      </div>
-      <div class="col-box">
-        <strong>k (Neighbors)</strong>
-        <p>Number of nearest neighbors to consider. Small k = sensitive; Large k = smooth but may underfit.</p>
-      </div>
+      <div class="col-box"><strong>Feature Space</strong><p>The n-dimensional space formed by all features. Each data point is a position in this space.</p></div>
+      <div class="col-box"><strong>Distance Metric</strong><p>A function that measures "closeness" between two points.</p></div>
+      <div class="col-box"><strong>Query Point</strong><p>The new, unknown data point for which we want to predict the label or value.</p></div>
+      <div class="col-box"><strong>k (Neighbors)</strong><p>Number of nearest neighbors to consider. Small k = sensitive; Large k = smooth but may underfit.</p></div>
     </div>
-
     <h3>Common Distance Measures</h3>
     <div class="formula">Euclidean Distance: d(p,q) = √[(x₁-x₂)² + (y₁-y₂)²]
 Manhattan Distance: d(p,q) = |x₁-x₂| + |y₁-y₂|
 Cosine Similarity: cos(θ) = (A·B) / (|A|·|B|)</div>
-
     <h3>Usage / Applications</h3>
     <ul>
-      <li><strong>Classification:</strong> Assign class based on majority vote of k nearest neighbors (KNN)</li>
+      <li><strong>Classification:</strong> Assign class based on majority vote of k nearest neighbors</li>
       <li><strong>Regression:</strong> Predict value as average of k nearest neighbors</li>
-      <li><strong>Recommendation Systems:</strong> Netflix, Amazon suggest items based on similar users/items</li>
+      <li><strong>Recommendation Systems:</strong> Netflix, Amazon suggest items based on similar users</li>
       <li><strong>Image Recognition:</strong> Match query image to nearest stored images</li>
       <li><strong>Anomaly Detection:</strong> Points far from all neighbors are flagged as anomalies</li>
-      <li><strong>Clustering:</strong> Used in algorithms like DBSCAN to define neighborhood</li>
     </ul>
-
     <h3>Effect of k Value</h3>
     <table>
       <tr><th>k Value</th><th>Behavior</th><th>Risk</th></tr>
@@ -1026,107 +784,67 @@ Cosine Similarity: cos(θ) = (A·B) / (|A|·|B|)</div>
   </div>
 </div>
 
-<!-- ═══ Q10 ═══ -->
+<!-- Q10 -->
 <div class="q-card" id="q10">
   <div class="q-header">
     <span class="q-num">Q 10</span>
     <span class="q-text">Describe distance measures / nearest neighbor concepts in data science.</span>
     <span class="mark-badge m4">4 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Win'23</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Win'23</span></div>
   <div class="q-body">
     <h3>Distance Measures in Data Science</h3>
-    <p>Distance measures (also called similarity/dissimilarity metrics) quantify how "close" or "far apart" two data points are in the feature space. They are fundamental to KNN, clustering, and many other ML algorithms.</p>
-
+    <p>Distance measures quantify how "close" or "far apart" two data points are in the feature space. They are fundamental to KNN, clustering, and many other ML algorithms.</p>
     <h4>1. Euclidean Distance</h4>
-    <p>The straight-line distance between two points in n-dimensional space. Most commonly used.</p>
-    <div class="formula">d(p,q) = √[(p₁-q₁)² + (p₂-q₂)² + ... + (pₙ-qₙ)²]
-       = √[Σ(pᵢ - qᵢ)²]</div>
-    <p><strong>Best for:</strong> Continuous features, normal distribution, when scale matters.</p>
-
-    <h4>2. Manhattan Distance (City Block / Taxicab)</h4>
+    <p>The straight-line distance between two points in n-dimensional space.</p>
+    <div class="formula">d(p,q) = √[(p₁-q₁)² + (p₂-q₂)² + ... + (pₙ-qₙ)²] = √[Σ(pᵢ - qᵢ)²]</div>
+    <h4>2. Manhattan Distance (City Block)</h4>
     <p>Sum of absolute differences along each dimension. Like navigating a city grid.</p>
-    <div class="formula">d(p,q) = |p₁-q₁| + |p₂-q₂| + ... + |pₙ-qₙ|
-       = Σ|pᵢ - qᵢ|</div>
-    <p><strong>Best for:</strong> High-dimensional data, when outliers should have less influence.</p>
-
-    <h4>3. Minkowski Distance (Generalization)</h4>
-    <p>Generalizes Euclidean (p=2) and Manhattan (p=1) distances.</p>
-    <div class="formula">d(p,q) = [Σ|pᵢ - qᵢ|^r]^(1/r)
-When r=1: Manhattan | When r=2: Euclidean</div>
-
+    <div class="formula">d(p,q) = |p₁-q₁| + |p₂-q₂| + ... + |pₙ-qₙ| = Σ|pᵢ - qᵢ|</div>
+    <h4>3. Minkowski Distance</h4>
+    <div class="formula">d(p,q) = [Σ|pᵢ - qᵢ|^r]^(1/r)   — When r=1: Manhattan | When r=2: Euclidean</div>
     <h4>4. Cosine Similarity</h4>
-    <p>Measures the angle between two vectors. Useful for text/document similarity (independent of magnitude).</p>
-    <div class="formula">cos(θ) = (A · B) / (||A|| × ||B||)
-Similarity ranges from 0 (orthogonal) to 1 (identical direction)</div>
-
+    <div class="formula">cos(θ) = (A · B) / (||A|| × ||B||)   — Ranges from 0 (orthogonal) to 1 (identical)</div>
     <h4>5. Hamming Distance</h4>
     <p>Number of positions at which two strings differ. Used for categorical/binary data.</p>
-    <div class="formula">d("karolin","kathrin") = 3 (3 positions differ)</div>
-
+    <div class="formula">d("karolin","kathrin") = 3   (3 positions differ)</div>
     <div class="diagram">
-      <div class="diagram-title">Euclidean vs Manhattan Distance — Visual</div>
+      <div class="diagram-title">Euclidean vs Manhattan Distance</div>
       <svg viewBox="0 0 680 160" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <!-- Grid -->
-        <rect x="40" y="20" width="260" height="130" rx="6" fill="rgba(56,189,248,0.04)" stroke="rgba(56,189,248,0.15)" stroke-width="1"/>
-        <text x="170" y="15" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#38bdf8">Euclidean Distance</text>
-        <!-- Grid lines -->
-        <line x1="80" y1="20" x2="80" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="120" y1="20" x2="120" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="160" y1="20" x2="160" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="200" y1="20" x2="200" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="240" y1="20" x2="240" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="40" y1="60" x2="300" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="40" y1="100" x2="300" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <!-- Points -->
-        <circle cx="80" cy="130" r="6" fill="#4ecb8d"/>
-        <text x="80" y="148" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#4ecb8d">A(1,1)</text>
-        <circle cx="260" cy="50" r="6" fill="#e96b6b"/>
-        <text x="260" y="44" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#e96b6b">B(5,4)</text>
-        <!-- Euclidean line (straight) -->
-        <line x1="80" y1="130" x2="260" y2="50" stroke="#38bdf8" stroke-width="2.5"/>
-        <text x="168" y="105" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#38bdf8" transform="rotate(-24,168,105)">√(16+9) = 5</text>
-
-        <!-- Manhattan Distance panel -->
-        <rect x="380" y="20" width="260" height="130" rx="6" fill="rgba(124,106,247,0.04)" stroke="rgba(124,106,247,0.15)" stroke-width="1"/>
-        <text x="510" y="15" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#a89cf7">Manhattan Distance</text>
-        <line x1="420" y1="20" x2="420" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="460" y1="20" x2="460" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="500" y1="20" x2="500" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="540" y1="20" x2="540" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="580" y1="20" x2="580" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="380" y1="60" x2="640" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="380" y1="100" x2="640" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <circle cx="420" cy="130" r="6" fill="#4ecb8d"/>
-        <text x="420" y="148" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#4ecb8d">A(1,1)</text>
-        <circle cx="600" cy="50" r="6" fill="#e96b6b"/>
-        <text x="600" y="44" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#e96b6b">B(5,4)</text>
-        <!-- Manhattan path: right then up -->
-        <polyline points="420,130 600,130 600,50" fill="none" stroke="#a89cf7" stroke-width="2.5"/>
-        <text x="510" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#a89cf7">|4| = 4 →</text>
-        <text x="618" y="95" font-family="Outfit,sans-serif" font-size="10" fill="#a89cf7">|3| = 3 ↑</text>
-        <text x="490" y="85" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#a89cf7">Total = 7</text>
+        <rect x="40" y="20" width="260" height="130" rx="6" fill="rgba(8,145,178,0.03)" stroke="rgba(8,145,178,0.15)" stroke-width="1"/>
+        <text x="170" y="15" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#0891b2">Euclidean Distance</text>
+        <line x1="80" y1="20" x2="80" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="120" y1="20" x2="120" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="160" y1="20" x2="160" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="200" y1="20" x2="200" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="240" y1="20" x2="240" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
+        <line x1="40" y1="60" x2="300" y2="60" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="40" y1="100" x2="300" y2="100" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
+        <circle cx="80" cy="130" r="6" fill="#16a05e"/><text x="80" y="148" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#16a05e">A(1,1)</text>
+        <circle cx="260" cy="50" r="6" fill="#d94f4f"/><text x="260" y="44" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#d94f4f">B(5,4)</text>
+        <line x1="80" y1="130" x2="260" y2="50" stroke="#0891b2" stroke-width="2.5"/>
+        <text x="168" y="105" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#0891b2" transform="rotate(-24,168,105)">√(16+9) = 5</text>
+        <rect x="380" y="20" width="260" height="130" rx="6" fill="rgba(91,78,232,0.03)" stroke="rgba(91,78,232,0.12)" stroke-width="1"/>
+        <text x="510" y="15" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#5b4ee8">Manhattan Distance</text>
+        <line x1="420" y1="20" x2="420" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="460" y1="20" x2="460" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="500" y1="20" x2="500" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="540" y1="20" x2="540" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="580" y1="20" x2="580" y2="150" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
+        <line x1="380" y1="60" x2="640" y2="60" stroke="rgba(0,0,0,0.05)" stroke-width="1"/><line x1="380" y1="100" x2="640" y2="100" stroke="rgba(0,0,0,0.05)" stroke-width="1"/>
+        <circle cx="420" cy="130" r="6" fill="#16a05e"/><text x="420" y="148" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#16a05e">A(1,1)</text>
+        <circle cx="600" cy="50" r="6" fill="#d94f4f"/><text x="600" y="44" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#d94f4f">B(5,4)</text>
+        <polyline points="420,130 600,130 600,50" fill="none" stroke="#5b4ee8" stroke-width="2.5"/>
+        <text x="510" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#5b4ee8">|4| = 4 →</text>
+        <text x="618" y="95" font-family="Outfit,sans-serif" font-size="10" fill="#5b4ee8">|3| = 3 ↑</text>
+        <text x="490" y="85" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#5b4ee8">Total = 7</text>
       </svg>
     </div>
-
-    <div class="note">📌 Always normalize/standardize features before applying distance measures — otherwise features with large scales dominate the distance calculation.</div>
+    <div class="note">📌 Always normalize/standardize features before applying distance measures — otherwise features with large scales dominate.</div>
   </div>
 </div>
 
-<!-- ═══ Q11 ═══ -->
+<!-- Q11 -->
 <div class="q-card" id="q11">
   <div class="q-header">
     <span class="q-num">Q 11</span>
     <span class="q-text">Compare supervised and unsupervised learning.</span>
     <span class="mark-badge m4">4 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Win'23</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Win'23</span></div>
   <div class="q-body">
-    <h3>Comparison — Supervised vs Unsupervised Learning</h3>
+    <h3>Comparison Table</h3>
     <table>
       <tr><th>Parameter</th><th>Supervised Learning</th><th>Unsupervised Learning</th></tr>
       <tr><td>Definition</td><td>Learns from labeled input-output pairs</td><td>Finds patterns in unlabeled data</td></tr>
@@ -1135,75 +853,48 @@ Similarity ranges from 0 (orthogonal) to 1 (identical direction)</div>
       <tr><td>Training Goal</td><td>Learn f(X) = Y mapping</td><td>Discover structure in X</td></tr>
       <tr><td>Output</td><td>Predicted class or value</td><td>Clusters, components, associations</td></tr>
       <tr><td>Evaluation</td><td>Easy — compare with ground truth</td><td>Hard — no ground truth</td></tr>
-      <tr><td>Complexity</td><td>Less complex, well-defined</td><td>More complex, exploratory</td></tr>
-      <tr><td>Use cases</td><td>Spam detection, Medical diagnosis, Price prediction</td><td>Customer segmentation, Topic modeling, Anomaly detection</td></tr>
+      <tr><td>Use cases</td><td>Spam detection, Medical diagnosis</td><td>Customer segmentation, Anomaly detection</td></tr>
       <tr><td>Algorithms</td><td>KNN, SVM, Naive Bayes, DT, LR</td><td>K-Means, DBSCAN, PCA, Apriori</td></tr>
-      <tr><td>Data requirement</td><td>Large labeled dataset (costly)</td><td>Large or small, any data</td></tr>
     </table>
-
     <div class="two-col">
-      <div class="col-box">
-        <strong>Supervised — Analogy</strong>
-        <p>Like a student learning from a textbook with answers. You see examples with correct labels and learn from them.</p>
-      </div>
-      <div class="col-box">
-        <strong>Unsupervised — Analogy</strong>
-        <p>Like sorting a mixed pile of objects by similarity without any instructions. You figure out the groups yourself.</p>
-      </div>
+      <div class="col-box"><strong>Supervised — Analogy</strong><p>Like a student learning from a textbook with answers. You see examples with correct labels and learn from them.</p></div>
+      <div class="col-box"><strong>Unsupervised — Analogy</strong><p>Like sorting a mixed pile of objects by similarity without any instructions. You figure out the groups yourself.</p></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ Q12 ═══ -->
+<!-- Q12 -->
 <div class="q-card" id="q12">
   <div class="q-header">
     <span class="q-num">Q 12</span>
     <span class="q-text">Explain working of average nearest neighbor algorithm. (Sum'25 variant)</span>
     <span class="mark-badge m4">4 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'25</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'25</span></div>
   <div class="q-body">
     <h3>Average Nearest Neighbor — Detailed Working</h3>
-    <p>The Average Nearest Neighbor (ANN) algorithm is a variant of KNN that makes predictions by computing the <strong>mean (average)</strong> of k nearest neighbors' outputs rather than using just one nearest neighbor or pure majority vote.</p>
-
-    <h3>Algorithm — Step by Step</h3>
+    <p>ANN makes predictions by computing the <strong>mean (average)</strong> of k nearest neighbors' outputs rather than using just one nearest neighbor.</p>
     <ol class="step-list">
-      <li><strong>Input:</strong> Training dataset D with n labeled instances, query point Q, and k value</li>
-      <li><strong>Distance Calculation:</strong> Compute distance between Q and every training point using Euclidean/Manhattan distance</li>
+      <li><strong>Input:</strong> Training dataset D, query point Q, and k value</li>
+      <li><strong>Distance Calculation:</strong> Compute distance between Q and every training point</li>
       <li><strong>Sort:</strong> Arrange all training points in ascending order of distance from Q</li>
       <li><strong>Select k Neighbors:</strong> Take the top k closest data points</li>
       <li><strong>Average (Regression):</strong> Prediction = (sum of k neighbors' Y values) / k</li>
       <li><strong>Output:</strong> Return the averaged prediction as the result</li>
     </ol>
-
     <div class="formula">ANN Prediction = (y₁ + y₂ + y₃ + ... + yₖ) / k
 
-Where y₁, y₂, ..., yₖ are output values of k nearest neighbors</div>
-
-    <h3>Weighted ANN (Advanced Variant)</h3>
-    <p>Instead of simple average, assign weights inversely proportional to distance — closer neighbors contribute more.</p>
-    <div class="formula">Weighted ANN = Σ(wᵢ × yᵢ) / Σwᵢ    where wᵢ = 1/dᵢ</div>
-
-    <h3>Choosing Optimal k</h3>
+Weighted ANN = Σ(wᵢ × yᵢ) / Σwᵢ    where wᵢ = 1/dᵢ</div>
     <div class="two-col">
-      <div class="col-box">
-        <strong>k too small (e.g., k=1)</strong>
-        <p>Highly sensitive to noise. Individual outliers heavily affect prediction. Overfitting.</p>
-      </div>
-      <div class="col-box">
-        <strong>k too large (e.g., k=N)</strong>
-        <p>Prediction becomes the global average. Loses local structure. Underfitting.</p>
-      </div>
+      <div class="col-box"><strong>k too small (e.g., k=1)</strong><p>Highly sensitive to noise. Overfitting risk.</p></div>
+      <div class="col-box"><strong>k too large (e.g., k=N)</strong><p>Prediction becomes the global average. Underfitting.</p></div>
     </div>
-    <p><strong>Solution:</strong> Use cross-validation — test multiple k values and pick the one with lowest error on validation set. Rule of thumb: k = √n where n = number of training samples.</p>
-
+    <p><strong>Rule of thumb:</strong> k = √n where n = number of training samples. Use cross-validation to find optimal k.</p>
     <div class="note">📌 Weighted ANN outperforms simple ANN when training data is dense, as it properly accounts for proximity.</div>
   </div>
 </div>
 
-<!-- ═══ Q13 ═══ -->
+<!-- Q13 -->
 <div class="q-card" id="q13">
   <div class="q-header">
     <span class="q-num">Q 13</span>
@@ -1215,41 +906,25 @@ Where y₁, y₂, ..., yₖ are output values of k nearest neighbors</div>
   </div>
   <div class="q-body">
     <h3>Introduction to K-Nearest Neighbor (KNN)</h3>
-    <p><strong>KNN</strong> is a simple, non-parametric, lazy learning algorithm used for both classification and regression. It classifies a new data point based on the majority class (for classification) or average value (for regression) of its k nearest neighbors in the training dataset.</p>
-
+    <p><strong>KNN</strong> is a simple, non-parametric, lazy learning algorithm used for both classification and regression. It classifies a new data point based on the majority class of its k nearest neighbors in the training dataset.</p>
     <div class="two-col">
-      <div class="col-box">
-        <strong>Type</strong>
-        <p>Supervised Learning, Instance-based (Lazy Learner)</p>
-      </div>
-      <div class="col-box">
-        <strong>Lazy Learner Meaning</strong>
-        <p>No explicit model is trained. All computation happens at prediction time.</p>
-      </div>
-      <div class="col-box">
-        <strong>Non-Parametric</strong>
-        <p>Makes no assumptions about the underlying data distribution.</p>
-      </div>
-      <div class="col-box">
-        <strong>Key Parameter</strong>
-        <p>k = number of neighbors. Critical hyperparameter affecting accuracy.</p>
-      </div>
+      <div class="col-box"><strong>Type</strong><p>Supervised Learning, Instance-based (Lazy Learner)</p></div>
+      <div class="col-box"><strong>Lazy Learner Meaning</strong><p>No explicit model is trained. All computation happens at prediction time.</p></div>
+      <div class="col-box"><strong>Non-Parametric</strong><p>Makes no assumptions about the underlying data distribution.</p></div>
+      <div class="col-box"><strong>Key Parameter</strong><p>k = number of neighbors. Critical hyperparameter affecting accuracy.</p></div>
     </div>
-
     <h3>KNN Algorithm — Step by Step</h3>
     <ol class="step-list">
       <li>Choose the value of k (e.g., k = 3)</li>
       <li>For each new data point, compute the distance to all training data points using Euclidean distance</li>
       <li>Sort all training points by distance in ascending order</li>
       <li>Select the k nearest training points (smallest distances)</li>
-      <li>For Classification: Assign the class that appears most frequently among k neighbors (majority voting)</li>
+      <li>For Classification: Assign the class that appears most frequently (majority voting)</li>
       <li>For Regression: Predict the mean of the k neighbors' output values</li>
     </ol>
-
     <h3>Distance Formula Used</h3>
     <div class="formula">Euclidean Distance:
 d(p, q) = √[(p₁−q₁)² + (p₂−q₂)² + ... + (pₙ−qₙ)²]</div>
-
     <h3>Example — Classification with k=3</h3>
     <p>Dataset: Classify whether a person plays tennis based on Height and Weight.</p>
     <table>
@@ -1261,62 +936,45 @@ d(p, q) = √[(p₁−q₁)² + (p₂−q₂)² + ... + (pₙ−qₙ)²]</div>
       <tr><td>E</td><td>155</td><td>50</td><td>No</td></tr>
       <tr><td><strong>Q (New)</strong></td><td><strong>172</strong></td><td><strong>68</strong></td><td><strong>?</strong></td></tr>
     </table>
-
     <h3>Calculations (k = 3)</h3>
     <table>
       <tr><th>Point</th><th>Distance from Q(172,68)</th><th>Class</th></tr>
-      <tr><td>A(170,65)</td><td>√[(172−170)²+(68−65)²] = √[4+9] = √13 ≈ <strong>3.6</strong></td><td>Yes ✓</td></tr>
-      <tr><td>D(175,70)</td><td>√[(172−175)²+(68−70)²] = √[9+4] = √13 ≈ <strong>3.6</strong></td><td>Yes ✓</td></tr>
-      <tr><td>B(180,80)</td><td>√[(172−180)²+(68−80)²] = √[64+144] = √208 ≈ <strong>14.4</strong></td><td>Yes ✓</td></tr>
-      <tr><td>C(160,55)</td><td>√[(172−160)²+(68−55)²] = √[144+169] ≈ <strong>17.7</strong></td><td>No</td></tr>
-      <tr><td>E(155,50)</td><td>√[(172−155)²+(68−50)²] = √[289+324] ≈ <strong>24.8</strong></td><td>No</td></tr>
+      <tr><td>A(170,65)</td><td>√[4+9] = √13 ≈ <strong>3.6</strong></td><td>Yes ✓</td></tr>
+      <tr><td>D(175,70)</td><td>√[9+4] = √13 ≈ <strong>3.6</strong></td><td>Yes ✓</td></tr>
+      <tr><td>B(180,80)</td><td>√[64+144] = √208 ≈ <strong>14.4</strong></td><td>Yes ✓</td></tr>
+      <tr><td>C(160,55)</td><td>√[144+169] ≈ <strong>17.7</strong></td><td>No</td></tr>
+      <tr><td>E(155,50)</td><td>√[289+324] ≈ <strong>24.8</strong></td><td>No</td></tr>
     </table>
-
     <p><strong>k=3 Nearest:</strong> A (3.6), D (3.6), B (14.4)</p>
-    <div class="highlight">
-      Votes: <strong>Yes=3, No=0</strong> → Prediction: <strong>Yes</strong> — The person plays tennis.
-    </div>
-
+    <div class="highlight">Votes: <strong>Yes=3, No=0</strong> → Prediction: <strong>Yes</strong> — The person plays tennis.</div>
     <div class="diagram">
       <div class="diagram-title">KNN Classification — Decision Boundary Visualization</div>
       <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <!-- Axes -->
-        <line x1="60" y1="170" x2="620" y2="170" stroke="#2e3650" stroke-width="1.5"/>
-        <line x1="60" y1="30" x2="60" y2="170" stroke="#2e3650" stroke-width="1.5"/>
-        <text x="340" y="190" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#6b7494">Height →</text>
-        <text x="20" y="100" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#6b7494" transform="rotate(-90,20,100)">Weight →</text>
-        <!-- Class regions (shaded) -->
-        <ellipse cx="370" cy="90" rx="160" ry="75" fill="rgba(78,203,141,0.07)" stroke="rgba(78,203,141,0.2)" stroke-width="1" stroke-dasharray="5 3"/>
-        <ellipse cx="160" cy="145" rx="100" ry="40" fill="rgba(233,107,107,0.07)" stroke="rgba(233,107,107,0.2)" stroke-width="1" stroke-dasharray="5 3"/>
-        <!-- Training points -->
-        <circle cx="330" cy="110" r="9" fill="#4ecb8d" opacity="0.85"/>
-        <text x="330" y="114" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#0a0d16">A</text>
-        <circle cx="440" cy="75" r="9" fill="#4ecb8d" opacity="0.85"/>
-        <text x="440" y="79" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#0a0d16">B</text>
-        <circle cx="200" cy="140" r="9" fill="#e96b6b" opacity="0.85"/>
-        <text x="200" y="144" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#0a0d16">C</text>
-        <circle cx="390" cy="97" r="9" fill="#4ecb8d" opacity="0.85"/>
-        <text x="390" y="101" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#0a0d16">D</text>
-        <circle cx="140" cy="155" r="9" fill="#e96b6b" opacity="0.85"/>
-        <text x="140" y="159" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#0a0d16">E</text>
-        <!-- Query point -->
-        <circle cx="355" cy="104" r="11" fill="none" stroke="#f7c94b" stroke-width="2.5"/>
-        <circle cx="355" cy="104" r="4" fill="#f7c94b"/>
-        <text x="355" y="88" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#f7c94b">Q (New)</text>
-        <!-- k-radius circle -->
-        <circle cx="355" cy="104" r="58" fill="none" stroke="#7c6af7" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.7"/>
-        <text x="430" y="50" font-family="Outfit,sans-serif" font-size="10" fill="#7c6af7">k=3 radius</text>
-        <!-- Lines to 3 nearest -->
-        <line x1="355" y1="104" x2="330" y2="110" stroke="#f7c94b" stroke-width="1" stroke-dasharray="4 2" opacity="0.7"/>
-        <line x1="355" y1="104" x2="390" y2="97" stroke="#f7c94b" stroke-width="1" stroke-dasharray="4 2" opacity="0.7"/>
-        <line x1="355" y1="104" x2="440" y2="75" stroke="#f7c94b" stroke-width="1" stroke-dasharray="4 2" opacity="0.7"/>
-        <!-- Legend -->
-        <circle cx="510" cy="40" r="7" fill="#4ecb8d"/><text x="522" y="44" font-family="Outfit,sans-serif" font-size="11" fill="#4ecb8d">Yes (plays)</text>
-        <circle cx="510" cy="58" r="7" fill="#e96b6b"/><text x="522" y="62" font-family="Outfit,sans-serif" font-size="11" fill="#e96b6b">No (doesn't play)</text>
-        <circle cx="510" cy="76" r="7" fill="none" stroke="#f7c94b" stroke-width="2"/><text x="522" y="80" font-family="Outfit,sans-serif" font-size="11" fill="#f7c94b">Query Point Q</text>
+        <defs><marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5b4ee8" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+        <line x1="60" y1="170" x2="620" y2="170" stroke="#e2e5ef" stroke-width="1.5"/>
+        <line x1="60" y1="30" x2="60" y2="170" stroke="#e2e5ef" stroke-width="1.5"/>
+        <text x="340" y="190" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#6b7280">Height →</text>
+        <text x="20" y="100" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#6b7280" transform="rotate(-90,20,100)">Weight →</text>
+        <ellipse cx="370" cy="90" rx="160" ry="75" fill="rgba(22,160,94,0.06)" stroke="rgba(22,160,94,0.2)" stroke-width="1" stroke-dasharray="5 3"/>
+        <ellipse cx="160" cy="145" rx="100" ry="40" fill="rgba(217,79,79,0.06)" stroke="rgba(217,79,79,0.2)" stroke-width="1" stroke-dasharray="5 3"/>
+        <circle cx="330" cy="110" r="9" fill="#16a05e"/><text x="330" y="114" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#fff">A</text>
+        <circle cx="440" cy="75" r="9" fill="#16a05e"/><text x="440" y="79" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#fff">B</text>
+        <circle cx="200" cy="140" r="9" fill="#d94f4f"/><text x="200" y="144" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#fff">C</text>
+        <circle cx="390" cy="97" r="9" fill="#16a05e"/><text x="390" y="101" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#fff">D</text>
+        <circle cx="140" cy="155" r="9" fill="#d94f4f"/><text x="140" y="159" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#fff">E</text>
+        <circle cx="355" cy="104" r="11" fill="none" stroke="#e6900a" stroke-width="2.5"/>
+        <circle cx="355" cy="104" r="4" fill="#e6900a"/>
+        <text x="355" y="88" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#e6900a">Q (New)</text>
+        <circle cx="355" cy="104" r="58" fill="none" stroke="#5b4ee8" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.6"/>
+        <text x="430" y="50" font-family="Outfit,sans-serif" font-size="10" fill="#5b4ee8">k=3 radius</text>
+        <line x1="355" y1="104" x2="330" y2="110" stroke="#e6900a" stroke-width="1" stroke-dasharray="4 2" opacity="0.7"/>
+        <line x1="355" y1="104" x2="390" y2="97" stroke="#e6900a" stroke-width="1" stroke-dasharray="4 2" opacity="0.7"/>
+        <line x1="355" y1="104" x2="440" y2="75" stroke="#e6900a" stroke-width="1" stroke-dasharray="4 2" opacity="0.7"/>
+        <circle cx="510" cy="40" r="7" fill="#16a05e"/><text x="522" y="44" font-family="Outfit,sans-serif" font-size="11" fill="#16a05e">Yes (plays)</text>
+        <circle cx="510" cy="58" r="7" fill="#d94f4f"/><text x="522" y="62" font-family="Outfit,sans-serif" font-size="11" fill="#d94f4f">No (doesn't play)</text>
+        <circle cx="510" cy="76" r="7" fill="none" stroke="#e6900a" stroke-width="2"/><text x="522" y="80" font-family="Outfit,sans-serif" font-size="11" fill="#e6900a">Query Point Q</text>
       </svg>
     </div>
-
     <h3>Advantages and Disadvantages</h3>
     <div class="two-col">
       <div class="col-box">
@@ -1338,37 +996,32 @@ d(p, q) = √[(p₁−q₁)² + (p₂−q₂)² + ... + (pₙ−qₙ)²]</div>
         </ul>
       </div>
     </div>
-
-    <div class="note">📌 Always show the distance calculation table, the voting result, and the KNN diagram in exam. This question is worth 7 marks — cover all 6 steps + example + advantages.</div>
+    <div class="note">📌 Always show the distance calculation table, voting result, and KNN diagram in exam. Cover all 6 steps + example + advantages for full 7 marks.</div>
   </div>
 </div>
 
-<!-- ═══ Q14 ═══ -->
+<!-- Q14 -->
 <div class="q-card" id="q14">
   <div class="q-header">
     <span class="q-num">Q 14</span>
     <span class="q-text">Write differences between supervised learning and unsupervised learning. (7M variant)</span>
     <span class="mark-badge m7">7 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'25</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'25</span></div>
   <div class="q-body">
     <h3>Supervised Learning — Deep Dive</h3>
-    <p>In <strong>Supervised Learning</strong>, the algorithm is given a training dataset where each example is paired with the correct output (label). It learns a mapping function from inputs to outputs by minimizing prediction error on labeled examples.</p>
+    <p>Each example is paired with the correct output (label). It learns a mapping function from inputs to outputs by minimizing prediction error.</p>
     <ul>
       <li><strong>Classification:</strong> Output is a discrete label. E.g., Image → Cat or Dog</li>
       <li><strong>Regression:</strong> Output is a continuous value. E.g., Area → House Price</li>
     </ul>
-
     <h3>Unsupervised Learning — Deep Dive</h3>
-    <p>In <strong>Unsupervised Learning</strong>, the algorithm receives only inputs (no labels) and must discover the underlying structure, patterns, or distribution of data without any guidance.</p>
+    <p>The algorithm receives only inputs (no labels) and must discover the underlying structure, patterns, or distribution of data without any guidance.</p>
     <ul>
       <li><strong>Clustering:</strong> Group similar data points. E.g., Customer segments</li>
       <li><strong>Dimensionality Reduction:</strong> Compress features. E.g., PCA</li>
       <li><strong>Association:</strong> Discover rules. E.g., Market basket analysis</li>
     </ul>
-
     <h3>Comprehensive Comparison</h3>
     <table>
       <tr><th>Dimension</th><th>Supervised Learning</th><th>Unsupervised Learning</th></tr>
@@ -1381,63 +1034,49 @@ d(p, q) = √[(p₁−q₁)² + (p₂−q₂)² + ... + (pₙ−qₙ)²]</div>
       <tr><td>Training cost</td><td>High (need labeled data)</td><td>Lower (no annotation)</td></tr>
       <tr><td>Interpretability</td><td>Higher — outputs are meaningful</td><td>Lower — may need expert validation</td></tr>
       <tr><td>Risk</td><td>Overfitting, label bias</td><td>Wrong cluster count, ambiguous groups</td></tr>
-      <tr><td>Examples of algorithms</td><td>KNN, SVM, Random Forest, Logistic Regression, Naive Bayes</td><td>K-Means, DBSCAN, PCA, Apriori, Autoencoders</td></tr>
+      <tr><td>Algorithms</td><td>KNN, SVM, Random Forest, LR, Naive Bayes</td><td>K-Means, DBSCAN, PCA, Apriori, Autoencoders</td></tr>
       <tr><td>Example tasks</td><td>Spam detection, Face recognition, Credit scoring</td><td>Customer profiling, Topic discovery, Anomaly detection</td></tr>
     </table>
-
     <div class="diagram">
       <div class="diagram-title">Taxonomy of Machine Learning</div>
       <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <defs>
-          <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#7c6af7" stroke-width="1.5" stroke-linecap="round"/>
-          </marker>
-        </defs>
-        <!-- Root -->
-        <rect x="265" y="10" width="150" height="38" rx="8" fill="rgba(124,106,247,0.2)" stroke="rgba(124,106,247,0.5)" stroke-width="1.5"/>
-        <text x="340" y="34" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#a89cf7">Machine Learning</text>
-        <!-- Branches -->
-        <line x1="340" y1="48" x2="160" y2="90" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr4)"/>
-        <line x1="340" y1="48" x2="340" y2="90" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr4)"/>
-        <line x1="340" y1="48" x2="520" y2="90" stroke="#7c6af7" stroke-width="1.2" marker-end="url(#arr4)"/>
-        <!-- Supervised -->
-        <rect x="80" y="90" width="160" height="34" rx="7" fill="rgba(78,203,141,0.12)" stroke="rgba(78,203,141,0.35)" stroke-width="1.2"/>
-        <text x="160" y="112" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="600" fill="#4ecb8d">Supervised</text>
-        <!-- Unsupervised -->
-        <rect x="260" y="90" width="160" height="34" rx="7" fill="rgba(56,189,248,0.12)" stroke="rgba(56,189,248,0.35)" stroke-width="1.2"/>
-        <text x="340" y="112" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="600" fill="#38bdf8">Unsupervised</text>
-        <!-- Reinforcement -->
-        <rect x="440" y="90" width="160" height="34" rx="7" fill="rgba(233,107,107,0.12)" stroke="rgba(233,107,107,0.35)" stroke-width="1.2"/>
-        <text x="520" y="112" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="600" fill="#e96b6b">Reinforcement</text>
-        <!-- Sub-nodes supervised -->
-        <line x1="130" y1="124" x2="100" y2="158" stroke="#4ecb8d" stroke-width="1" opacity="0.7" marker-end="url(#arr4)"/>
-        <line x1="180" y1="124" x2="200" y2="158" stroke="#4ecb8d" stroke-width="1" opacity="0.7" marker-end="url(#arr4)"/>
-        <rect x="62" y="158" width="80" height="26" rx="5" fill="rgba(78,203,141,0.08)" stroke="rgba(78,203,141,0.2)" stroke-width="1"/>
-        <text x="102" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#4ecb8d">Classification</text>
-        <rect x="154" y="158" width="75" height="26" rx="5" fill="rgba(78,203,141,0.08)" stroke="rgba(78,203,141,0.2)" stroke-width="1"/>
-        <text x="191" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#4ecb8d">Regression</text>
-        <!-- Sub-nodes unsupervised -->
-        <line x1="315" y1="124" x2="285" y2="158" stroke="#38bdf8" stroke-width="1" opacity="0.7" marker-end="url(#arr4)"/>
-        <line x1="365" y1="124" x2="395" y2="158" stroke="#38bdf8" stroke-width="1" opacity="0.7" marker-end="url(#arr4)"/>
-        <rect x="244" y="158" width="75" height="26" rx="5" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
-        <text x="281" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#38bdf8">Clustering</text>
-        <rect x="360" y="158" width="70" height="26" rx="5" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
-        <text x="395" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#38bdf8">Dim. Reduction</text>
+        <defs><marker id="arr5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5b4ee8" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+        <rect x="265" y="10" width="150" height="38" rx="8" fill="rgba(91,78,232,0.1)" stroke="rgba(91,78,232,0.35)" stroke-width="1.5"/>
+        <text x="340" y="34" text-anchor="middle" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#5b4ee8">Machine Learning</text>
+        <line x1="340" y1="48" x2="160" y2="90" stroke="#5b4ee8" stroke-width="1.2" marker-end="url(#arr5)"/>
+        <line x1="340" y1="48" x2="340" y2="90" stroke="#5b4ee8" stroke-width="1.2" marker-end="url(#arr5)"/>
+        <line x1="340" y1="48" x2="520" y2="90" stroke="#5b4ee8" stroke-width="1.2" marker-end="url(#arr5)"/>
+        <rect x="80" y="90" width="160" height="34" rx="7" fill="rgba(22,160,94,0.1)" stroke="rgba(22,160,94,0.3)" stroke-width="1.2"/>
+        <text x="160" y="112" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="600" fill="#16a05e">Supervised</text>
+        <rect x="260" y="90" width="160" height="34" rx="7" fill="rgba(8,145,178,0.1)" stroke="rgba(8,145,178,0.3)" stroke-width="1.2"/>
+        <text x="340" y="112" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="600" fill="#0891b2">Unsupervised</text>
+        <rect x="440" y="90" width="160" height="34" rx="7" fill="rgba(217,79,79,0.1)" stroke="rgba(217,79,79,0.3)" stroke-width="1.2"/>
+        <text x="520" y="112" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" font-weight="600" fill="#d94f4f">Reinforcement</text>
+        <line x1="130" y1="124" x2="100" y2="158" stroke="#16a05e" stroke-width="1" opacity="0.7" marker-end="url(#arr5)"/>
+        <line x1="180" y1="124" x2="200" y2="158" stroke="#16a05e" stroke-width="1" opacity="0.7" marker-end="url(#arr5)"/>
+        <rect x="62" y="158" width="80" height="26" rx="5" fill="rgba(22,160,94,0.07)" stroke="rgba(22,160,94,0.2)" stroke-width="1"/>
+        <text x="102" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#16a05e">Classification</text>
+        <rect x="154" y="158" width="75" height="26" rx="5" fill="rgba(22,160,94,0.07)" stroke="rgba(22,160,94,0.2)" stroke-width="1"/>
+        <text x="191" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#16a05e">Regression</text>
+        <line x1="315" y1="124" x2="285" y2="158" stroke="#0891b2" stroke-width="1" opacity="0.7" marker-end="url(#arr5)"/>
+        <line x1="365" y1="124" x2="395" y2="158" stroke="#0891b2" stroke-width="1" opacity="0.7" marker-end="url(#arr5)"/>
+        <rect x="244" y="158" width="75" height="26" rx="5" fill="rgba(8,145,178,0.07)" stroke="rgba(8,145,178,0.2)" stroke-width="1"/>
+        <text x="281" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#0891b2">Clustering</text>
+        <rect x="360" y="158" width="70" height="26" rx="5" fill="rgba(8,145,178,0.07)" stroke="rgba(8,145,178,0.2)" stroke-width="1"/>
+        <text x="395" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#0891b2">Dim. Reduction</text>
       </svg>
     </div>
   </div>
 </div>
 
-<!-- ═══ Q15 ═══ -->
+<!-- Q15 -->
 <div class="q-card" id="q15">
   <div class="q-header">
     <span class="q-num">Q 15</span>
     <span class="q-text">Describe Normal, Binomial and Categorical distributions. / Differentiate MultinomialNB, BernoulliNB and GaussianNB.</span>
     <span class="mark-badge m3">3 M</span>
   </div>
-  <div class="exam-tags">
-    <span class="exam-tag">Sum'24</span>
-  </div>
+  <div class="exam-tags"><span class="exam-tag">Sum'24</span></div>
   <div class="q-body">
     <h3>1. Normal (Gaussian) Distribution</h3>
     <p>A continuous probability distribution that is symmetric and bell-shaped about the mean μ. Completely described by mean (μ) and standard deviation (σ).</p>
@@ -1447,19 +1086,15 @@ Properties:
   • Mean = Median = Mode (symmetric)
   • 68% data within 1σ, 95% within 2σ, 99.7% within 3σ
   • Used in GaussianNB classifier</div>
-
     <h3>2. Binomial Distribution</h3>
-    <p>A discrete distribution modeling the number of successes in n independent Bernoulli trials. Each trial has two outcomes: success (p) or failure (1−p).</p>
+    <p>A discrete distribution modeling the number of successes in n independent Bernoulli trials.</p>
     <div class="formula">P(X = k) = C(n,k) · pᵏ · (1−p)^(n−k)
 
 Example: P(3 heads in 5 coin flips) = C(5,3)·(0.5)³·(0.5)²
 Used in BernoulliNB (binary features: present/absent)</div>
-
     <h3>3. Categorical / Multinomial Distribution</h3>
-    <p>Extends binomial to k>2 outcomes. Models the counts of occurrences of multiple categories. Used when features are counts or frequencies.</p>
-    <div class="formula">P(X₁=n₁, X₂=n₂, ..., Xₖ=nₖ) = n!/(n₁!n₂!...nₖ!) · p₁ⁿ¹p₂ⁿ²...pₖⁿᵏ
-Used in MultinomialNB (word count features in text)</div>
-
+    <p>Extends binomial to k greater than 2 outcomes. Models the counts of occurrences of multiple categories.</p>
+    <div class="formula">Used in MultinomialNB (word count features in text classification)</div>
     <h3>Naive Bayes Classifier Comparison</h3>
     <table>
       <tr><th>Classifier</th><th>Feature Type</th><th>Distribution</th><th>Best Use Case</th></tr>
@@ -1467,46 +1102,28 @@ Used in MultinomialNB (word count features in text)</div>
       <tr><td><strong>BernoulliNB</strong></td><td>Binary (0 or 1)</td><td>Bernoulli/Binomial</td><td>Spam detection (word present? yes/no)</td></tr>
       <tr><td><strong>MultinomialNB</strong></td><td>Count / Frequency</td><td>Multinomial</td><td>Text classification (word frequency / TF-IDF)</td></tr>
     </table>
-
     <div class="diagram">
       <div class="diagram-title">Distribution Shapes</div>
       <svg viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg" width="100%">
-        <!-- Normal -->
-        <text x="110" y="18" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#4ecb8d">Normal</text>
-        <line x1="20" y1="130" x2="200" y2="130" stroke="#2e3650" stroke-width="1"/>
-        <path d="M20,130 C40,130 60,128 80,110 C90,98 100,60 110,52 C120,60 130,98 140,110 C160,128 180,130 200,130" fill="rgba(78,203,141,0.15)" stroke="#4ecb8d" stroke-width="2"/>
-        <line x1="110" y1="52" x2="110" y2="130" stroke="#4ecb8d" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
-        <text x="110" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7494">μ (mean)</text>
-
-        <!-- Binomial -->
-        <text x="340" y="18" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#38bdf8">Binomial</text>
-        <line x1="250" y1="130" x2="430" y2="130" stroke="#2e3650" stroke-width="1"/>
-        <rect x="260" y="125" width="14" height="5" fill="#38bdf8" opacity="0.7"/>
-        <rect x="280" y="110" width="14" height="20" fill="#38bdf8" opacity="0.7"/>
-        <rect x="300" y="80" width="14" height="50" fill="#38bdf8" opacity="0.9"/>
-        <rect x="320" y="65" width="14" height="65" fill="#38bdf8"/>
-        <rect x="340" y="78" width="14" height="52" fill="#38bdf8" opacity="0.9"/>
-        <rect x="360" y="105" width="14" height="25" fill="#38bdf8" opacity="0.7"/>
-        <rect x="380" y="120" width="14" height="10" fill="#38bdf8" opacity="0.5"/>
-        <text x="340" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7494">k (successes)</text>
-
-        <!-- Multinomial / Categorical -->
-        <text x="570" y="18" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#a89cf7">Categorical</text>
-        <line x1="480" y1="130" x2="660" y2="130" stroke="#2e3650" stroke-width="1"/>
-        <rect x="495" y="80" width="22" height="50" fill="#a89cf7" opacity="0.9"/>
-        <text x="506" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7494">Cat A</text>
-        <rect x="528" y="55" width="22" height="75" fill="#e96b6b" opacity="0.9"/>
-        <text x="539" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7494">Cat B</text>
-        <rect x="561" y="95" width="22" height="35" fill="#4ecb8d" opacity="0.9"/>
-        <text x="572" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7494">Cat C</text>
-        <rect x="594" y="70" width="22" height="60" fill="#38bdf8" opacity="0.9"/>
-        <text x="605" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7494">Cat D</text>
-        <rect x="627" y="105" width="22" height="25" fill="#f7c94b" opacity="0.9"/>
-        <text x="638" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7494">Cat E</text>
+        <text x="110" y="18" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#16a05e">Normal</text>
+        <line x1="20" y1="130" x2="200" y2="130" stroke="#e2e5ef" stroke-width="1"/>
+        <path d="M20,130 C40,130 60,128 80,110 C90,98 100,60 110,52 C120,60 130,98 140,110 C160,128 180,130 200,130" fill="rgba(22,160,94,0.1)" stroke="#16a05e" stroke-width="2"/>
+        <line x1="110" y1="52" x2="110" y2="130" stroke="#16a05e" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+        <text x="110" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7280">μ (mean)</text>
+        <text x="340" y="18" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#0891b2">Binomial</text>
+        <line x1="250" y1="130" x2="430" y2="130" stroke="#e2e5ef" stroke-width="1"/>
+        <rect x="260" y="125" width="14" height="5" fill="#0891b2" opacity="0.6"/><rect x="280" y="110" width="14" height="20" fill="#0891b2" opacity="0.7"/><rect x="300" y="80" width="14" height="50" fill="#0891b2" opacity="0.8"/><rect x="320" y="65" width="14" height="65" fill="#0891b2"/><rect x="340" y="78" width="14" height="52" fill="#0891b2" opacity="0.8"/><rect x="360" y="105" width="14" height="25" fill="#0891b2" opacity="0.7"/><rect x="380" y="120" width="14" height="10" fill="#0891b2" opacity="0.5"/>
+        <text x="340" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#6b7280">k (successes)</text>
+        <text x="570" y="18" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#5b4ee8">Categorical</text>
+        <line x1="480" y1="130" x2="660" y2="130" stroke="#e2e5ef" stroke-width="1"/>
+        <rect x="495" y="80" width="22" height="50" fill="#5b4ee8" opacity="0.8"/><text x="506" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7280">Cat A</text>
+        <rect x="528" y="55" width="22" height="75" fill="#d94f4f" opacity="0.8"/><text x="539" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7280">Cat B</text>
+        <rect x="561" y="95" width="22" height="35" fill="#16a05e" opacity="0.8"/><text x="572" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7280">Cat C</text>
+        <rect x="594" y="70" width="22" height="60" fill="#0891b2" opacity="0.8"/><text x="605" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7280">Cat D</text>
+        <rect x="627" y="105" width="22" height="25" fill="#e6900a" opacity="0.8"/><text x="638" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#6b7280">Cat E</text>
       </svg>
     </div>
-
-    <div class="note">📌 Remember: GaussianNB → Continuous features; BernoulliNB → Binary (0/1); MultinomialNB → Count/Frequency data. All use Bayes' Theorem but different likelihood models.</div>
+    <div class="note">📌 GaussianNB → Continuous; BernoulliNB → Binary (0/1); MultinomialNB → Count/Frequency. All use Bayes' Theorem with different likelihood models.</div>
   </div>
 </div>
 
@@ -1514,9 +1131,9 @@ Used in MultinomialNB (word count features in text)</div>
 <div style="text-align:center;padding:32px 0 16px;color:var(--ink3);font-size:13px;border-top:1px solid var(--border);margin-top:16px;line-height:2;">
   Chapter 3 Complete &nbsp;·&nbsp; 15 Topics Covered &nbsp;·&nbsp; GTU 3161613 — Data Analysis &amp; Visualization
   <br>
-  <span style="font-size:11px;color:var(--ink3);">Classification · KNN · Supervised vs Unsupervised · Distance Measures · Distributions</span>
+  <span style="font-size:11px;">Classification · KNN · Supervised vs Unsupervised · Distance Measures · Distributions</span>
   <br>
-  <span style="font-size:11px;margin-top:8px;display:block;color:var(--accent);opacity:0.7;">See Chapter 1 for Math, Probability &amp; Statistical Modeling answers</span>
+  <a href="dashboard.html" style="font-size:11px;margin-top:8px;display:inline-block;color:var(--accent);text-decoration:none;">← Back to Dashboard</a>
 </div>
 
 </div>
